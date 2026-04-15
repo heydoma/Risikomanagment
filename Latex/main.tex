@@ -1,0 +1,230 @@
+% !TEX program = pdflatex
+% Kompiliert mit: pdflatex (2x)  | optional: biber (falls biblatex genutzt wird)
+
+\documentclass[
+  12pt,
+  a4paper,
+  oneside,
+  headings=big,
+  parskip=half,
+  bibliography=totoc
+]{scrreprt}
+
+% --- Sprache & Typografie ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} % ok für pdflatex
+\usepackage[ngerman]{babel}
+\usepackage{microtype}
+\usepackage{csquotes}
+
+% --- Layout ---
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% --- Mathe, Tabellen, Grafiken ---
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{tabularx}
+
+% --- Listen & Links ---
+\usepackage{enumitem}
+\setlist{nosep}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+
+% --- KOMA: bessere Überschriftenabstände (optional) ---
+% \RedeclareSectionCommand[beforeskip=0.8\baselineskip,afterskip=0.6\baselineskip]{chapter}
+
+% --- Optionale Literaturverwaltung (wenn du später BibLaTeX nutzen willst) ---
+% \usepackage[backend=biber,style=authoryear,maxcitenames=2]{biblatex}
+% \addbibresource{references.bib}
+
+% --- Metadaten / Titelseite ---
+\newcommand{\thesistitle}{Risikomanagement in Data-Science-Projekten}
+\newcommand{\thesissubtitle}{Einordnung, Methoden und Strategieentwicklung entlang des DASC-PM}
+\newcommand{\thesisauthor}{\textless Dein Name\textgreater}
+\newcommand{\thesisprogram}{Masterstudium \textless Studiengang\textgreater}
+\newcommand{\thesiscourse}{Modul: Projektmanagement in Data-Science-Projekten}
+\newcommand{\thesissupervisor}{\textless Betreuer:in\textgreater}
+\newcommand{\thesisdate}{15. April 2026}
+
+\title{\thesistitle\\\large \thesissubtitle}
+\author{\thesisauthor}
+\date{\thesisdate}
+
+\begin{document}
+
+% --- Titelseite (einfach, gut editierbar) ---
+\begin{titlepage}
+  \centering
+  \vspace*{2cm}
+
+  {\LARGE\bfseries \thesistitle\par}
+  \vspace{0.5cm}
+  {\Large \thesissubtitle\par}
+
+  \vspace{1.5cm}
+  {\large \thesisauthor\par}
+
+  \vfill
+
+  \begin{tabular}{@{}ll@{}}
+    Studiengang: & \thesisprogram\\
+    Veranstaltung: & \thesiscourse\\
+    Betreuung: & \thesissupervisor\\
+    Datum: & \thesisdate\\
+  \end{tabular}
+
+  \vspace*{2cm}
+\end{titlepage}
+
+% --- Optional: Abstract (de) ---
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+% Kurzfassung in 150--250 Wörtern: Problem, Vorgehen, Ergebnis, Beitrag.
+\noindent\textless Hier kommt dein Abstract hin.\textgreater
+
+\tableofcontents
+\clearpage
+
+% --- Optional: Abkürzungsverzeichnis (minimal, ohne zusätzliche Pakete) ---
+\chapter*{Abkürzungsverzeichnis}
+\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+\begin{description}[leftmargin=3.2cm,style=nextline]
+  \item[DASC-PM] \textless Bedeutung eintragen\textgreater
+  \item[DS] Data Science
+  \item[PM] Projektmanagement
+  \item[RM] Risikomanagement
+\end{description}
+\clearpage
+
+% ==========================================================
+% Gliederung (Baukasten)
+% ==========================================================
+
+\chapter{Einleitung}
+\section{Motivation und Problemstellung}
+\textless Text\textgreater
+
+\section{Zielsetzung und Forschungsfragen}
+\textless Text\textgreater
+
+\section{Vorgehen und Aufbau der Arbeit}
+\textless Text\textgreater
+
+
+\chapter{Grundlagen des Risikomanagements}
+\section{Begriffe und Definitionen}
+\textless Text\textgreater
+
+\section{Risikotypen in Data-Science-Projekten}
+\textless Text\textgreater
+
+\section{Rollen, Verantwortlichkeiten und Governance}
+\textless Text\textgreater
+
+
+\chapter{Methoden des Risikomanagements}
+\section{Überblick: Prozessschritte und Artefakte}
+\textless Text\textgreater
+
+\section{Methode 1: Risikobewertung}
+\subsection{Identifikation}
+\textless Text\textgreater
+
+\subsection{Analyse und Bewertung (qualitativ/quantitativ)}
+\textless Text\textgreater
+
+\subsection{Beispiel-Artefakt: Risk Register (Template)}
+\begin{longtable}{@{}p{3.0cm}p{3.2cm}p{2.1cm}p{2.1cm}p{4.2cm}@{}}
+\toprule
+\textbf{Risiko} & \textbf{Ursache/\allowbreak Trigger} & \textbf{Eintritt} & \textbf{Auswirkung} & \textbf{Maßnahmen /\allowbreak Owner} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Risiko} & \textbf{Ursache/\allowbreak Trigger} & \textbf{Eintritt} & \textbf{Auswirkung} & \textbf{Maßnahmen /\allowbreak Owner} \\
+\midrule
+\endhead
+\textless Risiko 1\textgreater & \textless Trigger\textgreater & H/M/L & H/M/L & \textless Maßnahme + Verantwortliche:r\textgreater \\
+\textless Risiko 2\textgreater & \textless Trigger\textgreater & H/M/L & H/M/L & \textless Maßnahme + Verantwortliche:r\textgreater \\
+\bottomrule
+\end{longtable}
+
+\section{Methode 2: Risikominimierungsstrategien}
+\subsection{Vermeiden, Vermindern, Übertragen, Akzeptieren}
+\textless Text\textgreater
+
+\subsection{Kontrollen, Monitoring und Eskalation}
+\textless Text\textgreater
+
+
+\chapter{Strategieentwicklung entlang des DASC-PM}
+\section{Annahmen: Phasen/Artefakte des DASC-PM}
+\textless Text\textgreater
+
+\section{Risikomanagement-Integration je Phase}
+\textless Text\textgreater
+
+\section{Vorschlag: RM-Playbook als wiederverwendbarer Baukasten}
+\textless Text\textgreater
+
+
+\chapter{Case-Study}
+\section{Auswahl, Beschreibung und Ziel der Case-Study}
+\textless Text\textgreater
+
+\section{Anwendung der Strategie auf die Case-Study}
+\textless Text\textgreater
+
+\section{Case-Study 1: Anwendung und Bewertung}
+\textless Text\textgreater
+
+\section{Case-Study 2: Anwendung und Bewertung}
+\textless Text\textgreater
+
+\section{Case-Study 3: Anwendung und Bewertung}
+\textless Text\textgreater
+
+
+\chapter{Diskussion}
+\section{Kann man das DASC-PM um ein Risikomanagement erweitern oder sollte man ein parallel laufendes Modell nutzen?}
+\textless Text\textgreater
+
+\section{Limitationen und Validität der Ergebnisse}
+\textless Text\textgreater
+
+
+\chapter{Fazit}
+\section{Zusammenfassung der Ergebnisse}
+\textless Text\textgreater
+
+\section{Implikationen für Data-Science-Projektmanagement}
+\textless Text\textgreater
+
+\section{Ausblick}
+\textless Text\textgreater
+
+
+% ==========================================================
+% Literatur (self-contained) – später gern auf BibLaTeX umstellen
+% ==========================================================
+\begin{thebibliography}{9}
+  \bibitem{placeholder} \textless Autor\textgreater. \textit{\textless Titel\textgreater}. \textless Verlag/Journal\textgreater, \textless Jahr\textgreater.
+\end{thebibliography}
+
+% --- Wenn du BibLaTeX aktivierst, ersetze oben durch: ---
+% \printbibliography
+
+
+% ==========================================================
+% Anhang (optional)
+% ==========================================================
+% \appendix
+% \chapter{Zusätzliche Materialien}
+% \textless Text\textgreater
+
+\end{document}
