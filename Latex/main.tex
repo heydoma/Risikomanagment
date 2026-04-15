@@ -82,149 +82,29 @@
   \vspace*{2cm}
 \end{titlepage}
 
-% --- Optional: Abstract (de) ---
-\chapter*{Abstract}
-\addcontentsline{toc}{chapter}{Abstract}
-% Kurzfassung in 150--250 Wörtern: Problem, Vorgehen, Ergebnis, Beitrag.
-\noindent\textless Hier kommt dein Abstract hin.\textgreater
+% --- Abstract ---
+\input{frontmatter/abstract}
 
 \tableofcontents
 \clearpage
 
-% --- Optional: Abkürzungsverzeichnis (minimal, ohne zusätzliche Pakete) ---
-\chapter*{Abkürzungsverzeichnis}
-\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
-\begin{description}[leftmargin=3.2cm,style=nextline]
-  \item[DASC-PM] \textless Bedeutung eintragen\textgreater
-  \item[DS] Data Science
-  \item[PM] Projektmanagement
-  \item[RM] Risikomanagement
-\end{description}
+% --- Abkürzungsverzeichnis ---
+\input{frontmatter/abkuerzungsverzeichnis}
 \clearpage
 
 % ==========================================================
-% Gliederung (Baukasten)
+% Inhalt (Baukasten über \input)
 % ==========================================================
 
-\chapter{Einleitung}
-\section{Motivation und Problemstellung}
-\textless Text\textgreater
+\input{chapters/01_einleitung/chapter}
+\input{chapters/02_grundlagen/chapter}
+\input{chapters/03_methoden/chapter}
+\input{chapters/04_strategie_dasc_pm/chapter}
+\input{chapters/05_case_study/chapter}
+\input{chapters/06_diskussion/chapter}
+\input{chapters/07_fazit/chapter}
 
-\section{Zielsetzung und Forschungsfragen}
-\textless Text\textgreater
-
-\section{Vorgehen und Aufbau der Arbeit}
-\textless Text\textgreater
-
-
-\chapter{Grundlagen des Risikomanagements}
-\section{Begriffe und Definitionen}
-\textless Text\textgreater
-
-\section{Risikotypen in Data-Science-Projekten}
-\textless Text\textgreater
-
-\section{Rollen, Verantwortlichkeiten und Governance}
-\textless Text\textgreater
-
-
-\chapter{Methoden des Risikomanagements}
-\section{Überblick: Prozessschritte und Artefakte}
-\textless Text\textgreater
-
-\section{Methode 1: Risikobewertung}
-\subsection{Identifikation}
-\textless Text\textgreater
-
-\subsection{Analyse und Bewertung (qualitativ/quantitativ)}
-\textless Text\textgreater
-
-\subsection{Beispiel-Artefakt: Risk Register (Template)}
-\begin{longtable}{@{}p{3.0cm}p{3.2cm}p{2.1cm}p{2.1cm}p{4.2cm}@{}}
-\toprule
-\textbf{Risiko} & \textbf{Ursache/\allowbreak Trigger} & \textbf{Eintritt} & \textbf{Auswirkung} & \textbf{Maßnahmen /\allowbreak Owner} \\
-\midrule
-\endfirsthead
-\toprule
-\textbf{Risiko} & \textbf{Ursache/\allowbreak Trigger} & \textbf{Eintritt} & \textbf{Auswirkung} & \textbf{Maßnahmen /\allowbreak Owner} \\
-\midrule
-\endhead
-\textless Risiko 1\textgreater & \textless Trigger\textgreater & H/M/L & H/M/L & \textless Maßnahme + Verantwortliche:r\textgreater \\
-\textless Risiko 2\textgreater & \textless Trigger\textgreater & H/M/L & H/M/L & \textless Maßnahme + Verantwortliche:r\textgreater \\
-\bottomrule
-\end{longtable}
-
-\section{Methode 2: Risikominimierungsstrategien}
-\subsection{Vermeiden, Vermindern, Übertragen, Akzeptieren}
-\textless Text\textgreater
-
-\subsection{Kontrollen, Monitoring und Eskalation}
-\textless Text\textgreater
-
-
-\chapter{Strategieentwicklung entlang des DASC-PM}
-\section{Annahmen: Phasen/Artefakte des DASC-PM}
-\textless Text\textgreater
-
-\section{Risikomanagement-Integration je Phase}
-\textless Text\textgreater
-
-\section{Vorschlag: RM-Playbook als wiederverwendbarer Baukasten}
-\textless Text\textgreater
-
-
-\chapter{Case-Study}
-\section{Auswahl, Beschreibung und Ziel der Case-Study}
-\textless Text\textgreater
-
-\section{Anwendung der Strategie auf die Case-Study}
-\textless Text\textgreater
-
-\section{Case-Study 1: Anwendung und Bewertung}
-\textless Text\textgreater
-
-\section{Case-Study 2: Anwendung und Bewertung}
-\textless Text\textgreater
-
-\section{Case-Study 3: Anwendung und Bewertung}
-\textless Text\textgreater
-
-
-\chapter{Diskussion}
-\section{Kann man das DASC-PM um ein Risikomanagement erweitern oder sollte man ein parallel laufendes Modell nutzen?}
-\textless Text\textgreater
-
-\section{Limitationen und Validität der Ergebnisse}
-\textless Text\textgreater
-
-
-\chapter{Fazit}
-\section{Zusammenfassung der Ergebnisse}
-\textless Text\textgreater
-
-\section{Implikationen für Data-Science-Projektmanagement}
-\textless Text\textgreater
-
-\section{Ausblick}
-\textless Text\textgreater
-
-
-% ==========================================================
-% Literatur (self-contained) – später gern auf BibLaTeX umstellen
-% ==========================================================
-\begin{thebibliography}{9}
-  \bibitem{placeholder} \textless Autor\textgreater. \textit{\textless Titel\textgreater}. \textless Verlag/Journal\textgreater, \textless Jahr\textgreater.
-\end{thebibliography}
-
-% --- Wenn du BibLaTeX aktivierst, ersetze oben durch: ---
-% \printbibliography
-
-
-% ==========================================================
-% Anhang (optional)
-% ==========================================================
-% \appendix
-% \chapter{Zusätzliche Materialien}
-% \textless Text\textgreater
+\input{backmatter/literatur}
+\input{backmatter/anhang}
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.9.15)  15 APR 2026 13:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.9.15)  15 APR 2026 14:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -622,17 +622,17 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 
 
-{/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}{/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
+{/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}{/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] (./frontmatter/abstract.tex
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
+)
 
 [2
 
 ]
-Package tocbasic Info: character protrusion at toc deactivated on input line 91.
+Package tocbasic Info: character protrusion at toc deactivated on input line 88.
  (./main.toc
 
 [3
@@ -643,94 +643,94 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 91.
 
 
 
-[4]
+[4] (./frontmatter/abkuerzungsverzeichnis.tex)
 
 [5
 
 
-]
+] (./chapters/01_einleitung/chapter.tex
 chapter 1.
-
+(./chapters/01_einleitung/01_motivation_problemstellung.tex) (./chapters/01_einleitung/02_zielsetzung_forschungsfragen.tex) (./chapters/01_einleitung/03_vorgehen_aufbau.tex)) (./chapters/02_grundlagen/chapter.tex
 
 [6
 
 
 ]
 chapter 2.
-
+(./chapters/02_grundlagen/01_begriffe_definitionen.tex) (./chapters/02_grundlagen/02_risikotypen_ds_projekte.tex) (./chapters/02_grundlagen/03_rollen_governance.tex)) (./chapters/03_methoden/chapter.tex
 
 [7
 
 ]
 chapter 3.
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--145
+(./chapters/03_methoden/01_ueberblick.tex) (./chapters/03_methoden/02_methode1_risikobewertung.tex
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
 []|\T1/cmr/bx/n/12 (+20) Ursache/
  []
 
 
-Overfull \hbox (9.9097pt too wide) in paragraph at lines 145--145
-[]|\T1/cmr/bx/n/12 (-20) Auswirkung| 
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+[]|\T1/cmr/bx/n/12 (+20) Aus
  []
 
 
-Overfull \hbox (8.16624pt too wide) in alignment at lines 143--147
+Overfull \hbox (8.16624pt too wide) in alignment at lines 9--13
  [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
 []|\T1/cmr/bx/n/12 (+20) Ursache/
  []
 
 
-Overfull \hbox (9.9097pt too wide) in paragraph at lines 149--149
-[]|\T1/cmr/bx/n/12 (-20) Auswirkung| 
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]|\T1/cmr/bx/n/12 (+20) Aus
  []
 
 
-Overfull \hbox (8.16624pt too wide) in alignment at lines 147--151
+Overfull \hbox (8.16624pt too wide) in alignment at lines 13--17
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (8.16624pt too wide) in alignment at lines 151--155
+Overfull \hbox (8.16624pt too wide) in alignment at lines 17--21
  [] [] [] [] [] 
  []
 
-
+) (./chapters/03_methoden/03_methode2_risikominimierungsstrategien.tex
 
 [8
 
-]
+])) (./chapters/04_strategie_dasc_pm/chapter.tex
 
 [9]
 chapter 4.
-
+(./chapters/04_strategie_dasc_pm/01_annahmen_phasen_artefakte.tex) (./chapters/04_strategie_dasc_pm/02_integration_je_phase.tex) (./chapters/04_strategie_dasc_pm/03_rm_playbook.tex)) (./chapters/05_case_study/chapter.tex
 
 [10
 
 ]
 chapter 5.
-
+(./chapters/05_case_study/01_auswahl_beschreibung_ziel.tex) (./chapters/05_case_study/02_anwendung_strategie.tex) (./chapters/05_case_study/03_case_study_1.tex) (./chapters/05_case_study/04_case_study_2.tex) (./chapters/05_case_study/05_case_study_3.tex)) (./chapters/06_diskussion/chapter.tex
 
 [11
 
 ]
 chapter 6.
-
+(./chapters/06_diskussion/01_dasc_pm_erweitern_oder_parallel.tex) (./chapters/06_diskussion/02_limitationen_validitaet.tex)) (./chapters/07_fazit/chapter.tex
 
 [12
 
 ]
 chapter 7.
-
+(./chapters/07_fazit/01_zusammenfassung.tex) (./chapters/07_fazit/02_implikationen.tex) (./chapters/07_fazit/03_ausblick.tex)) (./backmatter/literatur.tex
 
 [13
 
 ]
 chapter without number
-
+) (./backmatter/anhang.tex)
 
 [14
 
@@ -743,15 +743,15 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 18153 strings out of 473190
- 318676 string characters out of 5704335
+ 18418 strings out of 473190
+ 330866 string characters out of 5704335
  936618 words of memory out of 5000000
- 41066 multiletter control sequences out of 15000+600000
+ 41231 multiletter control sequences out of 15000+600000
  574935 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,7n,107p,10946b,724s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/cm-super/sfsx2488.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (14 pages, 202430 bytes).
+Output written on main.pdf (14 pages, 202436 bytes).
 PDF statistics:
  323 PDF objects out of 1000 (max. 8388607)
  284 compressed objects within 3 object streams
