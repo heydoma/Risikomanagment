@@ -76,4 +76,4 @@ out/
 # Optional: PDFs nicht versionieren
 # (Wenn du PDFs im Repo behalten willst, diese Zeile auslassen)
 # ------------------------------------------------------------
-# *.pdf
+*.pdf
