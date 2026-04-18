@@ -37,11 +37,13 @@
 \usepackage{url}
 
 % --- KOMA: bessere Überschriftenabstände (optional) ---
-% \RedeclareSectionCommand[beforeskip=0.8\baselineskip,afterskip=0.6\baselineskip]{chapter}
+\RedeclareSectionCommand[beforeskip=0.8\baselineskip,afterskip=0.6\baselineskip]{chapter}
 
 % --- Optionale Literaturverwaltung (wenn du später BibLaTeX nutzen willst) ---
-% \usepackage[backend=biber,style=authoryear,maxcitenames=2]{biblatex}
-% \addbibresource{references.bib}
+\usepackage[backend=biber,style=authoryear]{biblatex}
+\addbibresource{bib/Quellen_Sebastiaan.bib}
+\addbibresource{bib/Quellen_Marvin.bib}
+\addbibresource{bib/Quellen_Jana.bib}
 
 % --- Metadaten / Titelseite ---
 \newcommand{\thesistitle}{Risikomanagement in Data-Science-Projekten}
