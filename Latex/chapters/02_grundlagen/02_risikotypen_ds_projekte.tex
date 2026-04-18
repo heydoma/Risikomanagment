@@ -1,17 +1,54 @@
 \section{Risikotypen in Data-Science-Projekten}
 
-In der Literatur wird aktuell kein spezifischer bzw. einheitlicher Risikobegriff genutzt. statdessen werden die Risiken in Klassen oder Typen eingeteilt.
-Man unterscheidet dabei zwischen den ursachen- und wirkungsbezogenen Risiken.
-Die ursachenbezogenen Risiken beziehen sich dabei auf interne Entscheidungen oder auf externe Ereignisse, 
-wohingegen die wirkungsbezogenen Risiken auf die Folgen der Risiken auf das Erfolgsziel beziehen. \cite{niggemann_grundlagen_2013}
+In der Literatur wird aktuell kein einheitlicher Risikobegriff genutzt. Statdessen werden die Risiken in ihren unterschiedlichen Perspektiven betrachtet.
+Man unterscheidet dabei zwischen zwei Definitionene; den ursachen- und wirkungsbezogenen Risiken.
+Die ursachenbezogenen Risiken beziehen sich dabei primär auf interne Entscheidungen oder auf externe Ereignisse, 
+wohingegen die wirkungsbezogenen Risiken auf die Folgen der Risiken auf das Erfolgsziel beziehen \parencite{niggemann_grundlagen_2013}.
 
-Anders ausgedrückt kann man Risiken aus der Perspektive der Verursachenden Aspekte betrachten und 
-die möglichen Folgen daraus. Üblicherweise wird somit eine wirkungsbezogene Risikobetrachtung den Fokus 
-auf die Bewältigung und Abschätzung dieser Folgen richten wohingegen die ursachenbezogene Betrachtung einen breiteren Ansatz verfolgt und 
-Ereignisse bzw. Entscheidungen hinsichtlich ihres Risikopetenzials einordnet. \cite{borchert_stromhandel_2006}
+Anders ausgedrückt kann man Risiken verstärkt aus der Perspektive der Verursachenden Aspekte betrachten oder ehr
+die möglichen Folgen daraus \parencite{borchert_stromhandel_2006}.
+\noindent 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Riskokorridor.jpg}
+    \caption{Grafische Beschreibung des Riskobegriffs}
+    \label{fig:risikokorridor}
+\end{figure}
+Beide Definitionen sind nuanciert von einander zu differenzieren und richten sich ganz nach der Betrachtungsweise des Analysten, 
+es lässt sich aber feststellen, dass ursachenbezogene Risiken eine Art "Downstream" Charakter haben und wirkungsbezogene Risiken ehr umgekehrt "Upstream" betrachtet werden.
 
-Beide Definitionen sind nur sehr nuanciert von einander zu differenzieren und richten sich ganz nach der Betrachtungsweise des Analysten.
+Innerhalb der wirkungsbezogenen Risikoklasse gibt es noch zwei weitere Blicke auf die Thematik. 
+Eine Betrachtung der Risiken im weiteren Sinne (i. w. S.), die auch die Folgen auf den Chancenbereich 
+der Erfolgsabsicht einnimmt und eine Sicht im engeren Sinne (i. e. S.), 
+die explizit unterscheidet zwischen Chancen und Risiken als solche (siehe \ref{fig:risikokorridor}).
 
-Innerhalb der wirkungsbezogenen Risikoklasse gibt es noch zwei weitere Blicke auf die Thematik. Eine Betrachtung der Risiken im weiteren Sinne, die auch die Folgen
-auf den Chancenbereich der Erfolgsabsicht einnimmt und eine Sicht im engeren Sinne, die explizit unterscheidet zwischen Chancen und Risiken als solche.
+Zusammenfassend ergeben sich folgende Abgrenzungen:
+\begin{center}
+        
+    \begin{tabular}{|l |l| l|}
+        \hline
+        \textbf{Typ}         &  Ursachenbezogen            & Wirkungsbezogen             \\
+        \hline
+        \textbf{Beispiele}   & Regulatorische Änderungen   & Strafgelder durch nicht einhalten von Regularien  \\
+                             &                             & Negative Reputation \\
+                             & Fehlende Ressourcen         & schlechter Projektfortschritt \\ 
+                             & Fehlende Daten              & schlechte Performance, Underfitting \\ 
+                             & Vendor-LockIn               & hohe Kosten für Infrastruktur \\ 
+        \hline
+    \end{tabular}
+
+\end{center}
+
+Mit Hinblick auf den Schwerpunkt dieser Arbeit, der Data-Science, muss sich auf beide Perspektiven bezogen werden.
+Diese Ausrichtung fußt auf den besonderen Ansprüchen die ein Data-Science Projekt erfüllen muss und dessen Teilbereiche die es beinhaltet.
+
+In klassischen Projektorganisationen gibt es grob gesehen drei Bereiche in denen Risiken hauptsächlich gesehen werden:
+\textbf{Projektrisiken}, \textbf{Produktrisiken} und \textbf{Produktionsrisiken} \parencite{stahl_wesentliche_2025}. 
+\\
+Diese lassen sich auf die Terminologie eines Data-Science Projektes übertragen in 
+\textbf{Organisatorische Risiken}, \textbf{Ethische} und \textbf{Datenbezogene Risiken} 
+und \textbf{Modell-} bzw. \textbf{Analysebezogene Risiken}.
+
+\dots
+
 
