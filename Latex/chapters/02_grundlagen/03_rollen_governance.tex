@@ -1,2 +1,135 @@
 \section{Rollen, Verantwortlichkeiten und Governance}
-\textless Text\textgreater
+
+Governance in Data-Science-Projekten beschreibt den organisatorischen Rahmen,
+der sicherstellt, dass Ziele und Entscheidungen fachlich begründet sind,
+Daten und Modelle kontrolliert erstellt und betrieben werden und
+regulatorische sowie ethische Anforderungen laufend eingehalten werden.
+
+Im DASC-PM wird Governance dabei nicht als statisches Regelwerk verstanden,
+sondern als interdisziplinäres Zusammenspiel klar abgegrenzter Rollen
+und Entscheidungspunkte \cite{Schulz2021}.
+Diese Rollentrennung reduziert typische Projektrisiken wie methodische Fehlinterpretationen,
+Compliance-Verstöße und wirtschaftliche Fehlinvestitionen,
+die insbesondere bei datengetriebenen Vorhaben durch unklare Verantwortlichkeiten
+verstärkt werden \cite{Saltz2015}.
+
+\subsection{Rollendefinition und interdisziplinäre Verantwortlichkeit}
+Das DASC-PM geht nicht davon aus,
+dass eine einzelne Rolle, etwa der "Data Scientist als \glqq eierlegende Wollmilchsau\grqq",
+fachliche, methodische und technische Verantwortung gleichzeitig tragen kann
+\cite{Saltz2015,Schulz2021}.
+
+Stattdessen wird Governance über eine funktionale Aufteilung konkret umgesetzt:
+Rollen werden so definiert, dass Verantwortlichkeiten klar zugewiesen
+und Schnittstellen klar beschrieben werden.
+
+Im Kern lassen sich drei Verantwortungsbereiche unterscheiden:
+\begin{itemize}
+  \item \textbf{Fachliche Verantwortung durch Domänenexpert:in oder Business Owner:}
+        Sicherstellung der Ziel- und Nutzenorientierung als Business Governance,
+        Validierung des Business Value sowie Entscheidung über den Einsatz
+        der Ergebnisse im Geschäftsprozess \cite{Schulz2021}.
+  \item \textbf{Methodische Verantwortung durch Data Scientist:}
+        Auswahl geeigneter Verfahren, saubere Evaluation und Dokumentation
+        der Modellgüte sowie Minimierung methodischer Risiken
+        wie beispielsweise Scheinkorrelationen, Overfitting oder ungeeignete Metriken
+        \cite{Schulz2021}.
+  \item \textbf{Technische Verantwortung durch Data Engineer, IT oder Plattformbetrieb:}
+        Sicherstellung von Datenintegrität, Nachvollziehbarkeit der Datenflüsse,
+        Betriebsstabilität und Sicherheit der Systeme im Sinne von Data- und IT-Governance,
+        insbesondere im Übergang von Prototyp zu Betrieb \cite{Sculley2015}.
+\end{itemize}
+
+Zur klaren Zuweisung von Verantwortlichkeiten
+kann eine RACI-Matrix genutzt werden.
+RACI steht für Responsible, Accountable, Consulted und Informed.
+Das COBIT-Framework empfiehlt solche Rollen- und Verantwortlichkeitszuordnungen
+als Bestandteil wirksamer IT-Governance \cite{ISACA2018}.
+
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.1}
+\caption{Vereinfachtes Beispiel einer RACI-Zuordnung für zentrale Governance-Entscheidungen
+in Data-Science-Projekten.
+A steht für Accountable, R für Responsible, C für Consulted, I für Informed.
+Eigene Darstellung nach \cite{ISACA2018}}
+\label{tab:raci-ds}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}Xcccc@{}}
+\toprule
+\textbf{Governance-Objekt}
+  & \textbf{\shortstack{Domäne}}
+  & \textbf{\shortstack{Data\\Scientist}}
+  & \textbf{\shortstack{DE/\\IT}}
+  & \textbf{\shortstack{Compliance\\/DSB}} \\
+\midrule
+Problem- \& Zieldefinition      & A/R & C & I & C \\
+Datenzugang \& Datenqualität      & A   & C & R & C \\
+Modellierung \& Evaluation         & A   & R & C & C \\
+Deployment \& Betrieb            & A   & C & R & C \\
+Go/No-Go \& Nutzung im Prozess & A   & C & C & R \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Governance als Risikomanagement-Struktur}
+Governance unterstützt das Risikomanagement besonders,
+wenn sie nicht nur Rollen definiert,
+sondern Kontroll- und Entscheidungspunkte in Form von \glqq Control Gates\grqq{}
+entlang des Projektverlaufs etabliert.
+
+Diese Logik passt zur iterativen Ausgestaltung des DASC-PM:
+Rücksprünge und formale Entscheidungspunkte reduzieren das Risiko,
+dass Projekte trotz fehlender Eignung oder fehlendem Nutzen weitergeführt werden
+zum Beispiel weil bereits viel investiert wurde \cite{Schulz2021}.
+
+Drei Governance-Ebenen sind hierfür besonders relevant:
+\begin{itemize}
+  \item \textbf{Entscheidungs-Governance:}
+        Management- oder Business-Entscheidungen an kritischen Punkten
+        wie etwa nach der Prüfung von Problem- und Dateneignung
+        halten das Projekt auf Nutzen und Strategie ausgerichtet \cite{Schulz2021}.
+  \item \textbf{Compliance-Governance im Sinne von \glqq by Design\grqq{}:}
+        Regulatorische Anforderungen wie Datenschutz und Informationssicherheit
+        sollten nicht erst am Ende geprüft werden, sondern von Beginn an mitlaufen.
+        Für bestimmte Anwendungen kommt zusätzlich KI-Regulierung hinzu.
+        Der EU AI Act verstärkt das, weil je nach Risikoklasse konkrete Pflichten gelten.
+        Dazu zählen Anforderungen an Governance, Dokumentation und Überwachung
+        \cite{EUAIAct2024}.
+  \item \textbf{Ethische Governance:}
+        Themen wie Fairness, Transparenz und Erklärbarkeit
+        sowie die Vermeidung diskriminierender Effekte hängen direkt
+        an der Modellentwicklung.
+        Sie sollten daher als Governance-Aufgabe fest verankert werden
+        \cite{FloridiCowls2019}.
+\end{itemize}
+
+\subsection{Geteilte Verantwortung, Accountability und Haftung}
+Ein zentrales Governance-Problem datengetriebener Systeme ist die
+Zuweisung von Verantwortung bei Fehlentscheidungen:
+Technische Korrektheit beantwortet die Frage \glqq ist das Modell methodisch valide?\grqq{}.
+Organisatorische Verantwortung beantwortet die Frage \glqq ist der Einsatz im Prozess angemessen?\grqq{}.
+Beides fällt häufig auseinander.
+
+Das DASC-PM geht mit dieser Spannung um und nutzt das Prinzip geteilter Verantwortung:
+Der Data Scientist verantwortet die methodische Qualität des Modells,
+während die fachliche Instanz, Domänenexpert:in oder Business Owner,
+die Entscheidung über Anwendung, Grenzen und Interpretation
+im Geschäftsprozess trägt \cite{Schulz2021}.
+
+Trotz geteilter Verantwortung muss klar sein,
+wer am Ende wofür rechenschaftspflichtig ist.
+Dieses Prinzip wird häufig als Accountability bezeichnet:
+Organisationen müssen festlegen, wer diese Rechenschaft trägt
+und wie Nachweisbarkeit gewährleistet wird,
+zum Beispiel durch Dokumentation von Entscheidungen, Datenständen
+und Modellversionen \cite{FloridiCowls2019}.
+
+COBIT betont hierzu die Trennung von Governance
+\glqq evaluate, direct and monitor\grqq{} und Management
+\glqq plan, build, run and monitor\grqq{},
+das sich als Leitlinie nutzen lässt,
+um Entscheidungsverantwortung und operative Umsetzung
+in Data-Science-Projekten zu trennen
+\cite{ISACA2018}.
