@@ -16,30 +16,31 @@ Zur Identifikation von Risiken bieten sich einige verschiedene Methoden an. \par
     \item Mitarbeiter-Interviews - Befragungen in der eigenen Organsiation durchführen und dort Meinungen und Bedenken einholen.
 \end{itemize}
 Diese Methoden beziehen sich im allgemeinen ehr auf eine klassische Projektorganisation und werden den gesonderten Bereichen der 
-Data-Science nicht vollumfänglich gerecht. Wenn zum Beispiel die Bereiche der \textbf{Datenbezogenen-} oder \textbf{Modell-Risiken} betrachtet werden 
+Data-Science nicht vollumfänglich gerecht. Wenn zum Beispiel die Bereiche der \textbf{Datenbezogenen-} oder \textbf{Modell-Risiken} betrachtet werden, 
 könnten die bisher aufgeführten Identifikationsmethoden nicht die nötige Tiefe liefern, die es an dieser Stelle braucht.
-Auch der Bereich der \textbf{Strategischen Risiken} ist bei Data-Science Projekten geprägt von Besonderheiten. 
-IT-Infrastruktur, eine breit zu behandelnde Fachdomäne und technische Hürden erfordern ein geschäftes Augenmaß auf 
-der strategischen Ebene um Risiken adäquat zu identifizieren und zu bewerten.
 
-(Herleiten der Data-Science spezifischen Methoden) \dots
-
-Für die Datenbezogenen und Modell Risiken gibt es aus der Praxis bereits einige erprobte Methoden die z.B. Probleme 
-wie Model-Drift, Data-Drift, Ethic-Biases bereits frühzeitig identifiziert und Zeit lässt zu agieren.
-
-(Methoden auflisten) \dots
+\notiz{Die aktuelle Forschung in dem Bereich Data-Science hat sich besonders auf den Bereich der Modell und der Daten fokussiert. 
+Dies hat dazu geführt, dass bereits eine umfangreiche Liste von Risiken für die Bereiche Daten und Modell verfügbar sind und auch 
+allgegenwärtig. Wenn also ein Data-Science Projekt begonnen wird, gibt es garantiert das Risiko, dass diese Risiken auftreten könnten
+und dies bedarf daher keiner weiteren Identifikation. Die Analyse dieser Risiken sollte auf regelmäßiger Basis erfolgen und 
+dem fertigen Produkt bleibt es nicht erspart weiterhin auf die Probe gestellt zu werden.
+Nichtsdestotrotz lassen sich die aufgeführten Identifikationsmethoden auf die klassischen Risikobereiche anwenden und sind einer 
+erfolgreichen Risikobeurteilung mehr als zuträglich.
+\\
+Auf die Analyse bzw. das Monitoring als Methodischer Ansatz wird im Kapitel \ref{sec:risiko_monitoring}}
 
 \subsection{Analyse und Bewertung}
 
-(Einige der Datenspezifischen Methoden die bereits bei der Identifikation genannt wurden, beziehen die Analyse und Herkunft des Problems bereits mit ein.) \dots
-
-(Für die Bewertung wird man hier sicherlich wieder auf die gängigen Riskmanagement Methoden zurückgreifen. Sprich - Risikomatrix, Assessment Report, Risk Register, usw.)  \dots
+\notiz{Besonders die Daten- und Modell spezifischen Risiken müssen mit standardisierten Prozessen/Verfahren analysiert und dann bewertet werden.
+Eine bereits im Verfahrensmodell eingegliederte methode zur Risikoanalyse (Nicht primär für Risikoanalyse genutzt sondern zur Einschätzung der Daten
+hinsichtlich des Produktes) ist die EDA; die Explorative Datenanalyse, bei der ein Data-Scientist eine erste Einschätzung der Daten vornimmt und sie 
+hinsichtlich der Güte und Eignung für die Absichten des Projektes bewertet. Dies erlaubt eine gute erste Bewertung der Risiken für z.B. Model-Drift, 
+Ethic-Biases, Historical-Bias oder ähnliche diskriminierende Nebeneffekte.}
 
 Qualitative Methoden befassen sich mit der Auflistung und Einordnung ohne Auswertung. z.B. Lieferengpässe (Wahrscheinlichkeit: Hoch, Auswirkung: Mittel).
-Quantitative Methoden werten diese Auflistung aus und bieten eine art Score, der bei der Abwägung hilft. 
-z.B. Lieferengpässe (Wahrscheinlichkeit: 7/10, Auswirkung: 6/10 - Riskscore: 7 x 6 = 42)
+Semi-Quantitative Methoden werten diese Auflistung aus und bieten einen Score, der direkte Vergleichbarkeit ermöglicht. z.B. Lieferengpässe (Wahrscheinlichkeit: 7/10, Auswirkung: 6/10 - Riskscore: 7 x 6 = 42)
+Komplett Quantitative Methoden werten ganze Systeme, Szenarien oder Entscheidungspfade aus und liefern ein, mit statistischen Methoden ermittelten, Risikowert für eben diese Entscheidung oder das Szenario.
 
-(Herleiten und mit Quellen belegen)
 \subsubsection{Qualitative Methoden}
 \begin{itemize}
     \item Risikomatrix
@@ -55,6 +56,20 @@ Die Methoden unterscheiden sich lediglich hinsichtlich ihrer Gruppierung der Ris
 \end{itemize}
 
 \subsubsection{Quantitative Methoden}
+\begin{itemize}
+    \item Monte-Carlo Simulation
+    \item Sensitivitätsanalyse
+    \item Entscheidungsbäume
+    \item Net Present Value at Risk
+    \item Value at Risk
+\end{itemize}
+
+\subsubsection{Hybride Methoden}
+\begin{itemize}
+    \item Bow-Tie Analyse
+    \item Scenario Analyse
+    \item Risk Breakdown Structure
+\end{itemize}
 
 \subsection{Beispiel-Artefakt: Risk Register}
 \begin{longtable}{@{}p{3.0cm}p{3.2cm}p{2.1cm}p{2.1cm}p{4.2cm}@{}}
