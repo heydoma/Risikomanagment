@@ -26,33 +26,35 @@ dem fertigen Produkt bleibt es nicht erspart weiterhin auf die Probe gestellt zu
 Nichtsdestotrotz lassen sich die aufgeführten Identifikationsmethoden auf die klassischen Risikobereiche anwenden und sind einer 
 erfolgreichen Risikobeurteilung mehr als zuträglich.
 
-\notiz{Zu den eingangs erwähnten Data-Science spezifischen Risiken gehören unter anderem die Daten-Biases, die viele verschiedene Formen annehmen können.
+\notiz{Zu den eingangs erwähnten Data-Science spezifischen Risiken gehören unter anderem die \textbf{Daten-Biases}, die viele verschiedene Formen annehmen können.
 Ein Daten-Bias ist eine in den Daten verborgene Struktur oder ein Muster, welches eine gewisse Haltung oder Meinung abbildet. Das kann 
 durch zum Teil einseitige Datenerhebung oder schlechte Filterung auftreten. So werden allerdings diese Muster reproduziert und führen 
 u.U. zu benachteilungen von Minderheiten oder Gruppierungen \citep{mehrabi_survey_2022,banks_how_2025}.}
 
-\notiz{Recht ähnlich zu dem Daten-Bias sind die Overconfidence und Underperformance Probleme die ein Modell spezifisches Risiko darstellen.
+\notiz{Recht ähnlich zu dem Daten-Bias sind die \textbf{Overconfidence} und \textbf{Underperformance} Probleme die ein Modell spezifisches Risiko darstellen.
 Man erhält dieses Modellverhalten, wenn das Learning eines Modells zu strikt oder zu offen war. Ein besonder strikter Lernprozess zwingt das 
 Modell die Trainingsdaten fast schon auswendig zu lernen und fremde Daten müssen dann stark extrapoliert werden. Umgekehrt beim 
 Underperformance Verhalten. Wenn der Ergebniskorridor zu weit gefasst ist, ist die Antwort aus dem Modell zu generisch und damit ebenso 
 unbrauchbar \citep{aliferis_overfitting_2024,zlobin_data-driven_2025}. Somit ergibt sich hier das Modellverhalten nicht aus der Beschaffenheit 
 der Daten, sondern aus der Art des Trainings.}
 
-\notiz{Darüber hinaus gibt es die sogenannten \glqq Drift-Phenomäne\grqq , die einen graduellen Verfall der Modellqualität auf unterschiedlichen 
+\notiz{Darüber hinaus gibt es die sogenannten \textbf{\glqq Drift-Phenomäne\grqq} , die einen graduellen Verfall der Modellqualität auf unterschiedlichen 
 Ebenen beschreiben. Das tückische dabei ist, dass sich weder an dem Modell etwas geändert haben muss, noch an den Eingabedaten \citep{pelosi_explainability_2025}.}
+
+\notiz{TODO: Hier nochmal Datenqualität und Black-Box-Effekte nennen und herleiten. Dann übergehen zu den Analysemethoden}
 
 
 \subsection{Analyse und Bewertung}
 
-\notiz{Besonders die Daten- und Modell spezifischen Risiken müssen mit standardisierten Prozessen/Verfahren analysiert und dann bewertet werden.
-Eine bereits im Verfahrensmodell eingegliederte methode zur Risikoanalyse (Nicht primär für Risikoanalyse genutzt sondern zur Einschätzung der Daten
-hinsichtlich des Produktes) ist die EDA; die Explorative Datenanalyse, bei der ein Data-Scientist eine erste Einschätzung der Daten vornimmt und sie 
-hinsichtlich der Güte und Eignung für die Absichten des Projektes bewertet. Dies erlaubt eine gute erste Bewertung der Risiken für z.B. Model-Drift, 
-Ethic-Biases, Historical-Bias oder ähnliche diskriminierende Nebeneffekte.}
+\notiz{TODO: Hier einmal in die Analyse und Bewertungsmethoden einleiten und die klassischen Methoden nennen, begründen warum diese für die 
+typischen Projektmanagement Risiken relevant sind und ebenso relevant für Data-Science Projekte und dann übergeben zu den 
+Daten und Modellspezifischen Analysemethoden die bereits etabliert sind. Vielleicht nochmal auf geeignete Methoden für die Analyse und Bewertung von 
+Ethischen und Rechtlichen Geschichten mittels Semi-Quantitativer oder Hybrider Methoden eingehen. So eine Szenario-Analyse macht an der Stelle viel Sinn.}
 
 \textbf{Qualitative Methoden} befassen sich mit der Auflistung und Einordnung ohne Auswertung. z.B. Lieferengpässe (Wahrscheinlichkeit: Hoch, Auswirkung: Mittel).
 \textbf{Semi-Quantitative Methoden} werten diese Auflistung aus und bieten einen Score, der direkte Vergleichbarkeit ermöglicht. z.B. Lieferengpässe (Wahrscheinlichkeit: 7/10, Auswirkung: 6/10 - Riskscore: 7 x 6 = 42)
-\textbf{Komplett Quantitative Methoden} werten ganze Systeme, Szenarien oder Entscheidungspfade aus und liefern ein, mit statistischen Methoden ermittelten, Risikowert für eben diese Entscheidung oder das Szenario.
+\textbf{Quantitative Methoden} werten ganze Systeme, Szenarien oder Entscheidungspfade aus und liefern ein, mit statistischen Methoden ermittelten, Risikowert für eben diese Entscheidung oder das Szenario.
+\textbf{Hybride Methoden} Vereint die Vorzüge von quantitativen und qualitativen Methoden. Diese Methoden sind häufig sehr aufwändig in ihrer Anwendung.
 
 Hier eine Übersicht der gängigen Analyse und Bewertungsmethoden aus dem Risikomanagement:
 \begin{center}
@@ -73,6 +75,14 @@ Hier eine Übersicht der gängigen Analyse und Bewertungsmethoden aus dem Risiko
         \hline
     \end{tabular}
 \end{center}
+
+\notiz{Besonders die Daten- und Modell spezifischen Risiken müssen mit standardisierten Prozessen/Verfahren analysiert und dann bewertet werden.
+Eine bereits im Verfahrensmodell eingegliederte methode zur Risikoanalyse (Nicht primär für Risikoanalyse genutzt sondern zur Einschätzung der Daten
+hinsichtlich des Produktes) ist die EDA; die Explorative Datenanalyse, bei der ein Data-Scientist eine erste Einschätzung der Daten vornimmt und sie 
+hinsichtlich der Güte und Eignung für die Absichten des Projektes bewertet. Dies erlaubt eine gute erste Bewertung der Risiken für z.B. Hohen Bereinigungsaufwand, 
+Ethic-Biases, Historical-Biases oder ähnliche diskriminierende Nebeneffekte.}
+
+\notiz{TODO: Weitere Analyseverfahren auflisten}
 
 \subsection{Beispiel-Artefakt: Risk Register}
 \begin{longtable}{@{}p{3.0cm}p{3.2cm}p{2.1cm}p{2.1cm}p{4.2cm}@{}}
