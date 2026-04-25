@@ -5,10 +5,10 @@ Diese Strategie beschreibt, wie Risikomanagement als parallel laufende Steuerung
 DASC-PM bleibt das zentrale Delivery-Modell. Das Risikomanagement wirkt als verbindlicher Zusatzprozess, der in jeder Phase Entscheidungen absichert.
 
 ## Grundprinzip
-Die Projektsteuerung läuft auf zwei synchronisierten Spuren:
-
-1. Delivery-Spur: Fachliche und technische Umsetzung nach DASC-PM.
-2. Risiko-Spur: Laufende Risikoidentifikation, Bewertung, Maßnahmensteuerung, Monitoring, Eskalation und Nachweis.
+Pro Phase des Delivery-Modells (DASC-PM) gibt es einen Risikoprozess den wir auch Steuerungsmodell nennen.
+Der Risikoprozess schließt ab mit einem Risk-Gate, welches eine Entscheidung zulässt.
+Die Entscheidungen sind "Freigabe", "Beobachtung" oder "Abbruch".
+Der Risikoprozess beinhaltet Laufende Risikoidentifikation, Bewertung, Maßnahmensteuerung, Monitoring, Eskalation und Nachweis.
 
 Wichtige Regel:
 Ein Phasenfortschritt ohne dokumentierte Risikofreigabe ist nicht zulässig.
@@ -16,7 +16,7 @@ Ein Phasenfortschritt ohne dokumentierte Risikofreigabe ist nicht zulässig.
 ## Steuerungsmodell
 
 ### 1) Risk Gates an DASC-Entscheidungspunkten
-An jedem relevanten Entscheidungspunkt wird ein Risk Gate durchgeführt.
+Nach jeder Phase des DASC-PM gibt es ein Risk-Gate.
 Standardfrage am Gate:
 Ist das aktuelle Risikoprofil für den nächsten Schritt akzeptabel?
 
@@ -25,7 +25,7 @@ Mögliche Gate-Entscheidungen:
 - Freigabe mit Auflagen
 - Stopp und Nachsteuerung
 
-### 2) Einheitliches Risikoregister als Kernartefakt
+### 2) Einheitliches Risikoregister als Ergebnisartefakt
 Alle Risiken werden in einem gemeinsamen Register geführt.
 Pro Eintrag mindestens:
 - Risiko-ID
@@ -35,7 +35,7 @@ Pro Eintrag mindestens:
 - Eintrittswahrscheinlichkeit
 - Schadenshöhe
 - Risikostufe
-- Risk Owner
+- Owner
 - Maßnahme
 - KRI/Schwellenwert
 - Status
@@ -55,13 +55,17 @@ Empfohlenes 3-Stufen-Modell:
 - Eskalieren: Kritischer Wert, Entscheidung durch Governance-Ebene.
 
 ## Standardprozess pro DASC-Phase
-In jeder DASC-Phase wird derselbe Risikozyklus angewendet:
+In jeder DASC-Phase selber werden folgende Schritte durchgeführt:
 
-1. Risiken aktualisieren
+1. Risiken aktualisieren / identifizieren
 2. Risiken neu bewerten
-3. Maßnahmen planen oder nachschärfen
-4. KRI-Status prüfen
-5. Gate-Entscheidung dokumentieren
+
+Über das Risk-Gate werden folgende Schritte durchgeführt:
+2. KRI auf Schwellwert anwenden
+   1. Wenn Schwellwert überschritten
+      1. Maßnahmen planen oder nachschärfen
+      2. Maßnahmen implementieren
+3. Gate-Entscheidung dokumentieren
 
 Damit entsteht ein stabiler, wiederholbarer und auditierbarer Prozess.
 
