@@ -1,5 +1,35 @@
 \section{Annahmen: Phasen/Artefakte des DASC-PM}
-\textless Text\textgreater
 
 - Einstieg über Quality Gates aus der Softwareentwicklung
 - Nutzen zur Herleitung von Risk-Gates im DASC-PM
+
+\notiz{
+    Wie einleitend genannt, soll sich diese Arbeit mit der Strategieentwicklung für das Riskmanagement in Data-Science Projekten 
+    entlang des DASC-PM als Grundlage befassen.
+    Dafür soll das Werkzeug der, in der Softwareentwicklung üblichen, Quality-Gates als Ergänzungsvorschlag für das Prozessmodell 
+    DASC eingeführt werden.
+}
+
+\notiz{
+    TODO: Herleiten wie wir darauf kamen, dass diese Risk-Gates jetzt wirklich notwendig sind.
+}
+
+\notiz{TODO: Zunächst zu der Erwartungshaltung von Risk-Gates anhand von Quality-Gates in der Softwareentwicklung. 
+    Quality-Gates, insbesondere solche die in CI / CD Pipelines genutzt werden, verwenden quantitativ erzeugte 
+    Kennziffern die einen gewissen Schwellwert nicht überschreiten dürfen, da sonst die Entwicklung nicht in den 
+    Hauptzweig des Projektes einfließen darf. Dies ist besonders in agilen Organisationsstrukturen sinnvoll, da 
+    kleinere Meilensteine pro Iteration entwickelt werden.
+    Da ein Großteil der Analysemethoden die zuvor für die Risiken genutzt wurden, ebenfalls quantitativ sind, bietet 
+    sich das Prinzip des Quality Gates im Kontext von Data-Science Projekten ebenfalls an.
+}
+
+\notiz{ Um die Benennung noch treffender zu formulieren und auch eine Abgrenzung zu dem Softwareentwicklungsprozess 
+    in den meißten Projekten zu erzeugen, werden die Schranken hier ''Risk Gate,, genannt. }
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{RM-Extension_DASC-PM.jpeg}
+    \caption{RM-Extension für das DASC-PM}
+    \label{fig:rm_extension}
+\end{figure}
