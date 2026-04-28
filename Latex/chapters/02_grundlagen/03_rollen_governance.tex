@@ -1,13 +1,16 @@
 \section{Rollen, Verantwortlichkeiten und Governance}
 
-Governance in Data-Science-Projekten beschreibt den organisatorischen Rahmen,
+Aufbauend auf den zuvor beschriebenen Risikotypen stellt sich in der Praxis die Frage,
+wer Risiken erkennt, bewertet, freigibt und im Verlauf des Projekts nachsteuert.
+Governance in Data-Science-Projekten beantwortet diese Frage,
+indem sie den organisatorischen Rahmen definiert,
 der sicherstellt, dass Ziele und Entscheidungen fachlich begründet sind,
 Daten und Modelle kontrolliert erstellt und betrieben werden und
 regulatorische sowie ethische Anforderungen laufend eingehalten werden.
 
 Im DASC-PM wird Governance dabei nicht als statisches Regelwerk verstanden,
 sondern als interdisziplinäres Zusammenspiel klar abgegrenzter Rollen
-und Entscheidungspunkte \cite{Schulz2021}.
+und Entscheidungspunkte \cite{schulz_dasc-pm_2022}.
 Diese Rollentrennung reduziert typische Projektrisiken wie methodische Fehlinterpretationen,
 Compliance-Verstöße und wirtschaftliche Fehlinvestitionen,
 die insbesondere bei datengetriebenen Vorhaben durch unklare Verantwortlichkeiten
@@ -17,7 +20,7 @@ verstärkt werden \cite{Saltz2015}.
 Das DASC-PM geht nicht davon aus,
 dass eine einzelne Rolle, etwa der Data Scientist als ''eierlegende Wollmilchsau,,,
 fachliche, methodische und technische Verantwortung gleichzeitig tragen kann
-\cite{Saltz2015,Schulz2021}.
+\cite{Saltz2015,schulz_dasc-pm_2022}.
 
 Stattdessen wird Governance über eine funktionale Aufteilung konkret umgesetzt:
 Rollen werden so definiert, dass Verantwortlichkeiten klar zugewiesen
@@ -28,12 +31,12 @@ Im Kern lassen sich drei Verantwortungsbereiche unterscheiden:
   \item \textbf{Fachliche Verantwortung durch Domänenexpert:in oder Business Owner:}
         Sicherstellung der Ziel- und Nutzenorientierung als Business Governance,
         Validierung des Business Value sowie Entscheidung über den Einsatz
-        der Ergebnisse im Geschäftsprozess \cite{Schulz2021}.
+      der Ergebnisse im Geschäftsprozess \cite{schulz_dasc-pm_2022}.
   \item \textbf{Methodische Verantwortung durch Data Scientist:}
         Auswahl geeigneter Verfahren, saubere Evaluation und Dokumentation
         der Modellgüte sowie Minimierung methodischer Risiken
         wie beispielsweise Scheinkorrelationen, Overfitting oder ungeeignete Metriken
-        \cite{Schulz2021}.
+      \cite{schulz_dasc-pm_2022}.
   \item \textbf{Technische Verantwortung durch Data Engineer, IT oder Plattformbetrieb:}
         Sicherstellung von Datenintegrität, Nachvollziehbarkeit der Datenflüsse,
         Betriebsstabilität und Sicherheit der Systeme im Sinne von Data- und IT-Governance,
@@ -82,14 +85,14 @@ entlang des Projektverlaufs etabliert.
 Diese Logik passt zur iterativen Ausgestaltung des DASC-PM:
 Rücksprünge und formale Entscheidungspunkte reduzieren das Risiko,
 dass Projekte trotz fehlender Eignung oder fehlendem Nutzen weitergeführt werden
-zum Beispiel weil bereits viel investiert wurde \cite{Schulz2021}.
+zum Beispiel weil bereits viel investiert wurde \cite{schulz_dasc-pm_2022}.
 
 Drei Governance-Ebenen sind hierfür besonders relevant:
 \begin{itemize}
   \item \textbf{Entscheidungs-Governance:}
         Management- oder Business-Entscheidungen an kritischen Punkten
         wie etwa nach der Prüfung von Problem- und Dateneignung
-        halten das Projekt auf Nutzen und Strategie ausgerichtet \cite{Schulz2021}.
+      halten das Projekt auf Nutzen und Strategie ausgerichtet \cite{schulz_dasc-pm_2022}.
   \item \textbf{Compliance-Governance im Sinne von ''by Design,,:}
         Regulatorische Anforderungen wie Datenschutz und Informationssicherheit
         sollten nicht erst am Ende geprüft werden, sondern von Beginn an mitlaufen.
@@ -116,7 +119,7 @@ Das DASC-PM geht mit dieser Spannung um und nutzt das Prinzip geteilter Verantwo
 Der Data Scientist verantwortet die methodische Qualität des Modells,
 während die fachliche Instanz, Domänenexpert:in oder Business Owner,
 die Entscheidung über Anwendung, Grenzen und Interpretation
-im Geschäftsprozess trägt \cite{Schulz2021}.
+im Geschäftsprozess trägt \cite{schulz_dasc-pm_2022}.
 
 Trotz geteilter Verantwortung muss klar sein,
 wer am Ende wofür rechenschaftspflichtig ist.

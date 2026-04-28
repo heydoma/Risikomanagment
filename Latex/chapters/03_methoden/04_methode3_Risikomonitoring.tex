@@ -5,20 +5,20 @@ Risikominimierungsstrategien entsteht in Data Science Projekten eine weitere
 Herausforderung.
 Risiken verändern sich über die Zeit, neue Abhängigkeiten entstehen und Annahmen
 aus frühen Phasen können sich als falsch erweisen.
-Risikomonitoring und Risikoreporting zielt deshalb darauf ab,
+Risikomonitoring und Risikoreporting zielen deshalb darauf ab,
 Risiken fortlaufend zu beobachten, frühzeitig Warnsignale zu erkennen und
 Entscheidungen transparent an Stakeholder zu kommunizieren.
 Im Projektmanagement wird dieser Schritt häufig als Risikocontrolling verstanden.
 Dabei wird ein Risikoregister laufend aktualisiert und Abweichungen werden
-systematisch adressiert \cite{Tiemeyer2023,Wiehle2022}.
+systematisch adressiert \cite{Tiemeyer2023}.
 Für Data Science Projekte ist darüber hinaus entscheidend,
 dass Monitoring nicht nur Projektgrößen adressiert,
-sondern die zentralen Artefakte datengetriebener Wertschöpfung.
+sondern auch die zentralen Artefakte datengetriebener Wertschöpfung.
 Dazu zählen Datenquellen und Labels, Feature Pipelines,
 Trainingsläufe und Evaluationsläufe, Modellversionen sowie die Modellleistung im Betrieb.
 Gerade diese Abhängigkeiten erzeugen Risiken,
 die im klassischen Vergleich von Soll und Ist nur unvollständig sichtbar werden
-und daher eigene Monitoringsignale benötigen \cite{Sculley2015,Sato2019,Kreuzthaler2022}.
+und daher eigene Monitoringsignale benötigen \cite{Sculley2015,Amershi2019}.
 
 \subsection{Ziel, Taktung und Verantwortlichkeiten}
 Ein wirksames Monitoring benötigt eine klare Taktung und eindeutige Zuständigkeiten.
@@ -28,26 +28,21 @@ Typische Elemente sind:
 \begin{itemize}
 	\item \textbf{Regeltermine für Risikoreviews:}
 				kurze, feste Checkpoints in Teammeetings oder Steuerungsmeetings,
-				in denen Statusänderungen und neue Risiken erfasst werden
-				\cite{Tiemeyer2023}.
+				in denen Statusänderungen und neue Risiken erfasst werden.
 	\item \textbf{Aktualisierung des Risikoregisters:}
 				laufende Pflege von Eintrittswahrscheinlichkeit, Auswirkung,
-				Wirksamkeit bestehender Kontrollen und offenen Aufgaben
-				\cite{Wiehle2022}.
+				Wirksamkeit bestehender Kontrollen und offenen Aufgaben.
 	\item \textbf{Verantwortungszuordnung:}
 				für jedes priorisierte Risiko wird festgelegt,
-				wer Maßnahmen umsetzt und wer Entscheidungen freigibt
-				\cite{Tiemeyer2023}.
+				wer Maßnahmen umsetzt und wer Entscheidungen freigibt.
 	\item \textbf{Review von Datenindikatoren und Modellindikatoren:}
 				fester Bestandteil der Reviews ist eine kurze Prüfung,
 				ob Datenqualität, Labelqualität und Modellgüte stabil sind
-				oder ob sich Drift und Qualitätsverschlechterungen abzeichnen
-				\cite{Kreuzthaler2022}.
+				oder ob sich Drift und Qualitätsverschlechterungen abzeichnen.
 	\item \textbf{Nachvollziehbarkeit der Arbeitsergebnisse:}
 				Entscheidungen sollten auf reproduzierbaren Artefakten beruhen,
 				insbesondere auf versionierten Datenständen,
-				dokumentierten Experimentläufen und klaren Modellfreigaben
-				\cite{Sato2019,Sculley2015}.
+				dokumentierten Experimentläufen und klaren Modellfreigaben.
 \end{itemize}
 
 \subsection{Frühwarnmechanismen und Eskalation}
@@ -55,7 +50,7 @@ Monitoring ist besonders effektiv,
 wenn es neben der reinen Statuspflege auch messbare Warnsignale nutzt.
 Solche Frühwarnindikatoren werden oft als Key Risk Indicators verstanden.
 Sie operationalisieren Risiken durch beobachtbare Größen,
-die auf eine drohende Verschlechterung hinweisen \cite{Wiehle2022}.
+die auf eine drohende Verschlechterung hinweisen \cite{Tiemeyer2023}.
 
 Für die Praxis ist entscheidend,
 dass zu jedem Indikator Schwellenwerte und Reaktionen definiert werden.
@@ -65,13 +60,11 @@ Ein einfaches Prinzip ist:
 				Indikator zeigt eine Entwicklung, die noch im erwarteten Rahmen liegt.
   \item \textbf{Reagieren:}
 				Indikator überschreitet einen Grenzwert,
-				Maßnahmen werden ausgelöst und terminiert
-				\cite{Tiemeyer2023}.
+				Maßnahmen werden ausgelöst und terminiert.
   \item \textbf{Eskalieren:}
 				Indikator erreicht einen kritischen Wert,
 				Entscheidung über Pause, Kurskorrektur oder Abbruch wird herbeigeführt
-				und im Reporting nachvollziehbar dokumentiert
-				\cite{Wiehle2022}.
+				und im Reporting nachvollziehbar dokumentiert.
 \end{itemize}
 
 In Data Science Projekten sollten Frühwarnindikatoren bewusst sowohl
@@ -82,7 +75,7 @@ eine steigende Fehlerquote in der Datenpipeline
 oder eine wachsende Abweichung zwischen Trainingsdaten und Produktionsdaten.
 Solche Indikatoren eignen sich besonders,
 um Drift und versteckte technische Abhängigkeiten früh sichtbar zu machen
-\cite{Kreuzthaler2022,Sculley2015}.
+\cite{Sculley2015}.
 
 \subsection{Data Science spezifisches Monitoring im Sinne von MLOps}
 In Data Science Projekten umfasst Monitoring nicht nur Zeit, Budget und Scope.
@@ -91,7 +84,7 @@ Typische Ursachen sind Data Drift, Concept Drift oder eine Veränderung der
 Einsatzbedingungen.
 In der Praxis bedeutet das,
 dass neben Projektkennzahlen auch Modellkennzahlen und Datenkennzahlen kontinuierlich
-überwacht werden \cite{Kreuzthaler2022}.
+überwacht werden \cite{Sculley2015,Amershi2019}.
 
 Ein weiterer, für Data Science typischer Aspekt ist,
 dass sich Risiken oft als technische Schuld in Datenabhängigkeiten und Modellabhängigkeiten
@@ -101,47 +94,41 @@ fragile Featuredefinitionen oder nicht dokumentierte Datenvorverarbeitung.
 Monitoring sollte deshalb auch die Stabilität der gesamten Kette von Datenquelle
 über Featureberechnung bis zur Inferenz abdecken \cite{Sculley2015}.
 
-Ansätze aus dem MLOps Umfeld wie Continuous Delivery for Machine Learning betonen,
+Ansätze aus dem MLOps Umfeld betonen,
 dass Monitoring technisch unterstützt werden muss,
 beispielsweise durch Logging, automatisierte Tests, Dashboards und Alerting,
 damit Qualitätsabweichungen früh erkannt und reproduzierbar behoben werden können
-\cite{Sato2019}.
+\cite{Amershi2019}.
 Dieses Verständnis passt gut zu iterativen Prozessmodellen wie dem DASC PM,
 weil neue Erkenntnisse aus dem Betrieb wieder in die Entwicklung zurückgeführt
 werden können.
 Damit wird Monitoring zu einem formalen Rückkopplungsmechanismus,
 der Iterationen und Entscheidungspunkte im DASC PM datenbasiert unterstützt
-\cite{Schulz2021}.
+\cite{schulz_dasc-pm_2022}.
 
 Für das Monitoring in Data Science Projekten sind typischerweise folgende
-Signalgruppen relevant:
+Signalgruppen relevant \cite{Sculley2015,Amershi2019}:
 \begin{itemize}
   \item \textbf{Datenqualität:}
 				fehlende Werte, Ausreißer, Schemaänderungen, Dubletten,
-				Verteilungsshifts in Eingangsmerkmalen
-				\cite{Kreuzthaler2022}.
+				Verteilungsshifts in Eingangsmerkmalen.
   \item \textbf{Qualität von Labels und Ground Truth:}
 				Verzögerungen in der Rückmeldung,
 				Inkonsistenzen in der Annotation,
-	  systematische Unterschiede zwischen Trainingsdaten und Realitätsdaten
-				\cite{Sculley2015}.
+	  systematische Unterschiede zwischen Trainingsdaten und Realitätsdaten.
   \item \textbf{Modellgüte:}
 				Abfall in Accuracy, F1 oder AUC,
-				Anstieg von Fehlerquoten in kritischen Klassen
-				\cite{Kreuzthaler2022}.
+				Anstieg von Fehlerquoten in kritischen Klassen.
   \item \textbf{Robustheit und Fairness:}
 				Performanceunterschiede zwischen Gruppen,
-				Stabilität gegenüber veränderten Datenlagen
-				\cite{Kreuzthaler2022}.
+				Stabilität gegenüber veränderten Datenlagen.
   \item \textbf{Betrieb und Sicherheit:}
 				Latenzen, Ausfallraten, Zugriffsmuster,
-				Änderungen an Datenpipelines oder Modellversionen
-				\cite{Sato2019}.
+				Änderungen an Datenpipelines oder Modellversionen.
   \item \textbf{Businesswirkung:}
 				Nutzenkennzahlen wie Conversion, Kosten oder Durchlaufzeiten,
 				sowie Anzeichen für Fehlsteuerung durch falsche Modellinterpretation
-				im Geschäftsprozess
-				\cite{Wiehle2022}.
+				im Geschäftsprozess.
 \end{itemize}
 
 \subsection{Einordnung über Standards und Managementsysteme}
@@ -164,5 +151,5 @@ Geeignete Ergebnisse sind:
   \item ein \textbf{regelmäßiges Risikoreporting} an Stakeholder
   \item ein \textbf{Betriebsmonitoring} für Datenkennzahlen und Modellkennzahlen,
 	umgesetzt über Logs, Dashboards und Alerts
-	\cite{Sato2019,Kreuzthaler2022}
+	\cite{Amershi2019}
 \end{itemize}
