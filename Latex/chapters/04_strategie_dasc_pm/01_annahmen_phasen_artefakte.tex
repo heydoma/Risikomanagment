@@ -1,36 +1,56 @@
-\section{Annahmen: Phasen/Artefakte des DASC-PM}
+\section{Annahmen: Risikomanagementstrategie im Kontext des DASC-PM}
 
-    Wie einleitend genannt, soll sich diese Arbeit mit der Strategieentwicklung für das Riskmanagement in Data-Science Projekten 
-    entlang des DASC-PM als Grundlage befassen.
-    Dafür soll das Werkzeug der, in der Softwareentwicklung üblichen, Quality-Gates als Ergänzungsvorschlag für das Prozessmodell 
-    DASC eingeführt werden.
+Wie einleitend genannt, soll sich diese Arbeit mit der Strategieentwicklung für das Riskmanagement in Data-Science Projekten 
+entlang des DASC-PM als Grundlage befassen.
+Dafür soll das Werkzeug der, in der Softwareentwicklung üblichen, Quality-Gates als Ergänzungsvorschlag für das Prozessmodell 
+DASC eingeführt werden.
 
-    Das DASC-PM ist aktuell das modernste agile Modell, welches auch umfangreich und offen zugänglich definiert ist.
-    Damit bietet es ein gutes Fundament für die weitere Integration von Risikomanagement Schritten bzw. Prozessen.
+Das DASC-PM ist aktuell ein modernes, agiles Modell, welches umfangreich und offen zugänglich definiert ist.
+Damit bietet es ein geeignetes Fundament für die Integration zusätzlicher Risikomanagement-Schritte und -Prozesse.
+Insbesondere die iterative und inkrementelle Struktur des DASC-PM ermöglicht eine kontinuierliche Bewertung von Risiken entlang 
+des gesamten Projektverlaufs, anstatt diese ausschließlich in frühen Projektphasen zu betrachten.
 
-\notiz{ STRUKTUR: 
-        - Warum entlang des DASC-PM? -> Modern, Agil, Definiert
-        - Eigenschaften von Quality-Gates in der Softwareentwicklung
-        - Erwartungen an Quality-Gates im Riskmanagement 
-        - Die sich daraus ergebende Herleitung warum Quality-Gates eine sinnvolle Ergänzung sind für das DASC-PM
-        - Übergang zur eigentlichen Integration
-        }
+Quality Gates sind verbindliche Entscheidungspunkte in jedem Entwicklungszyklus (Phase), 
+an denen die Qualität des Zwischenergebnisses oder des Projektfortschritts objektiv geprüft und freigegeben wird. 
+Sie stellen sicher, dass nur Arbeit, die definierte Qualitätskriterien erfüllt, in die nächste Phase übergeht \citep{temole_integrated_2025}.
+Damit fungieren sie als strukturierende Kontrollmechanismen, die sowohl Qualitätssicherung als auch Risikominimierung unterstützen.
 
+In der Softwareentwicklung sind Quality Gates typischerweise an spezifische Anforderungen geknüpft, die ihre Wirksamkeit sicherstellen.
+Diese Anforderungen lassen sich wie folgt zusammenfassen:
+Erstens müssen die zugrunde liegenden Kriterien messbar und operationalisierbar sein, um eine objektive Bewertung zu ermöglichen \citep{uzunova_quality_2024, paul_integrating_2025}.
+Zweitens sollten sie flexibel und anpassbar gestaltet sein, um auf sich ändernde Projektanforderungen reagieren zu können, insbesondere in agilen Umgebungen \citep{uzunova_quality_2024}.
+Drittens ist eine enge Integration in den Entwicklungsprozess erforderlich, sodass Quality Gates nicht als externe Kontrollinstanz, 
+sondern als inhärenter Bestandteil des Workflows wirken \citep{paul_integrating_2025}.
+Darüber hinaus sollten sie Transparenz und Nachvollziehbarkeit gewährleisten, etwa durch dokumentierte Bewertungen und Berichte \citep{uzunova_quality_2024}.
+Ein weiterer zentraler Aspekt ist die Automatisierbarkeit, insbesondere im Kontext kontinuierlicher Integrations- und 
+Bereitstellungsprozesse (CI/CD), wodurch Effizienzgewinne erzielt und manuelle Fehler reduziert werden können \citep{paul_integrating_2025}.
+Zudem müssen Quality Gates eine Balance zwischen Qualitätssicherung und Agilität herstellen, da sie sonst die Geschwindigkeit iterativer Entwicklungsprozesse negativ beeinflussen können \citep{uzunova_quality_2024}.
+Schließlich spielen auch kontinuierliche Überwachung sowie die Einbettung in datengetriebene Pipelines eine zentrale Rolle, 
+insbesondere im Kontext von MLOps und Data-Science-Projekten \citep{nellutla1_mlops_2026}.
 
-\notiz{
-    TODO: Herleiten wie wir darauf kamen, dass diese Risk-Gates jetzt wirklich notwendig sind.
-    - Einstieg über Quality Gates aus der Softwareentwicklung
-    - Nutzen zur Herleitung von Risk-Gates im DASC-PM
-    Limitation anschneiden. -> Man ist auf quantitative Risikobewertungen angewiesen und diese müssen im
-    Bestfall automatisiert sein, sonder wird der gesamte Prozess lahmgelegt.
-}
+Überträgt man diese Eigenschaften auf das Risikomanagement in Data-Science-Projekten, so ergibt sich eine klare Erwartungshaltung 
+an Risk Gates, dessen Begriff mit dieser Arbeit etabliert wird. 
+Risk Gates sollen analog zu Quality Gates als Entscheidungs- und Kontrollpunkte fungieren, jedoch mit Fokus auf die Bewertung und 
+Steuerung von Risiken jeglichen Typs.
+Dabei bietet sich insbesondere der Einsatz quantitativer Kennzahlen, wie Key Risk Indicators (KRIs), an, um Risiken messbar und 
+automatisiert bewerten zu können.
+Ein solcher Ansatz ist konsistent mit vielen in Data-Science-Projekten verwendeten Analysemethoden, die ohnehin auf quantitativen 
+Modellen und Metriken basieren.
 
-\notiz{TODO: Zunächst zu der Erwartungshaltung von Risk-Gates anhand von Quality-Gates in der Softwareentwicklung. 
-    Quality-Gates, insbesondere solche die in CI / CD Pipelines genutzt werden, verwenden quantitativ erzeugte 
-    Kennziffern die einen gewissen Schwellwert nicht überschreiten dürfen, da sonst die Entwicklung nicht in den 
-    Hauptzweig des Projektes einfließen darf. Dies ist besonders in agilen Organisationsstrukturen sinnvoll, da 
-    kleinere Meilensteine pro Iteration entwickelt werden.
-    Da ein Großteil der Analysemethoden die zuvor für die Risiken genutzt wurden, ebenfalls quantitativ sind, bietet 
-    sich das Prinzip des Quality Gates im Kontext von Data-Science Projekten ebenfalls an.
-}
-    
+Insbesondere in agilen Umgebungen, in denen Ergebnisse in kurzen Iterationen entwickelt werden, ermöglichen Risk Gates eine 
+kontinuierliche und iterative Risikobewertung.
+Ähnlich wie Quality Gates in CI/CD-Pipelines können definierte Schwellwerte für Risikokennzahlen festgelegt werden, deren 
+Überschreitung dazu führt, dass ein Artefakt oder eine Phase nicht freigegeben wird.
+Auf diese Weise wird sichergestellt, dass kritische Risiken frühzeitig erkannt und adressiert werden, bevor sie sich im weiteren 
+Projektverlauf verstärken.
+
+Die Integration von Risk Gates in das DASC-PM stellt somit eine konsequente Erweiterung des bestehenden Prozessmodells dar.
+Sie verbindet die Stärken agiler Entwicklungsmethoden mit systematischem Risikomanagement und trägt dazu bei, sowohl die Qualität 
+der Projektergebnisse als auch die Stabilität des Projektverlaufs zu erhöhen.
+Gleichzeitig ist zu beachten, dass dieser Ansatz eine starke Abhängigkeit von der Verfügbarkeit geeigneter quantitativer 
+Risikokennzahlen mit sich bringt.
+Insbesondere die Automatisierbarkeit der Bewertung ist eine zentrale Voraussetzung, da andernfalls zusätzliche manuelle 
+Aufwände entstehen könnten, die den agilen Prozess erheblich verlangsamen.
+
+Vor diesem Hintergrund wird im folgenden Abschnitt die konkrete Integration von Risk Gates in die Phasen und Artefakte des 
+DASC-PM ausgearbeitet.
