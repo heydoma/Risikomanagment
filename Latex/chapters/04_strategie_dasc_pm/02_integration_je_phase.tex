@@ -1,14 +1,43 @@
 \section{Risikomanagement-Integration je Phase}
 
-\notiz{ Um die Benennung noch treffender zu formulieren und auch eine Abgrenzung zu dem Softwareentwicklungsprozess 
-    in den meißten Projekten zu erzeugen, werden die Schranken hier ''Risk Gate,, genannt. }
+Um die Benennung noch treffender zu formulieren und auch eine Abgrenzung zu dem Softwareentwicklungsprozess 
+zu erzeugen, werden die Schranken bzw. Quality Gates folgend als ''Risk Gate,, bezeichnet.
+Die Risk-Gates werden nach jeder der Hauptphasen des DASC-PM platziert und somit vor 
+jedem Übergang in die nächste Phase geprüft.
 
-\notiz{Die Risk-Gates werden nach dieser vorgestellten Strategie nach jeder der Hauptphasen des DASC-PM platziert und werden vor 
-        jedem Übergang in die nächste Phase, geprüft.}   
-        
-\begin{figure}[htbp]
+Dafür werden zunächst innerhalb der Hauptphasen jeweils Risiken identifiziert und bewertet, um die benötigten Risk Key Indicators 
+zu erzeugen. Dies geschieht anhand der eingangs vorgestellten Methoden zur Data-Science spezifischen Risikoanalyse.
+Dabei ist zu beachten, dass die Erzeugung der RKI direkt zu Beginn eines Projektes in einen automatisierten Prozess 
+entwickelt werden sollte, um diese Vorzüge mit jeder Iteration des Prozessmodells nutzen zu können. 
+In den unterschiedlichen Phasen des DASC-PM ist die Konzentration der zu behandelnden Risikotypen je nach Projektziel sehr individuell
+und erfordert eine ebenso individuelle Ausarbeitung der Risikobewertung.
+
+Eine zentrale Bedingung für die Nutzung von Risk-Gates ist dass die Risikobewertungen 
+in jedem Fall ein Ergebnisartefakt produzieren muss, welches einen RKI enthält.
+Nur so lässt sich dieser Ansatz in einem iterativen Prozess sinnvoll einbinden ohne 
+den Projektfortschritt stark zu verlangsamen.
+
+\notiz{Die Ergebinsartefakte der Risikobewertung werden zwischen den Gates und allen Phasen geteilt und dort kann immer 
+darauf bezogen werden. Dies hat den Vorteil, dass man Erkenntnisse aus der Nutzbarmachung durchaus bei der Nachschärfung 
+des Projektantrags nutzen kann, um ggf. ethische Einschränkungen direkt mit aufzunehmen und mithilfe eines Beirats 
+zu erarbeiten.}
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{RM-Extension_DASC-PM.jpeg}
+    \includegraphics[width=0.65\textwidth]{RM-Extension_DASC-PM.jpeg}
     \caption{RM-Extension für das DASC-PM}
     \label{fig:rm_extension}
 \end{figure}
+
+Dies führt zu der folgenden skizzierung der Integration in das DASC Prozessmodell in dem Schaubild \ref{fig:rm_extension},
+welches den Namen ,,DASC-PM Risk Management Extension'', kurz ,,RM-Extension'', erhalten hat.
+
+\notiz{Jedes dieser Risk-Gates erhält eine Art Ampelfunktion die drei Status abbildet. Grün = Kein kritisches Risiko, Gelb = Erhöhtes Risiko und Rot = Kritisches Risiko.
+Die Konsequenz der jeweiligen Status soll wie folgt definiert sein. Grün erfordert keine Maßnahmen, 
+Gelb erfordert keine Maßnahmen, wird aber als Risikoartefakt aufgenommen und jedes weitere Gate geprüft. Parallel können passende Maßnahmen eingeleitet werden.
+Rot erfordert Maßnahmen bevor in die nächste Phase übergegangen werden darf.
+}
+
+\notiz{Eine Abweichung von der Regel, dass nach jeder Phase ein Risk-Gate folgt, gibt es nur bei der Phase der ,,Nutzung''. Denn wenn das Projekt dort angelangt ist, 
+greift das stetige Monitoring, welches sowohl technische Veränderungen aufzeigen soll, als auch die 
+Änderungen hinsichtlich des Risikos. Wie an vielen Stellen, gehen dort technische Kennziffern Hand in Hand mit der Risikoeinschätzung.}
