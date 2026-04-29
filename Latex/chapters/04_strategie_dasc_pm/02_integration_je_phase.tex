@@ -34,10 +34,19 @@ welches den Namen ,,DASC-PM Risk Management Extension'', kurz ,,RM-Extension'', 
 
 \notiz{Jedes dieser Risk-Gates erhält eine Art Ampelfunktion die drei Status abbildet. Grün = Kein kritisches Risiko, Gelb = Erhöhtes Risiko und Rot = Kritisches Risiko.
 Die Konsequenz der jeweiligen Status soll wie folgt definiert sein. Grün erfordert keine Maßnahmen, 
-Gelb erfordert keine Maßnahmen, wird aber als Risikoartefakt aufgenommen und jedes weitere Gate geprüft. Parallel können passende Maßnahmen eingeleitet werden.
+Gelb erfordert keine Maßnahmen, wird aber als Risikoartefakt aufgenommen und jedes weitere Gate geprüft. 
+Parallel können passende Maßnahmen eingeleitet werden und das Risiko wird stetig überwacht.
 Rot erfordert Maßnahmen bevor in die nächste Phase übergegangen werden darf.
 }
 
+\notiz{Die gelbe Ampel ist somit eines der interessanteren Szenarien. Wenn ein Risiko eine gelbe Ampel in der Phase der Datenerhebung erhält
+und somit unter Beobachtung steht, dann wird dieses Risiko in jeder folgenden Phase analysiert und in jedem Folge-Gate hinsichtlich der RKI 
+geprüft. Wenn dieses Risiko nun beim nächsten Gate eine rote Ampel erhält, weil sich die Lage geändert hat, so wird die Phase an dieser Stelle 
+nicht beendet bis das Risiko ausreichend behandelt wurde.}
+
 \notiz{Eine Abweichung von der Regel, dass nach jeder Phase ein Risk-Gate folgt, gibt es nur bei der Phase der ,,Nutzung''. Denn wenn das Projekt dort angelangt ist, 
 greift das stetige Monitoring, welches sowohl technische Veränderungen aufzeigen soll, als auch die 
-Änderungen hinsichtlich des Risikos. Wie an vielen Stellen, gehen dort technische Kennziffern Hand in Hand mit der Risikoeinschätzung.}
+Änderungen hinsichtlich des Risikos. Wie an vielen Stellen, gehen dort technische Kennziffern Hand in Hand mit der Risikoeinschätzung.
+Wenn dann eine weitere Nutzung des Analyseartefakts ausgeschlossen wird, weil ein Risiko zu hoch ist, dann wird ohnehin eine andere Entscheidung im 
+Raum stehen, nämlich ,,Weiterentwickeln'' oder ,,Neuentwickeln'', was zu einem neuen Projektantrag führt und somit einen neuen Kreislauf anstößt.}
+
