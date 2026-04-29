@@ -1,26 +1,33 @@
 \section{Risikomanagement-Integration je Phase}
 
-Um die Benennung noch treffender zu formulieren und auch eine Abgrenzung zu dem Softwareentwicklungsprozess 
-zu erzeugen, werden die Schranken bzw. Quality Gates folgend als ''Risk Gate,, bezeichnet.
-Die Risk-Gates werden nach jeder der Hauptphasen des DASC-PM platziert und somit vor 
-jedem Übergang in die nächste Phase geprüft.
+Um eine terminologische Abgrenzung gegenüber dem aus der Softwareentwicklung 
+bekannten Quality-Gate-Konzept zu schaffen, werden die phasenübergreifenden 
+Prüfpunkte im Rahmen dieser Arbeit als ,,Risk Gates'' bezeichnet. 
+Risk Gates werden nach jeder Hauptphase des DASC-PM platziert und bilden 
+damit die formale Voraussetzung für den Übergang in die jeweils nachfolgende Phase.
 
-Dafür werden zunächst innerhalb der Hauptphasen jeweils Risiken identifiziert und bewertet, um die benötigten Risk Key Indicators 
-zu erzeugen. Dies geschieht anhand der eingangs vorgestellten Methoden zur Data-Science spezifischen Risikoanalyse.
-Dabei ist zu beachten, dass die Erzeugung der KRI direkt zu Beginn eines Projektes in einen automatisierten Prozess
-entwickelt werden sollte, um diese Vorzüge mit jeder Iteration des Prozessmodells nutzen zu können. 
-In den unterschiedlichen Phasen des DASC-PM ist die Konzentration der zu behandelnden Risikotypen je nach Projektziel sehr individuell
-und erfordert eine ebenso individuelle Ausarbeitung der Risikobewertung.
+Innerhalb jeder Hauptphase werden zunächst phasenspezifische Risiken 
+identifiziert und bewertet, um die dafür notwendigen Key Risk Indicators (KRI) 
+zu erzeugen. Dies geschieht anhand der in Kapitel~3 vorgestellten Methoden 
+zur risikobeurteilung in Data-Science-Projekten. Da die Konzentration relevanter 
+Risikotypen je nach Projektkontext und -ziel erheblich variiert, erfordert 
+jede Phase eine individuell ausgerichtete Risikobewertung. Um den iterativen 
+Charakter des DASC-PM zu erhalten und den Projektfortschritt nicht 
+unverhältnismäßig zu verlangsamen, ist es dabei essenziell, dass die 
+Risikobewertung von Beginn an in einen möglichst automatisierten Prozess 
+überführt wird. Nur so können die Vorteile des Risk-Gate-Ansatzes mit jeder 
+Iteration des Prozessmodells vollumfänglich genutzt werden.
 
-Eine zentrale Bedingung für die Nutzung von Risk-Gates ist dass die Risikobewertungen 
-in jedem Fall ein Ergebnisartefakt produzieren muss, welches einen KRI enthält.
-Nur so lässt sich dieser Ansatz in einem iterativen Prozess sinnvoll einbinden ohne 
-den Projektfortschritt stark zu verlangsamen.
-
-\notiz{Die Ergebinsartefakte der Risikobewertung werden zwischen den Gates und allen Phasen geteilt und dort kann immer 
-darauf bezogen werden. Dies hat den Vorteil, dass man Erkenntnisse aus der Nutzbarmachung durchaus bei der Nachschärfung 
-des Projektantrags nutzen kann, um ggf. ethische Einschränkungen direkt mit aufzunehmen und mithilfe eines Beirats 
-zu erarbeiten.}
+Eine zentrale Bedingung für den Einsatz von Risk Gates ist, dass jede 
+Risikobewertung ein dokumentiertes Ergebnisartefakt erzeugt, das mindestens 
+einen messbaren KRI enthält. Diese Artefakte werden phasenübergreifend 
+bereitgestellt und können in allen nachfolgenden Phasen referenziert werden. 
+Dadurch entsteht ein kontinuierliches Wissensgedächtnis über den gesamten 
+Projektverlauf: Erkenntnisse, die beispielsweise aus der Nutzungsphase 
+hervorgehen, können genutzt werden, um den Projektantrag im Sinne einer 
+iterativen Verbesserung nachzuschärfen, etwa um ethische Einschränkungen 
+explizit aufzunehmen und gegebenenfalls unter Einbindung eines Fachbeirats 
+zu konkretisieren.
 
 \begin{figure}[H]
     \centering
@@ -29,24 +36,51 @@ zu erarbeiten.}
     \label{fig:rm_extension}
 \end{figure}
 
-Dies führt zu der folgenden skizzierung der Integration in das DASC Prozessmodell in dem Schaubild \ref{fig:rm_extension},
-welches den Namen ,,DASC-PM Risk Management Extension'', kurz ,,RM-Extension'', erhalten hat.
+Die beschriebene Integration ist in Abbildung~\ref{fig:rm_extension} 
+schematisch dargestellt. Das resultierende Modell wird als 
+,,DASC-PM Risk Management Extension'', kurz ,,RM-Extension'', 
+bezeichnet.
 
-\notiz{Jedes dieser Risk-Gates erhält eine Art Ampelfunktion die drei Status abbildet. Grün = Kein kritisches Risiko, Gelb = Erhöhtes Risiko und Rot = Kritisches Risiko.
-Die Konsequenz der jeweiligen Status soll wie folgt definiert sein. Grün erfordert keine Maßnahmen, 
-Gelb erfordert keine Maßnahmen, wird aber als Risikoartefakt aufgenommen und jedes weitere Gate geprüft. 
-Parallel können passende Maßnahmen eingeleitet werden und das Risiko wird stetig überwacht.
-Rot erfordert Maßnahmen bevor in die nächste Phase übergegangen werden darf.
-}
+Zur Operationalisierung der Risk Gates wird ein dreistufiges Ampelsystem 
+eingeführt, das den Risikostatus am Ende jeder Phase bewertet und die 
+Entscheidung über den Phasenübergang strukturiert:
 
-\notiz{Die gelbe Ampel ist somit eines der interessanteren Szenarien. Wenn ein Risiko eine gelbe Ampel in der Phase der Datenerhebung erhält
-und somit unter Beobachtung steht, dann wird dieses Risiko in jeder folgenden Phase analysiert und in jedem Folge-Gate hinsichtlich der RKI 
-geprüft. Wenn dieses Risiko nun beim nächsten Gate eine rote Ampel erhält, weil sich die Lage geändert hat, so wird die Phase an dieser Stelle 
-nicht beendet bis das Risiko ausreichend behandelt wurde.}
+\begin{itemize}
+    \item \textbf{Grün -- kein kritisches Risiko:} Alle KRI liegen innerhalb 
+    der definierten Schwellenwerte. Es sind keine zusätzlichen Maßnahmen 
+    erforderlich. Der Übergang in die nächste Phase erfolgt ohne Einschränkungen.
+    
+    \item \textbf{Gelb -- erhöhtes Risiko:} Mindestens ein KRI weist auf ein 
+    erhöhtes, jedoch noch nicht kritisches Risiko hin. Das betreffende Risiko 
+    wird als Artefakt dokumentiert, in allen nachfolgenden Gates weiterverfolgt 
+    und kontinuierlich überwacht. Der Phasenübergang ist grundsätzlich möglich; 
+    parallel können geeignete Gegenmaßnahmen eingeleitet werden.
+    
+    \item \textbf{Rot -- kritisches Risiko:} Mindestens ein KRI überschreitet 
+    den definierten kritischen Schwellenwert. Ein Übergang in die nächste Phase 
+    ist erst zulässig, wenn geeignete Maßnahmen ergriffen wurden und der 
+    betreffende Indikator mindestens in den Gelb-Bereich zurückgeführt wurde. 
+    Das Risiko gilt damit als ausreichend behandelt, bleibt jedoch unter 
+    kontinuierlicher Beobachtung.
+\end{itemize}
 
-\notiz{Eine Abweichung von der Regel, dass nach jeder Phase ein Risk-Gate folgt, gibt es nur bei der Phase der ,,Nutzung''. Denn wenn das Projekt dort angelangt ist, 
-greift das stetige Monitoring, welches sowohl technische Veränderungen aufzeigen soll, als auch die 
-Änderungen hinsichtlich des Risikos. Wie an vielen Stellen, gehen dort technische Kennziffern Hand in Hand mit der Risikoeinschätzung.
-Wenn dann eine weitere Nutzung des Analyseartefakts ausgeschlossen wird, weil ein Risiko zu hoch ist, dann wird ohnehin eine andere Entscheidung im 
-Raum stehen, nämlich ,,Weiterentwickeln'' oder ,,Neuentwickeln'', was zu einem neuen Projektantrag führt und somit einen neuen Kreislauf anstößt.}
+Besondere Bedeutung kommt dabei dem Gelb-Status zu, da er eine Art 
+Risikogedächtnis im Projektverlauf begründet. Ein Risiko, das in einer frühen 
+Phase, etwa der Datenerhebung, als erhöht eingestuft wurde, wird in allen 
+nachfolgenden Gates erneut anhand seiner KRI geprüft. Verändert sich die 
+Risikolage im weiteren Projektverlauf und überschreitet der Indikator den 
+kritischen Schwellenwert, so wird der Status auf Rot angehoben. In diesem 
+Fall wird die betroffene Phase nicht abgeschlossen, bis das Risiko 
+ausreichend behandelt wurde.
 
+Eine Ausnahme von der Regel, dass nach jeder Hauptphase ein Risk Gate folgt, 
+bildet die Phase der ,,Nutzung''. Da das Modell zu diesem Zeitpunkt im 
+produktiven Betrieb ist, greift anstelle eines einmaligen Gate-Prüfpunkts 
+das in Kapitel~3.4 beschriebene kontinuierliche Monitoring. Dieses umfasst 
+sowohl technische Kennziffern als auch die fortlaufende Einschätzung des 
+Risikoniveaus. Technische Indikatoren und Risikobeurteilung sind in dieser 
+Phase konzeptionell eng miteinander verknüpft. Übersteigt ein Risiko im 
+laufenden Betrieb einen kritischen Schwellenwert, so stehen in der Regel 
+zwei strategische Optionen zur Wahl: die Weiterentwicklung des bestehenden 
+Modells oder eine vollständige Neuentwicklung. Beide Szenarien münden in 
+einem neuen Projektantrag und stoßen damit einen neuen Zyklus des DASC-PM an.
