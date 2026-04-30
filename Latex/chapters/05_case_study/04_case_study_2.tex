@@ -35,37 +35,59 @@ Fehlende Interpretierbarkeit (DS\_Projektorganisation)
 Bewertung
 Anschließend kann die Analyse der identifizierten Risiken anhand der FMEA (Fehlermöglichkeits- und Einflussanalyse) durchgeführt werden:
 
-\begin{table}[H]
-\centering
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\textwidth}{|p{3.2cm}|X|X|X|}
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+
+\begin{tabular}{|p{3cm}|p{4.9cm}|p{3cm}|p{4.9cm}|}
 \hline
-\textbf{Risiko} & \textbf{Auftrittswahrscheinlichkeit (A)} & \textbf{Bedeutung (B)} & \textbf{Entdeckungswahrscheinlichkeit (E)} \\ \hline
+\textbf{Risiko} & \textbf{Auftritts\-wahrscheinlichkeit A} & \textbf{Bedeutung B} & \textbf{Entdeckungs\-wahrscheinlichkeit E} \\
+\hline
 
 Fehlende Integration der Business-Perspektive 
-& \textbf{KRI: 6}\\ gelegentliches Auftreten
-& \textbf{KRI: 3}\\ unbedeutend, da Stakeholder nur geringfügig gestört werden
-& \textbf{KRI: 2}\\ zwangsläufige Entdeckung bei folgenden Prozessabschnitten \\ \hline
+& KRI: 6 (gelegentliches Auftreten)
+& KRI: 3 (unbedeutend)
+& KRI: 2 (zwangsläufige Entdeckung) \\
+\hline
 
 Bias Quellen 
-& \textbf{KRI: 8}\\ häufiges Auftreten
-& \textbf{KRI: 8}\\ eingeschränkte Dienstleistung, Kunden verärgert
-& \textbf{KRI: 9}\\ Kunde wird Fehler entdecken \\ \hline
+& KRI: 8 (häufiges Auftreten)
+& KRI: 8 (eingeschränkte Dienstleistung, Stakeholder verärgert)
+& KRI: 9 (Kunde wird Fehler entdecken) \\
+\hline
 
 Fehlende Interpretierbarkeit 
-& \textbf{KRI: 6}\\ gelegentliches Auftreten
-& \textbf{KRI: 7}\\ eingeschränkter Mehrwert, da Nutzen nicht klar wird, Stakeholder verärgert
-& \textbf{KRI: 9}\\ Stakeholder wird Fehler entdecken \\ \hline
+& KRI: 6 (gelegentliches Auftreten)
+& KRI: 7 (eingeschränkter Mehrwert und mangelnde Nachvollziehbarkeit)
+& KRI: 9 (Stakeholder wird Fehler entdecken) \\
+\hline
 
 Ressourcenüberforderung 
-& \textbf{KRI: 7}\\ häufiges Auftreten
-& \textbf{KRI: 5}\\ Störung im Prozess, Problem für Stakeholder, da möglicherweise Ergebnisse nicht schnell genug geliefert werden
-& \textbf{KRI: 10}\\ Fehler wird nicht sofort entdeckt, sondern im Verlauf der Zeit \\ \hline
+& KRI: 7 (häufiges Auftreten)
+& KRI: 5 (Störung im Prozess und Verzögerungen)
+& KRI: 10 (Fehler wird erst im Zeitverlauf entdeckt) \\
+\hline
 
-\end{tabularx}
-\caption{Bewertung der Risiken anhand von KRIs}
-\label{tab:kri_bewertung}
-\end{table}
+Overfitting 
+& KRI: 5 (gelegentliches Auftreten)
+& KRI: 8 (starke Beeinträchtigung der Modellqualität)
+& KRI: 6 (Entdeckung meist erst nach Deployment) \\
+\hline
+
+Black-Box-Problem 
+& KRI: 4 (mittlere Auftretenswahrscheinlichkeit)
+& KRI: 7 (fehlende Transparenz reduziert Vertrauen der Stakeholder)
+& KRI: 8 (Probleme werden meist erst bei Nutzung sichtbar) \\
+\hline
+
+Bias 
+& KRI: 8 (häufiges Auftreten)
+& KRI: 9 (diskriminierende oder fehlerhafte Vorhersagen)
+& KRI: 7 (Entdeckung häufig erst durch Stakeholder oder Monitoring) \\
+\hline
+
+\end{tabular}
+
+\end{center}
 
 Anhand des Risikoregisters, welche die einzelnen KRI's enthält, können die RPZ (Risikoprioritätszahlen) gebildet werden, um im Folgenden die Maßnahmenbildung parallel zur Priorisierung der Risiken einzuordnen. Hierfür wird die folgende Formel angewandt:
 \textbf{RPZ = A x B x E}
