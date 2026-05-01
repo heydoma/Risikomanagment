@@ -13,13 +13,15 @@ Jede DASC-PM-Phase durchläuft denselben Steuerungszyklus:
 	\item Im Risk Gate: Gate-Entscheidung dokumentieren.
 \end{itemize}
 
-Für das Scoring wird im ersten Beispiel (Case Study 1) die einfache Logik
-Score = Eintrittswahrscheinlichkeit mal Schadensauswirkung
-auf einer Skala von 1 bis 5 genutzt.
-Als pragmatische Obergrenzen werden gesetzt:
-Grün bis 8,
-Gelb bis 14,
-Rot bis 25.
+Für das Scoring wird im ersten Beispiel (Case Study 1) die Logik
+$\text{Score} = \text{Eintrittswahrscheinlichkeit} \times \text{Schadensauswirkung} \times \text{Entdeckbarkeit}$
+auf einer Skala von 1 bis 5 je Dimension genutzt.
+Die Entdeckbarkeit bewertet dabei, wie schwer ein Risiko frühzeitig zu erkennen ist
+(1 = leicht erkennbar, 5 = kaum erkennbar ohne explizite Analyse).
+Als pragmatische Schwellenwerte werden gesetzt:
+Grün bis 20,
+Gelb bis 50,
+Rot über 50.
 Das zugehörige Registerformat entspricht dem Artefakt im Anhang.
 
 Um einen weiteren Ansatz zu präsentieren orientiert sich das Scoring im zweiten Beispiel (Case Study 2) an der Logik der FMEA und fokussiert sich auf die Bildung sogenannter Risikoprioritätszahlen (RPZ), welche in diesem Kontext mit der Bildung von KRI's gleichgesetzt werden. Als Schwellenobergrenzen werden die Werte  ">0" = Grün, ">300" = Gelb,  ">600" = Rot verwendet. 
