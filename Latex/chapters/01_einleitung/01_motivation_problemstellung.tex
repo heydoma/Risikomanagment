@@ -1,24 +1,30 @@
 \section{Motivation und Problemstellung}
 
-\notiz{Jana / Empfehlung: Die zunehmende Digitalisierung und der wachsende Einsatz datengetriebener Systeme führen dazu, dass Data-Science-Projekte für Unternehmen zunehmend an strategischer Bedeutung gewinnen. Verfahren des maschinellen Lernens ermöglichen neue Formen der Automatisierung, Prognose und Entscheidungsunterstützung, bringen jedoch gleichzeitig neue Herausforderungen für das Projekt- und Risikomanagement mit sich. Im Vergleich zu klassischen IT- oder Softwareprojekten weisen Data-Science-Projekte eine deutlich höhere Komplexität und Unsicherheit auf. Gründe hierfür sind unter anderem iterative Entwicklungsprozesse, unsichere Datenlagen sowie schwer nachvollziehbare Modellentscheidungen. Risiken wie Overfitting, systemischer Bias, mangelnde Datenqualität oder regulatorische Verstöße können dabei mehrere Konsequenzen mit sich ziehen. Vor diesem Hintergrund gewinnt ein strukturiertes Risikomanagement zunehmend an Bedeutung.
+Die zunehmende Digitalisierung und der wachsende Einsatz datengetriebener Systeme führen dazu,
+dass Data-Science-Projekte für Unternehmen strategisch an Bedeutung gewinnen.
+Verfahren des maschinellen Lernens ermöglichen neue Formen der Automatisierung,
+Prognose und Entscheidungsunterstützung, bringen jedoch gleichzeitig
+neue Herausforderungen für das Projekt- und Risikomanagement mit sich.
+Im Vergleich zu klassischen IT- oder Softwareprojekten weisen Data-Science-Projekte
+eine deutlich höhere Komplexität und Unsicherheit auf.
+Ursachen hierfür sind unter anderem iterative Entwicklungsprozesse,
+unsichere Datenlagen sowie schwer nachvollziehbare Modellentscheidungen.
+Risiken wie Overfitting, systemischer Bias, mangelnde Datenqualität
+oder regulatorische Verstöße können dabei weitreichende Folgen haben \citep{holtkemper_risk_2023}.
 
-Problematisch ist, dass bestehende Ansätze des klassischen Projekt- und Risikomanagements die besonderen Anforderungen von Data Science Projekten häufig nur eingeschränkt berücksichtigen. Während technologische Aspekte oft im Mittelpunkt stehen, wird unzureichendes Projektmanagement regelmäßig als Ursache für das Scheitern von Initiativen identifiziert. Zusätzlich erschweren unklare Verantwortlichkeiten oder fehlende Governance-Strukturen, die erfolgreiche Umsetzung von Data-Science-Projekten. Insbesondere der EU AI Act verdeutlicht die Relevanz eines systematischen Risikomanagements, da KI-Systeme je nach Risikoklasse unterschiedlichen Anforderungen hinsichtlich Transparenz, Dokumentation und Kontrolle unterliegen.
+Bestehende Ansätze des klassischen Projekt- und Risikomanagements
+berücksichtigen die besonderen Anforderungen von Data-Science-Projekten häufig nur eingeschränkt.
+Während technologische Aspekte oft im Mittelpunkt stehen,
+wird unzureichendes Projektmanagement regelmäßig als wesentliche Ursache
+für das Scheitern von Initiativen identifiziert.
+Unklare Verantwortlichkeiten und fehlende Governance-Strukturen
+erschweren die erfolgreiche Umsetzung zusätzlich.
+Insbesondere der EU AI Act verdeutlicht die wachsende regulatorische Relevanz:
+KI-Systeme unterliegen je nach Risikoklasse unterschiedlichen Anforderungen
+hinsichtlich Transparenz, Dokumentation und Kontrolle \citep{EUAIAct2024}.
 
-Ziel dieser Arbeit ist es daher, Risiken in Data-Science-Projekten systematisch zu analysieren sowie geeignete Methoden zur Bewertung, Minimierung und Monitoring dieser Risiken aufzuzeigen. Im diesem Kontext wurde eine Modellerweiterung zum DASC-PM entwickelt, um diese Prozessschritte entsprechend zu strukturieren und für die Anwendung in der Praxis vorzubereiten.
-
-Methodisch basiert die Arbeit auf einer Literaturrecherche zu Risikomanagement und Projektmanagement im Kontext von Data Science. Ergänzend werden etablierte Standards und regulatorische Vorgaben analysiert. Zur praktischen Bewertung von Risiken wird zudem die Ermittlung von KRI's (Key Risk Indicators), unter anderem anhand der Fehlermöglichkeits- und Einflussanalyse (FMEA) einschließlich der Bildung von Risikoprioritätszahlen (RPZ), betrachtet.
-
-Die Arbeit beschäftigt sich zunächst mit den Grundlagen des Risiko- und Projektmangements als fachliche Basis für weitere Untersuchungen. Darauf aufbauend folgen Methoden zur Risikoidentifikation, -Minimierung und -monitorung. Anschließend wird die Erweiterung des DASC-PM um eine "RM-Extension" (Risikomanagement-Erweiterung) erläutert und anhand ausgewählter Fallbeispiele auf seine Praxisrelevanz untersucht und anschließend bewertet.}
-Im Rahmen des Master Studiengangs mit dem Schwerpunkt ''Data-Science,, hat sich das Team dieser Hausarbeit 
-mit dem Thema Risikomanagement beschäftigt und auf Grundlage der dort gewonnenen Erkenntnisse, soll nun 
-eine Hausarbeit entstehen.
-
-Der Antrieb auch weiterhin dieses Thema zu behandeln ist, dass das generelle Thema der Data-Science Projektorganisation
-aktuell stark im Umschwung ist und Strukturen in dem Bereich sich immer wieder wandeln. Mit dem DASC-PM hat man ein 
-modernes und agiles Prozessmodell für Data-Science Projekte geschaffen und es hat sich gelohnt diesen spezifischen Weg 
-für die Allgemeinheit zu definieren. Das Problem ist nun, dass das Themenfeld Risikomanagement aktuell ebenfalls nur 
-in klassischen Projektmanagement Strukturen definiert ist und nicht die durchaus speziellen Ansprüche des Bereichs der Data-Science 
-beachtet oder in der Tiefe behandelt wie nötig wäre.
-
-Dies soll sich mit dieser Hausarbeit ändern.
+Vor diesem Hintergrund fehlt bislang eine strukturierte Risikomanagement-Strategie,
+die spezifisch auf die Phasen und Artefakte des
+Data Science Process Model (DASC-PM) ausgerichtet ist.
+Diese Lücke adressiert die vorliegende Arbeit.
 
