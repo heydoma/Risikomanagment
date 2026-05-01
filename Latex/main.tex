@@ -65,6 +65,9 @@
 
 \begin{document}
 
+% Seitenzahlen erst ab der Einleitung anzeigen
+\pagenumbering{gobble}
+
 % --- Titelseite (einfach, gut editierbar) ---
 \begin{titlepage}
   \centering
@@ -102,6 +105,10 @@
 % ==========================================================
 % Inhalt (Baukasten über \input)
 % ==========================================================
+
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
 
 \input{chapters/01_einleitung/chapter}
 \input{chapters/02_grundlagen/chapter}
