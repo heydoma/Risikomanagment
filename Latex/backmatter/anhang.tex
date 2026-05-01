@@ -2,7 +2,7 @@
 % Anhang (optional)
 % ==========================================================
 \appendix
-\chapter{Zusätzliche Materialien}
+\chapter{Anhang/Zusätzliche Materialien}
 % \textless Text\textgreater
 
 \section{Beispiel-Artefakt: Risk Register}
@@ -99,7 +99,56 @@ und einen stufenweisen Rollout.
 Das Gesamtbudget beträgt 550.000 Euro
 einschließlich externer Beratung und Cloud-Ressourcen.
 Der Go-Live ist für das folgende Geschäftsjahr vorgesehen.
-\section*{Anhang: Projektorganisation und Verantwortlichkeiten}
+
+\section{Case Study 2: Ergebnisse der FMEA innerhalb der Risk Gates}
+
+\subsection{Risk Gate 2: Kriterien zur Bildung der RPZ}
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{3cm}|p{4.9cm}|p{3cm}|p{4.9cm}|}
+\hline
+\textbf{Risiko} & \textbf{Auftritts\-wahrscheinlichkeit A} & \textbf{Bedeutung B} & \textbf{Entdeckungs\-wahrscheinlichkeit E} \\
+\hline
+
+Mangelnde Datenverfügbarkeit und Zugriffshürden 
+& KRI: 5 (gelegentliches Auftreten)
+& KRI: 5 (Störung im Prozess)
+& KRI: 2 (zwangsläufige Entdeckung) \\
+\hline
+
+Bias 
+& KRI: 3 (gering)
+& KRI: 3 (unbedeutend)
+& KRI: 2 (zwangsläufige Entdeckung im folgenden Prozess) \\
+\hline
+
+Rechtliche Verstöße
+& KRI: 4 (gelegentliches Auftreten)
+& KRI: 10 (Verletzung von Vorschriften)
+& KRI: 9 (sachverständiger Stakeholder wird Fehler entdecken) \\
+\hline
+\end{tabular}
+\caption{Kriterien zur Bildung der RPZ innerhalb des 2. Risk Gates}
+\label{tab:kriterien_rpz}
+\end{table}
+
+\subsection{Ergebnisse:RPZ und KRI}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{9cm}|c|}
+\hline
+\textbf{Risiko} & \textbf{RPZ} \\ \hline
+Mangelnde Datenverfügbarkeit und Zugriffshürden & $(5 \times 5 \times 2) = 50$ \\ \hline
+Bias & $(3 \times 3 \times 2) = 18$ \\ \hline
+Rechtliche Verstöße & $(4 \times 10 \times 9) = 360$ \\ \hline
+\end{tabular}
+\caption{Beispielhafte Risikopriorisierung mittels RPZ, Risk Gate 2, eigene Darstellung}
+\label{tab:rpz_risiken}
+\end{table}
+
+\section{Projektorganisation und Verantwortlichkeiten}
 
 In der folgenden Tabelle sind die Abschnitte dieser Arbeit sowie die jeweiligen Hauptverantwortlichkeiten für die Erstellung aufgeführt.
 
@@ -115,8 +164,8 @@ In der folgenden Tabelle sind die Abschnitte dieser Arbeit sowie die jeweiligen 
 1.2 & Zielsetzung und Forschungsfragen & Jana/Marvin \\ \hline
 1.3 & Vorgehen und Aufbau der Arbeit & Jana/Marvin \\ \hline
 \textbf{2.} & \textbf{Grundlagen des Risikomanagements} & \\ \hline
-2.1 & Zentrale Begriffe und Frameworks & Sebastiaan \\ \hline
-2.2 & Risikotypen in Data-Science-Projekten & Jana \\ \hline
+2.1 & Zentrale Begriffe und Frameworks & Jana \\ \hline
+2.2 & Risikotypen in Data-Science-Projekten & Sebastiaan \\ \hline
 2.3 & Rollen, Verantwortlichkeiten und Governance & Marvin \\ \hline
 \textbf{3.} & \textbf{Methoden des Risikomanagements} & \\ \hline
 3.1 & Überblick: Prozessschritte und Artefakte & Gemeinsam \\ \hline
@@ -126,7 +175,7 @@ In der folgenden Tabelle sind die Abschnitte dieser Arbeit sowie die jeweiligen 
 \textbf{4.} & \textbf{Strategieentwicklung entlang des DASC-PM} & \\ \hline
 4.1 & Annahmen: RM-Strategie im Kontext DASC-PM & Sebastiaan* \\ \hline
 4.2 & Risikomanagement-Integration je Phase & Sebastiaan* \\ \hline
-4.3 & Anwendung der RM-Extension auf die Case-Studys & Marvin \\ \hline
+4.3 & Anwendung der RM-Extension auf die Case-Studys & Marvin & Jana \\ \hline
 4.4 & Case-Study 1: Projekt SafeLend & Marvin \\ \hline
 4.5 & Case-Study 2: Jumbo Personalisierung & Jana \\ \hline
 \textbf{5.} & \textbf{Fazit} & Sebastiaan \\ \hline
@@ -146,7 +195,6 @@ In der folgenden Tabelle sind die Abschnitte dieser Arbeit sowie die jeweiligen 
     \item \textbf{Qualitätssicherung:} Um eine konsistente Argumentation und hohe inhaltliche Qualität zu gewährleisten, wurde jeder Abschnitt nach der Erstellung von den jeweils anderen Teammitgliedern intensiv gereviewed und bei Bedarf aktualisiert.
     \item \textbf{Gesamtverantwortung:} Grundsätzlich wurden alle inhaltlichen Konzepte sowie die methodische Ausrichtung der Arbeit in gemeinsamen Arbeitssitzungen erarbeitet und verabschiedet.
 \end{itemize}
-
 
 \section{Prozessdokumentation}
 \begin{center}
