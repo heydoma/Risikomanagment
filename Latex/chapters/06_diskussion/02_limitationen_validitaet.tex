@@ -1,11 +1,40 @@
 \section{Limitationen und Validität der Ergebnisse}
 
-- Wir betrachten den KRI immer nur als obere-Grenze und nicht z.B. als Korridor, weshalb sich eine 
-unrealistische Korrektur nach unten nicht durch einen Alarm abfangen lässt. Haben wir nicht behandelt weil zu umfangreich!
+Die entwickelte Strategie weist mehrere Einschränkungen auf, die bei der 
+Interpretation der Ergebnisse berücksichtigt werden müssen.
 
-- Es wird die automatisierte Erzeugung von quantitativen Kennziffern benötigt um die Risk-Gates sinnvoll einzusetzen. Der Prozess wird 
-    zu träge, wenn zwischen jeder Phase eine standardmäßige Risikobewertung durchgeführt werden muss, die nicht automatisiert ist. Somit 
-    beschränkt sich die Nutzbarkeit von Risk-Gates im Grunde auf die Daten- und Modellbezogenen Risiken.
+\textbf{Abhängigkeit von quantitativen Kennziffern.} Eine zentrale Voraussetzung 
+für den effizienten Einsatz von Risk Gates ist die Verfügbarkeit automatisiert 
+erzeugter, quantitativer KRI. Für Risiken im Bereich der Daten- und Modellqualität 
+-- etwa Drift-Indikatoren wie der Population Stability Index oder 
+Datenqualitätsmetriken -- ist diese Voraussetzung in modernen MLOps-Umgebungen 
+weitgehend erfüllbar. Für organisatorische, ethische oder strategische Risiken 
+hingegen fehlen häufig geeignete, automatisierbare Metriken. In diesen Fällen 
+erfordert die Gate-Prüfung manuelle Bewertungen, die den iterativen Prozessfluss 
+des DASC-PM erheblich verlangsamen können. Die Nutzbarkeit von Risk Gates ist 
+damit in der Praxis vorrangig auf daten- und modellbezogene Risiken beschränkt.
 
-- Nicht jede Phase eignet sich besonders gut um automatisierbare, quantitative Risikobewertungen hervorzubringen, die dann 
-per Schwellenwert über die Weiterentwicklung bestimmen.
+\textbf{KRI als einseitige Schranke.} Die vorliegende Strategie behandelt KRI 
+ausschließlich als obere Schranken, deren Überschreitung einen erhöhten oder 
+kritischen Risikostatus auslöst. Eine Unterschreitung eines definierten 
+Mindestwerts -- beispielsweise ein unerwartet starker Rückgang eines 
+Stabilitätsindikators -- wird durch das bestehende Modell nicht gesondert 
+abgefangen. Die Einführung von Korridorgrenzen mit definierter Unter- und 
+Obergrenze wäre konzeptionell sinnvoll, würde jedoch den Kalibrierungsaufwand 
+erheblich erhöhen und wurde im Rahmen dieser Arbeit bewusst ausgeklammert.
+
+\textbf{Phasenspezifische Einschränkungen.} Nicht jede Phase des DASC-PM eignet 
+sich gleichermaßen für eine automatisierbare, quantitative Risikobewertung. 
+Insbesondere in frühen Phasen wie der Problemdefinition oder der Projektinitiierung 
+dominieren qualitative Risiken, für die eine objektive Schwellenwertlogik nur 
+eingeschränkt anwendbar ist. Die Gate-Entscheidungen in diesen Phasen sind daher 
+stärker von der Erfahrung und Urteilskraft der beteiligten Rollen abhängig, was 
+die Reproduzierbarkeit der Ergebnisse einschränkt.
+
+\textbf{Validität der Fallstudien.} Die erste Fallstudie basiert auf einem 
+synthetisch konstruierten Szenario, das zwar reale Risikotypen abbildet, jedoch 
+keine empirisch erhobenen Projektdaten zugrunde legt. Die zweite Fallstudie stützt 
+sich auf öffentlich verfügbare Informationen über das Jumbo-Personalisierungsprojekt, 
+ohne Zugang zu internen Projektdokumentationen oder Risikoregistern. Beide Fallstudien 
+sind daher als Gedankenexperimente zu verstehen, die die Plausibilität der Strategie 
+illustrieren, nicht jedoch deren empirische Wirksamkeit belegen.
