@@ -1,15 +1,11 @@
 \section{Methode 1: Risikobeurteilung} \label{sec:methode1}
-Die Risikobeurteilung (auch Risk-Assessment genannt) ist ein zentraler Bereich des Risikomanagement Werkzeugkastens. 
-Das Ergebnis daraus ist die Bewertung, die für alle weiteren Abwägungen genutzt werden kann \citep{walder_risikomanagement_2017}. 
-
-Dafür sollen in diesem Kapitel unterschiedliche Methoden der Risikoidentifikation und -bewertung aufgeführt werden, die später Anwendung in 
-der Risikomanagement Strategie in Data-Science Projekten finden kann. Die Identifikation von Risiken im klassischen Rahmen bezieht sich 
-vorwiegend auf die Folgen, also eine wirkungsbezogene Betrachtung. Dies gilt bei den Zielen eines Data-Science Projektes ebenso, nur
-dass die Ursachenbezogene Risikobetrachtung, gerade mit Hinblick auf die Daten- und Modellrisiken mehr Potenzial zur Analyse bieten.
-Somit wird sich dieses Kapitel primär auf eine ursachenbezogene Sichtweise der Risikobeurteilung fokussieren.
+Die Risikobeurteilung (Risk Assessment) ist ein Kernbaustein des Risikomanagements.
+Sie liefert eine nachvollziehbare Bewertung als Grundlage für Priorisierung und Maßnahmen \citep{walder_risikomanagement_2017}.
+Dieses Kapitel fasst Methoden zur Risikoidentifikation und -bewertung zusammen und ordnet sie für Data-Science-Projekte ein.
+Im Fokus steht eine ursachenorientierte Betrachtung, da Daten- und Modellrisiken häufig über Ursachen (nicht nur Folgen) wirksam werden.
 
 \subsection{Identifikation}
-Zur Identifikation von Risiken bieten sich einige verschiedene Methoden an. \citep{blender_risiken_2025}
+Zur Identifikation von Risiken eignen sich etablierte Methoden \citep{blender_risiken_2025}:
 \begin{itemize}
     \item Brainstorming - Kollaborativer Austausch im Team.
     \item SWOT-Analyse - Strukturierte Stärken und Schwächen Analyse.
@@ -17,51 +13,30 @@ Zur Identifikation von Risiken bieten sich einige verschiedene Methoden an. \cit
     \item Vergangenheitsdaten - In der Vergangenheit aufgetretene Schäden hinsichtlich ihrer Ursachen analysieren.
     \item Mitarbeiter-Interviews - Befragungen in der eigenen Organisation durchführen und dort Meinungen und Bedenken einholen.
 \end{itemize}
-Diese Methoden beziehen sich im allgemeinen ehr auf eine klassische Projektorganisation und werden den gesonderten Bereichen der 
-Data-Science nicht vollumfänglich gerecht. Wenn zum Beispiel die Bereiche der \textbf{Datenbezogenen-} oder \textbf{Modell-Risiken} betrachtet werden, 
-könnten die bisher aufgeführten Identifikationsmethoden nicht die nötige Tiefe liefern, die es an dieser Stelle braucht.
+Diese Verfahren decken klassische Projektrisiken gut ab, greifen bei daten- und modellbezogenen Risiken jedoch oft zu kurz.
+Hier sind zusätzliche, artefaktnahe Analysen (Daten, Features, Modellverhalten) erforderlich.
 
-Die aktuelle Forschung in dem Bereich Data-Science hat sich besonders auf den Bereich der Modell und der Daten fokussiert. 
-Dies hat dazu geführt, dass bereits eine umfangreiche Liste von Risiken für die Bereiche Daten und Modell verfügbar ist und diese auch 
-allgegenwärtig Bestand hat. Die Analyse dieser Risiken sollte auf regelmäßiger Basis erfolgen und 
-dem fertigen Produkt bleibt es nicht erspart weiterhin auf die Probe gestellt zu werden.
-Nichtsdestotrotz lassen sich die aufgeführten Identifikationsmethoden auf die klassischen Risikobereiche anwenden und sind einer 
-erfolgreichen Risikobeurteilung mehr als zuträglich und mit Hinblick auf rechtliche und ethische Fragen mehr als vereinbar.
+Die Forschung stellt für Daten- und Modellrisiken inzwischen umfangreiche Risikokataloge bereit;
+deren Prüfung sollte wiederkehrend erfolgen, da Risiken über den Lebenszyklus variieren.
+Die genannten Identifikationsmethoden bleiben dennoch sinnvoll, insbesondere für organisatorische, rechtliche und ethische Risiken.
 
-Zu den eingangs erwähnten Data-Science spezifischen Risiken gehören unter anderem die \textbf{Daten-Biases}, die viele verschiedene Formen annehmen können.
-Ein Daten-Bias ist eine in den Daten verborgene Struktur oder ein Muster, welches eine gewisse Haltung oder Meinung abbildet. Das kann 
-durch zum Teil einseitige Datenerhebung oder schlechte Filterung auftreten. So werden allerdings diese Muster reproduziert und führen 
-u.U. zu benachteilungen von Minderheiten oder Gruppierungen \citep{mehrabi_survey_2022,banks_how_2025}. Im Idealfall ist die \textbf{Datenqualität} 
-so hoch, dass solche Themen generell nicht auftreten. Dies ist auch eines der am häufigsten genannten Probleme (Platz 3 nach \cite{holtkemper_risk_2023}) in Data-Science Projekten.
-Recht ähnlich zu dem Daten-Bias sind die \textbf{Overconfidence} und \textbf{Underperformance} Probleme die ein Modell spezifisches Risiko darstellen.
-Man erhält dieses Modellverhalten, wenn das Learning eines Modells zu strikt oder zu offen war. Ein besonder strikter Lernprozess zwingt das 
-Modell die Trainingsdaten fast schon auswendig zu lernen und fremde Daten müssen dann stark extrapoliert werden. Umgekehrt beim 
-Underperformance Verhalten. Wenn der Ergebniskorridor zu weit gefasst ist, ist die Antwort aus dem Modell zu generisch und damit ebenso 
-unbrauchbar \citep{aliferis_overfitting_2024,zlobin_data-driven_2025}. Somit ergibt sich hier das Modellverhalten nicht aus der Beschaffenheit 
-der Daten, sondern aus der Art des Trainings.
+Zu den Data-Science-spezifischen Risiken zählen u.a. \textbf{Daten-Biases}.
+Sie entstehen z.B. durch einseitige Datenerhebung oder ungeeignete Filterung und können Minderheiten benachteiligen \citep{mehrabi_survey_2022,banks_how_2025}.
+Eng damit verbunden sind \textbf{Datenqualität} (häufiges Problem in der Praxis \cite{holtkemper_risk_2023}) sowie modellseitige Risiken wie
+\textbf{Overfitting/Overconfidence} und \textbf{Underperformance} \citep{aliferis_overfitting_2024,zlobin_data-driven_2025}.
 
-Darüber hinaus gibt es die sogenannten \textbf{''Drift-Phenomäne,,} , die einen graduellen Verfall der Modellqualität auf unterschiedlichen 
-Ebenen beschreiben. Das tückische dabei ist, dass sich weder an dem Modell etwas geändert haben muss, noch an den Eingabedaten \citep{pelosi_explainability_2025, bayram_concept_2022}.
-Ein besonders kritischer Aspekt, der sich aus diesen Risiken ergibt, ist der sogenannte „Black Box Effekt“ \citep{rai_explainable_2020}. 
-Viele moderne Data-Science-Modelle, insbesondere solche auf Basis von Deep Learning, sind so komplex, 
-dass ihre Entscheidungsprozesse selbst für Expert:innen kaum nachvollziehbar sind. 
-Dies wirft nicht nur technische, sondern auch ethische und rechtliche Fragen auf: 
-Wie kann Vertrauen in ein System geschaffen werden, dessen Entscheidungswege intransparenter Natur sind? 
-Und wie lassen sich potenzielle Diskriminierungen oder Fehler erkennen und korrigieren, 
-wenn die zugrundeliegenden Mechanismen nicht vollständig verstanden werden? 
-Der Black Box Effekt verschärft somit die bereits genannten Risiken und 
-unterstreicht die Notwendigkeit einer systematischen Analyse und 
-Bewertung von Risiken in Data-Science Projekten \textemdash ein Thema, dem sich der folgende Abschnitt widmen wird.
+Weitere zentrale Risiken sind \textbf{Drift-Phänomene} (schleichender Qualitätsverfall über die Zeit) \citep{pelosi_explainability_2025,bayram_concept_2022}
+und der \textbf{Black-Box-Effekt} als mangelnde Nachvollziehbarkeit komplexer Modelle \citep{rai_explainable_2020}.
+Beides erhöht technische, ethische und rechtliche Risiken und erfordert eine systematische Bewertung.
 
 \subsection{Analyse und Bewertung}
-Nach dem initialen Schritt der Identifikation von potenziellen Risiken dem ein Projekt ausgesetzt sein könnte, muss im nächsten Schritt 
-analysiert werden zu welchem Ausmaß diese Risiken eintreten werden und welche Konsequenzen daraus entspringen \citep{walder_risikomanagement_2017}.
-Dafür werden in der klassischen Projektorganisation verschiedene Methoden genutzt, die sich in folgende vier Charakteristika einordnen lassen.
+Nach der Identifikation wird bewertet, wie wahrscheinlich Risiken eintreten und welche Auswirkungen sie haben \citep{walder_risikomanagement_2017}.
+In der Projektpraxis lassen sich Methoden grob in vier Klassen einordnen:
 \begin{itemize}
-    \item \textbf{Qualitative Methoden} befassen sich mit der Auflistung und Einordnung ohne Auswertung. z.B. Lieferengpässe (Wahrscheinlichkeit: Hoch, Auswirkung: Mittel) \citep{macpherson_pdf_2018}.
-    \item \textbf{Semi-Quantitative Methoden} werten diese Auflistung aus und bieten einen Score, der direkte Vergleichbarkeit ermöglicht. z.B. Lieferengpässe (Wahrscheinlichkeit: 7/10, Auswirkung: 6/10 - Riskscore: 7 x 6 = 42) \citep{aven_semi-quantitative_2008}.
-    \item \textbf{Quantitative Methoden} werten ganze Systeme, Szenarien oder Entscheidungspfade aus und liefern ein, mit statistischen Methoden ermittelten, Risikowert für eben diese Entscheidung oder das Szenario \citep{macpherson_pdf_2018}.
-    \item \textbf{Hybride Methoden} Vereint die Vorzüge von quantitativen und qualitativen Methoden bzw. kombiniert diese in einen umfassenden Prozess \citep{luna_pdf_2025}.
+    \item \textbf{Qualitativ:} Einordnung ohne Berechnung \citep{macpherson_pdf_2018}.
+    \item \textbf{Semi-quantitativ:} Skalen/Score zur Vergleichbarkeit \citep{aven_semi-quantitative_2008}.
+    \item \textbf{Quantitativ:} statistische Bewertung von Szenarien/Entscheidungen \citep{macpherson_pdf_2018}.
+    \item \textbf{Hybrid:} Kombination qualitativer und quantitativer Schritte \citep{luna_pdf_2025}.
 \end{itemize}
 
 In diesen Charakteristika lassen sich die folgenden konkreten Methoden einordnen.
@@ -85,51 +60,34 @@ In diesen Charakteristika lassen sich die folgenden konkreten Methoden einordnen
 \end{center}
 
 \subsubsection*{Spezifische Herausforderungen in Data-Science-Projekten}
-Die klassischen Methoden der Risikoanalyse stoßen in Data-Science-Projekten oft an ihre Grenzen, 
-da die spezifischen Risiken, wie \textbf{Daten-Biases}, \textbf{Datenqualität}, \textbf{Erklärbarkeit der Ergebnisse}, \textbf{Modellperformance} oder \textbf{Drift-Phänomene}, 
-eine höhere Komplexität aufweisen und angepasste Ansätze erfordern. Viele der Analysemethoden, die bereits in der Data-Science genutzt werden, nähern sich
-quantitativen Risiko-Analysemethoden stark an. Sie münden vor allem in Indikator Werten, die eine vergleichbare Einschätzung der untersuchten Metrik zulässt. 
+Klassische Risikoanalyse stößt in Data-Science-Projekten oft an Grenzen, da Risiken wie Bias,
+Datenqualität, Erklärbarkeit, Modellperformance und Drift artefakt- und metrikgetrieben sind.
+Viele Data-Science-nahe Ansätze liefern deshalb Indikatorwerte, die als (semi-)quantitative Risikosignale genutzt werden können.
 
 \begin{enumerate}
     \item \textbf{Datenqualität} \\
-    Die strikte Trennung von Trainings- und Testdaten entspricht einer Sensitivitätsanalyse, 
-    bei der kleine Änderungen im System oder Modell auf ihre Auswirkungen hin überprüft werden. 
-    Eine ausführliche Explorative Datenanalyse (EDA) ist dabei essenziell, 
-    um das Potenzial der Daten zu verstehen und mögliche Risiken frühzeitig zu identifizieren. 
-    Tools wie Great Expectations oder Pandas Profiling ermöglichen es, 
-    bereits während der Datenerhebung die Verteilung der Daten zu analysieren und Ausreißer zu identifizieren \citep{noauthor_home_nodate}.
+    EDA und automatisierte Checks (z.B. Great Expectations) unterstützen die frühe Erkennung von
+    Ausreißern, Schemaänderungen und Verteilungseffekten \citep{noauthor_home_nodate}.
     \item \textbf{Modell-Robustheit} \\
-    Die Monte-Carlo-Simulation kann genutzt werden, um die Robustheit eines Modells zu testen. 
-    Durch die Simulation verschiedener Szenarien lassen sich insbesondere Daten-Biases 
-    und die Modellperformance analysieren. 
-    Dies ermöglicht eine fundierte Bewertung der Stabilität des Modells unter unterschiedlichen Bedingungen \citep{gleisner_risikoaggregation_2019}.
+    Monte-Carlo-Simulationen und Sensitivitätsanalysen prüfen Stabilität unter variierten Annahmen
+    und Datenlagen \citep{gleisner_risikoaggregation_2019}.
     \item \textbf{Drift-Phenomäne} \\
-    Um Drift-Phänomene zu erkennen, können kontinuierliche Monitoring-Systeme eingesetzt werden, 
-    die Abweichungen in den Daten oder der Modellperformance über die Zeit hinweg überwachen. 
-    Dies entspricht einer dynamischen Form der Szenarioanalyse, bei der nicht nur statische Risiken, 
-    sondern auch zeitliche Veränderungen berücksichtigt werden \citep{pelosi_explainability_2025}.
+    Kontinuierliches Monitoring macht zeitliche Veränderungen von Daten und Modellgüte sichtbar
+    und unterstützt dynamische Re-Bewertungen \citep{pelosi_explainability_2025}.
     \item \textbf{Erklärbarkeit der Ergebnisse} \\
-    In vielen Data-Science-Projekten, insbesondere in regulierten Branchen wie Finanzen oder Gesundheitswesen, 
-    ist die Interpretierbarkeit von Modellen ein zentrales Risiko. 
-    Komplexe Modelle wie Deep-Learning-Netzwerke oder Ensemble-Methoden liefern zwar oft hohe Vorhersagegenauigkeiten, 
-    ihre Entscheidungsprozesse sind jedoch schwer nachvollziehbar („Black-Box-Problem“). 
-    Dies kann zu rechtlichen, ethischen oder operativen Risiken führen, 
-    wenn Stakeholder oder Aufsichtsbehörden die Entscheidungsgrundlagen nicht verstehen oder vertrauen.
-    Zur Analyse dieses Bereichs werden z.B. SHAP-Werte (SHapley Additive exPlanations) \citep{lundberg_unified_2017} oder 
-    LIME (Local Interpretable Model-agnostic Explanations) \citep{ribeiro_why_2016} eingesetzt. Beide Methoden erlauben eine 
-    quantitative Analyse der Modelle und wie sie im inneren Entscheidungen treffen.
+    Interpretierbarkeit ist besonders in regulierten Domänen zentral.
+    SHAP \citep{lundberg_unified_2017} und LIME \citep{ribeiro_why_2016} unterstützen die nachvollziehbare
+    Attribution von Modellentscheidungen und helfen, Proxy-Effekte zu erkennen.
 \end{enumerate}
 
 \subsubsection*{Bewertung und Ergebnisartefakte}
-Die Bewertung der identifizierten und analysierten Risiken mündet in der Erstellung von Ergebnisartefakten, die als Grundlage für Entscheidungen und Maßnahmen dienen. Dazu gehören:
+Die Risikobeurteilung mündet in Artefakten, die Entscheidungen und Maßnahmen nachvollziehbar machen:
 \begin{itemize}
-    \item Risikoregister: Eine strukturierte Übersicht aller identifizierten Risiken, inklusive ihrer Einstufung nach Wahrscheinlichkeit und Auswirkung.
-    \item Risikoberichte: Detaillierte Analysen zu einzelnen Risiken, insbesondere zu den spezifischen Herausforderungen in Data-Science-Projekten.
-    \item Maßnahmenpläne: Konkrete Handlungsempfehlungen zur Minimierung oder Vermeidung von Risiken, z. B. durch den Einsatz von Monitoring-Tools oder die Anpassung von Modellen.
-    \item Dokumentation der Methoden: Eine transparente Darstellung der verwendeten Analysemethoden, um die Nachvollziehbarkeit und Reproduzierbarkeit der Ergebnisse zu gewährleisten.
+    \item \textbf{Risikoregister} mit Bewertung und Status.
+    \item \textbf{Maßnahmenplan} mit Verantwortlichkeiten und Terminen.
+    \item \textbf{Methoden-/Entscheidungsdokumentation} zur Reproduzierbarkeit.
 \end{itemize}
 
-Die Analyse und Bewertung von Risiken in Data-Science-Projekten erfordert 
-eine Kombination aus klassischen und angepassten Methoden. 
-Während qualitative und semi-quantitative Ansätze eine erste Einordnung ermöglichen, 
-sind quantitative und hybride Methoden insbesondere für die spezifischen Herausforderungen von Data-Science Projekten essenziell.
+In Data-Science-Projekten ist eine Kombination klassischer und angepasster Methoden sinnvoll:
+Qualitative und semi-quantitative Ansätze liefern eine erste Einordnung; quantitative/hybride Verfahren
+unterstützen die Bewertung artefakt- und metrikgetriebener Risiken.

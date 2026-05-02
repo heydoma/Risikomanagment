@@ -1,28 +1,22 @@
-\section{Case-Study 1: Projekt SafeLend: Automatisierung der Kreditprüfung}
+\section{Case-Study 1: Projekt SafeLend: Automatisierung der Kreditprüfung} \label{sec:case_study_1}
 
-Die Case-Study \enquote{SafeLend} beschreibt die Einführung
-eines KI-basierten Kredit-Scorings in einem regulierten Bankumfeld
-und betrachtet typische Risiken eines solchen Vorhabens
-(Daten-, Modell- und Prozessrisiken).
-Die konkreten Schwerpunktrisiken ergeben sich
-im Verlauf der DASC-PM-Phasen.
-Als Ausgangspunkt stehen hoher Zeitdruck,
-klare Compliance-Anforderungen
+Die Case-Study \enquote{SafeLend} behandelt die Einführung eines KI-basierten
+Kredit-Scorings in einem regulierten Bankumfeld.
+Entlang der DASC-PM-Phasen werden zentrale Daten-, Modell- und Prozessrisiken
+identifiziert, bewertet und über Risk Gates gesteuert.
+Ausgangspunkt sind hoher Zeitdruck, strikte Compliance-Anforderungen
 und ein interdisziplinäres Projektsetup.
-Dieses Kapitel fasst die Fallstudie methodisch zusammen
-und zeigt die Anwendung der Risikostrategie entlang der DASC-PM-Phasen.
-Die vollständige Beschreibung von Unternehmenskontext,
-Zielbild, Datenbasis, Rahmenbedingungen, Projektorganisation sowie Ressourcenplanung
-ist im Anhang dokumentiert.
+Der detaillierte Unternehmens- und Projekthintergrund (Zielbild, Datenbasis,
+Rahmenbedingungen, Organisation, Ressourcen) ist im Anhang dokumentiert.
 
 \paragraph*{Risikobewertung und Schwellenwerte.}
 Für das Scoring wird in dieser Fallstudie die Logik
 $\text{Score} = \text{Eintrittswahrscheinlichkeit} \times \text{Schadensauswirkung} \times \text{Entdeckbarkeit}$
 auf einer Skala von 1 bis 5 je Dimension genutzt.
-Die Entdeckbarkeit bewertet dabei, wie schwer ein Risiko frühzeitig zu erkennen ist
-(1 = leicht erkennbar, 5 = kaum erkennbar ohne explizite Analyse).
-Als pragmatische Schwellenwerte werden gesetzt: Grün bis 20, Gelb bis 50, Rot über 50.
-Das zugehörige Registerformat entspricht dem Artefakt im Anhang.
+Die Entdeckbarkeit beschreibt dabei, wie schwer ein Risiko frühzeitig zu erkennen ist
+(1 = leicht, 5 = kaum ohne explizite Analyse).
+Als Schwellenwerte werden gesetzt: Grün bis 20, Gelb bis 50, Rot über 50.
+Das Registerformat entspricht dem Artefakt im Anhang.
 
 \subsection{Gedankenexperiment entlang der DASC-PM-Phasen}
 
@@ -37,19 +31,14 @@ Als Artefakte entstehen ein erstes Zielsystem,
 eine Risikoakzeptanzmatrix und ein initialer Governance-Entwurf.
 
 \paragraph*{Bewertung und Begründung.}
-In dieser Phase werden Zielkonflikte zwischen Geschwindigkeit,
-Fachanforderungen und Compliance früh sichtbar.
-Diese Konflikte treten erfahrungsgemäß regelmäßig auf,
-sind aber mit klaren Governance-Regeln noch steuerbar.
-Deshalb bewerten wir die Eintrittswahrscheinlichkeit mit 3.
-Die Auswirkung bewerten wir mit 4,
-weil eine falsche Zielsetzung alle Folgephasen beeinflusst
-und dadurch hohe Korrekturkosten entstehen können.
-Die Entdeckbarkeit des Hauptrisikos bewerten wir mit 4,
-da Zielkonflikte in frühen Phasen oft erst retrospektiv sichtbar werden,
-wenn Weichenstellungen bereits getroffen wurden.
+Zielkonflikte zwischen Geschwindigkeit, Fachanforderungen und Compliance sind in
+frühen Phasen typisch und grundsätzlich steuerbar; Eintritt: 3.
+Fehlsteuerungen wirken in alle Folgephasen und verursachen hohe Korrekturkosten;
+Auswirkung: 4.
+Zielschieflagen werden häufig erst nach getroffenen Weichenstellungen sichtbar;
+Entdeckbarkeit: 4.
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \begin{tabular}{|p{5.5cm}|c|c|c|c|l|}
 \hline
@@ -65,18 +54,10 @@ Unklare Verantwortlichkeiten in der Freigabe & 2 & 4 & 2 & 16 & Grün \\
 \end{table}
 
 \paragraph*{Maßnahmen.}
-Um die erkannten Risiken zu steuern,
-werden verbindliche Governance-Kriterien eingeführt.
-Sie legen fest, wer wofür freigibt,
-und halten die Risikoakzeptanz schriftlich fest.
-Dadurch bleiben Entscheidungen nachvollziehbar
-und Verantwortlichkeiten eindeutig.
-Zusätzlich wird ein Eskalationspfad definiert.
-Er greift bei Zielkonflikten zwischen Business Value,
-Compliance und Modellleistung
-und ermöglicht schnelle Entscheidungen auf Managementebene.
+Gesteuert wird über verbindliche Governance-Kriterien (Freigaben, dokumentierte
+Risikoakzeptanz) und einen Eskalationspfad für Zielkonflikte (Tab.~\ref{tab:cs1_phase1_massnahmen}).
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \begin{tabular}{|p{4cm}|p{8cm}|}
 \hline
@@ -91,19 +72,8 @@ Eskalationspfad & Management-Prozess für Konflikte zwischen Business Value, Com
 \end{table}
 
 \paragraph*{Gate-Entscheidung.}
-Die Phase wird unter Auflagen freigegeben,
-die Bearbeitung kann fortgesetzt werden.
-Parallel werden die Governance-Maßnahmen eingeleitet,
-die Risk Owner benannt und das Risiko im Risikoregister dokumentiert.
-
-\begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{Entscheidung} & \textbf{FREIGABE UNTER AUFLAGEN} \\
-\hline
-\end{tabular}
-\end{table}
+\textbf{Freigabe unter Auflagen.} Governance-Maßnahmen starten parallel;
+Risk Owner werden benannt und die Entscheidungen im Risikoregister dokumentiert.
 
 \subsubsection{Phase 2: Datenverständnis und Datenvorbereitung}
 \paragraph*{Ausgangslage und Risiko.}
@@ -118,19 +88,13 @@ Ein Modell, das auf solchen Daten trainiert wird,
 würde diese Verzerrung erlernen und fortschreiben.
 
 \paragraph*{Bewertung und Begründung.}
-Das Risiko einer unzureichenden Datenrepräsentativität ist real,
-da historische Datenschnitte oft nicht die aktuellen oder zukünftigen Kontexte abbilden.
-Die Eintrittswahrscheinlichkeit wird mit 3 bewertet,
-da solche Verzerrungen in Bestandsdaten häufig vorkommen.
-Die Auswirkung wird auf 5 gesetzt,
-weil eine verzerrte Datengrundlage das Modell fundamental schwächt
-und spätere Entscheidungen systematisch verfälschen kann,
-was zu hohen finanziellen und reputativen Schäden führt.
-Die Entdeckbarkeit wird mit 5 bewertet,
-da latente Verzerrungen in historischen Daten
-ohne explizite Bias-Analyse kaum erkennbar sind.
+Historische Datenschnitte sind oft nicht repräsentativ für aktuelle/future Kontexte;
+Bias in Bestandsdaten ist daher plausibel (Eintritt: 3).
+Eine verzerrte Datengrundlage schwächt das Modell fundamental und kann systematische
+Fehlentscheidungen mit finanziellen und reputativen Schäden erzeugen (Auswirkung: 5).
+Latente Verzerrungen sind ohne explizite Analysen schwer erkennbar (Entdeckbarkeit: 5).
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \begin{tabular}{|p{5.5cm}|c|c|c|c|l|}
 \hline
@@ -146,16 +110,11 @@ Datenschutz- und Compliance-Lücken & 3 & 4 & 2 & 24 & Gelb \\
 \end{table}
 
 \paragraph*{Maßnahmen.}
-Zur Sicherung der Datengrundlage werden mehrere Maßnahmen kombiniert.
-Data-Quality-Gates prüfen automatisiert die Einhaltung von Qualitätsregeln.
-Eine klare Feature-Governance legt Herkunft,
-Bedeutung und Verantwortung je Merkmal fest.
-Instabile Merkmale werden ausgeschlossen,
-die Versionierung von Datenschnitten gewährleistet die Reproduzierbarkeit.
-Ein verbindlicher Datenfreigabeprozess stellt sicher,
-dass Fachbereich, Data Science und Compliance kritische Merkmale gemeinsam bewerten.
+Die Steuerung kombiniert Data-Quality-Gates, Feature-Governance und Bias-Prüfungen;
+kritische Merkmale werden im Datenfreigabeprozess gemeinsam durch Fachbereich,
+Data Science und Compliance bewertet (Tab.~\ref{tab:cs1_phase2_massnahmen}).
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \begin{tabular}{|p{4cm}|p{8cm}|}
 \hline
@@ -171,22 +130,10 @@ Bias-Monitoring & Prüfung auf Diskriminierung und Ausschluss instabiler Merkmal
 \end{table}
 
 \paragraph*{Gate-Entscheidung.}
-Die Entscheidung lautet Stopp und Nachsteuerung.
-Die Phase wird erst freigegeben,
-wenn die definierten Datenqualitätsregeln technisch umgesetzt
-und im Risikoregister als wirksam markiert sind.
-Nach erfolgreicher Umsetzung wird der Risiko-Score neu bewertet und sinkt auf 10,
-wodurch eine Freigabe mit Auflagen möglich wird.
-Das offene Risiko aus Phase~1 wird erneut geprüft: Score unverändert, Risikostufe weiterhin Gelb.
-
-\begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{Entscheidung} & \textbf{STOPP UND NACHSTEUERUNG} \\
-\hline
-\end{tabular}
-\end{table}
+\textbf{Stopp und Nachsteuerung.} Freigabe erst nach technischer Umsetzung der
+Datenqualitätsregeln und Wirksamkeitsnachweis im Risikoregister.
+Nach Umsetzung sinkt der Score (Re-Bewertung) auf 10, sodass eine Freigabe unter Auflagen möglich wird.
+Offenes Risiko aus Phase~1: Score unverändert, weiterhin Gelb.
 
 \subsubsection{Phase 3: Modellierung und Evaluierung}
 \paragraph*{Ausgangslage und Risiko.}
@@ -205,17 +152,11 @@ und Auswirkungen auf das Kreditportfolio.
 In dieser Phase können bei der Modellselektion,
 insbesondere über heterogene Kundensegmente,
 instabile Ergebnisse auftreten.
-Deshalb bewerten wir die Eintrittswahrscheinlichkeit mit 3.
-Die Auswirkung bewerten wir mit 4,
-weil Fehlklassifikationen im Betrieb
-direkt auf Kreditentscheidungen und die Risikoexposition wirken.
-Die Entdeckbarkeit des Hauptrisikos wird mit 3 bewertet,
-da eine vollständige Segmentanalyse aufwändig ist
-und Schwächen in Teilgruppen global guten Kennzahlen verborgen bleiben können.
-Overfitting hingegen ist durch Cross-Validation gut erkennbar (Entdeckbarkeit 2),
-und die Erklärbarkeit lässt sich durch SHAP oder LIME direkt messen (Entdeckbarkeit 2).
+Eintritt: 3.
+Fehlklassifikationen wirken im Betrieb direkt auf Kreditentscheidungen und Risikoexposition (Auswirkung: 4).
+Schwächen in Teilgruppen können hinter globalen Kennzahlen verborgen bleiben (Entdeckbarkeit: 3).
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \begin{tabular}{|p{5.5cm}|c|c|c|c|l|}
 \hline
@@ -231,15 +172,10 @@ Geringe Erklärbarkeit kritischer Entscheidungen & 3 & 3 & 2 & 18 & Grün \\
 \end{table}
 
 \paragraph*{Maßnahmen.}
-Um die Modellstabilität zu erhöhen,
-werden Sensitivitätsanalysen sowie Monte-Carlo-Simulationen genutzt
-(vgl. \hyperref[sec:methode1]{Methode~1: Risikobeurteilung}).
-Ergänzend wird die Erklärbarkeit mit Verfahren wie SHAP oder LIME analysiert,
-um riskante Muster und Proxy-Effekte früh sichtbar zu machen.
-Es werden Mindestkriterien für die Modellgüte je Kundensegment definiert.
-Für Grenzentscheidungen wird eine verpflichtende manuelle Fachprüfung eingeführt.
+Steuerung über Robustheits-/Sensitivitätsanalysen, Erklärbarkeit (z.B. SHAP/LIME)
+und Mindestkriterien je Segment; Grenzfälle werden manuell geprüft (Tab.~\ref{tab:cs1_phase3_massnahmen}).
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \begin{tabular}{|p{4cm}|p{8cm}|}
 \hline
@@ -255,26 +191,10 @@ Manuelle Fachprüfung & Verpflichtende Prüfung bei Grenzentscheidungen durch Fa
 \end{table}
 
 \paragraph*{Gate-Entscheidung.}
-Die Phase wird unter Auflagen freigegeben,
-die Bearbeitung kann fortgesetzt werden.
-Parallel werden Drift-relevante Merkmale und die zugehörigen Schwellenwerte
-für das Betriebsmonitoring definiert und dokumentiert.
-Die offenen Risiken aus Phase~1 und Phase~2 werden erneut geprüft.
-Das Governance-Risiko aus Phase~1 wechselt auf Grün:
-Verantwortlichkeiten, Dokumentationspflichten und Eskalationswege sind
-über mehrere Phasen erprobt und stabil.
-Das Datenrisiko aus Phase~2 wechselt ebenfalls auf Grün:
-Die Qualitätsregeln haben sich im Modelltraining bewährt
-und die Bias-Analyse hat keine kritischen Proxy-Effekte ergeben.
-
-\begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{Entscheidung} & \textbf{FREIGABE UNTER AUFLAGEN} \\
-\hline
-\end{tabular}
-\end{table}
+\textbf{Freigabe unter Auflagen.} Drift-relevante Merkmale und Schwellenwerte für das
+Betriebsmonitoring werden definiert und dokumentiert.
+Carry-Forward-Prüfung: Governance-Risiko aus Phase~1 wechselt auf Grün (Regeln/Wege erprobt);
+Datenrisiko aus Phase~2 wechselt auf Grün (Qualitätsregeln bewährt, keine kritischen Proxy-Effekte).
 
 \subsubsection{Phase 4: Pilotierung und Nutzbarmachung}
 \paragraph*{Ausgangslage und Risiko.}
@@ -292,18 +212,13 @@ oder Ausfallsituationen getestet,
 um operative Schwachstellen vor dem breiten Rollout zu identifizieren.
 
 \paragraph*{Bewertung und Begründung.}
-Der Pilotbetrieb findet unter kontrollierten Bedingungen statt.
-Erste Anzeichen von Data Drift sind in dieser Phase wahrscheinlich,
-aber durch die begrenzte Nutzerzahl noch nicht voll geschäftskritisch.
-Die Eintrittswahrscheinlichkeit wird daher mit 3 bewertet.
-Die Auswirkung bleibt mit 4 hoch,
-weil ein unerkannter Drift im späteren Vollbetrieb erhebliche Fehlentscheidungen verursachen würde.
-Die Entdeckbarkeit des Drift-Risikos wird mit 3 bewertet,
-da das KRI-Set im Pilot noch nicht vollständig kalibriert ist
-und frühe Drift-Signale deshalb leicht übersehen werden können.
-Schnittstellenfehler hingegen sind durch End-to-End-Tests gut erkennbar (Entdeckbarkeit 2).
+Im Pilot sind erste Drift-Signale plausibel, aber noch nicht voll geschäftskritisch;
+Eintritt: 3.
+Ein unerkannter Drift skaliert im Vollbetrieb zu erheblichen Fehlentscheidungen (Auswirkung: 4).
+Im Pilot ist das KRI-Set noch nicht vollständig kalibriert; frühe Signale können übersehen werden
+(Entdeckbarkeit: 3).
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \begin{tabular}{|p{5.5cm}|c|c|c|c|l|}
 \hline
@@ -319,19 +234,11 @@ Unzureichendes Pilot-Monitoring & 3 & 3 & 3 & 27 & Gelb \\
 \end{table}
 
 \paragraph*{Maßnahmen.}
-Für den sicheren Übergang in den Betrieb werden mehrere Kontrollen implementiert.
-Ein technischer Fallback-Prozess stellt sicher,
-dass bei einem Ausfall des KI-Systems automatisch
-auf einen definierten Standardprozess (z.B. manuelle Bearbeitung) umgeschaltet wird.
-Eine Rollback-Option ermöglicht es,
-bei schwerwiegenden Fehlern schnell zur vorherigen Systemversion zurückzukehren.
-Das KRI-Set, inklusive der Drift-Indikatoren,
-wird mit einer klaren Eskalationslogik versehen.
-Ein regelmäßiges Reporting an Risk und Compliance sorgt für Transparenz.
-Zusätzlich werden Verantwortlichkeiten für die Incident-Bearbeitung
-und Reaktionszeiten verbindlich festgelegt.
+Für den Übergang in den Betrieb werden Fallback/Rollback, KRI-Eskalationslogik und
+regelmäßiges Reporting umgesetzt; Verantwortlichkeiten und Reaktionszeiten für Incidents
+werden verbindlich festgelegt (Tab.~\ref{tab:cs1_phase4_massnahmen}).
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \begin{tabular}{|p{4cm}|p{8cm}|}
 \hline
@@ -352,15 +259,6 @@ Die Pilotphase hat keine kritischen Segmentschwächen gezeigt
 und die Drift-Indikatoren liegen stabil unterhalb der definierten Schwellenwerte.
 Das Modellrisiko wechselt auf Grün.
 Die Phase wird freigegeben, der Übergang in den Vollbetrieb ist zulässig.
-
-\begin{table}[H]
-\centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{Entscheidung} & \textbf{FREIGABE} \\
-\hline
-\end{tabular}
-\end{table}
 
 \subsubsection{Phase 5: Laufende Steuerung im Betrieb}
 \paragraph*{Ausgangslage und Risiko.}
@@ -384,14 +282,10 @@ da Drift im Lebenszyklus eines Modells erwartet wird.
 Die Auswirkung wird auf 5 gesetzt,
 weil technische und fachliche Signale gleichzeitig negativ sind
 und dadurch Fehlentscheidungen sowie Portfoliorisiken real werden.
-Die Entdeckbarkeit des Drift-Risikos wird mit 3 bewertet,
-da der KRI zwar anschlägt, die vollständige Auswirkung auf das Portfolio
-sich aber verzögert akkumuliert und erst retrospektiv vollständig sichtbar wird.
-Das Portfoliorisiko erhält eine Entdeckbarkeit von 4,
-da sich finanzielle Folgen über viele Kreditentscheidungen verteilen
-und erst mit erheblichem Zeitverzug als systematisches Problem erkennbar werden.
+Die Entdeckbarkeit ist begrenzt, da sich Auswirkungen auf Portfolioebene zeitverzögert
+akkumulieren (Drift: 3; Portfoliorisiko: 4).
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \begin{tabular}{|p{5.5cm}|c|c|c|c|l|}
 \hline
@@ -432,5 +326,6 @@ erfolgt erst nach stabilen Indikatoren über einen definierten Zeitraum.
 
 \medskip
 \noindent
-Die RM-Strategie lässt sich auf dieses Szenario gut anwenden: Die Gate-Entscheidungen strukturieren den Projektverlauf klar, und offene Risiken werden durch die Carry-Forward-Logik konsequent weiterverfolgt.
-Die Unterscheidung zwischen Gelb und Rot sorgt dabei dafür, dass nicht jedes Risiko zum Projektstopp führt, ohne dass es dabei unbemerkt eskalieren kann.
+Die RM-Strategie ist in diesem Szenario gut anwendbar: Gate-Entscheidungen strukturieren den Verlauf,
+und offene Risiken werden per Carry-Forward-Logik konsequent nachverfolgt, ohne dass jede Abweichung
+automatisch zum Projektstopp führt.

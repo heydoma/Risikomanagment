@@ -1,74 +1,46 @@
 \section{Methode 3: Risikomonitoring und Risikoreporting} \label{sec:risiko_monitoring}
 
-Nach der Identifikation und Bewertung von Risiken sowie der Auswahl von
-Risikominimierungsstrategien entsteht in Data Science Projekten eine weitere
-Herausforderung.
-Risiken verändern sich über die Zeit, neue Abhängigkeiten entstehen und Annahmen
-aus frühen Phasen können sich als falsch erweisen.
-Risikomonitoring und Risikoreporting zielen deshalb darauf ab,
-Risiken fortlaufend zu beobachten, frühzeitig Warnsignale zu erkennen und
-Entscheidungen transparent an Stakeholder zu kommunizieren.
-Im Projektmanagement wird dieser Schritt häufig als Risikocontrolling verstanden.
-Dabei wird ein Risikoregister laufend aktualisiert und Abweichungen werden
-systematisch adressiert \cite{Tiemeyer2023}.
-Für Data Science Projekte ist darüber hinaus entscheidend,
-dass Monitoring nicht nur Projektgrößen adressiert,
-sondern auch die zentralen Artefakte datengetriebener Wertschöpfung.
-Dazu zählen Datenquellen und Labels, Feature Pipelines,
-Trainingsläufe und Evaluationsläufe, Modellversionen sowie die Modellleistung im Betrieb.
-Gerade diese Abhängigkeiten erzeugen Risiken,
-die im klassischen Vergleich von Soll und Ist nur unvollständig sichtbar werden
-und daher eigene Monitoringsignale benötigen \cite{Sculley2015,Amershi2019}.
+Nach Identifikation, Bewertung und Maßnahmenplanung müssen Risiken fortlaufend
+überwacht werden: Annahmen ändern sich, Abhängigkeiten entstehen, Risiken eskalieren.
+Risikomonitoring und -reporting zielen auf frühe Warnsignale und nachvollziehbare
+Entscheidungen gegenüber Stakeholdern \cite{Tiemeyer2023}.
+Für Data-Science-Projekte umfasst Monitoring neben Zeit/Budget/Scope auch zentrale
+Artefakte (Daten, Labels, Feature-Pipelines, Experimente, Modellversionen, Modellleistung im Betrieb),
+da dort spezifische, sonst schwer sichtbare Risiken entstehen \cite{Sculley2015,Amershi2019}.
 
 \subsection{Ziel, Taktung und Verantwortlichkeiten}
 Ein wirksames Monitoring benötigt eine klare Taktung und eindeutige Zuständigkeiten.
-Als Minimalset hat sich ein wiederkehrender Zyklus bewährt,
-in dem das Team Risiken überprüft und Maßnahmen nachschärft.
-Typische Elemente sind:
+Als Minimalset hat sich ein wiederkehrender Zyklus bewährt. Typische Elemente sind:
 \begin{itemize}
 	\item \textbf{Regeltermine für Risikoreviews:}
-				kurze, feste Checkpoints in Teammeetings oder Steuerungsmeetings,
-				in denen Statusänderungen und neue Risiken erfasst werden.
+				kurze, feste Checkpoints zur Erfassung neuer Risiken und Statusänderungen.
 	\item \textbf{Aktualisierung des Risikoregisters:}
-				laufende Pflege von Eintrittswahrscheinlichkeit, Auswirkung,
-				Wirksamkeit bestehender Kontrollen und offenen Aufgaben.
+				Pflege von Bewertung, Wirksamkeit bestehender Kontrollen und offenen Aufgaben.
 	\item \textbf{Verantwortungszuordnung:}
-				für jedes priorisierte Risiko wird festgelegt,
-				wer Maßnahmen umsetzt und wer Entscheidungen freigibt.
+				Zuordnung von Umsetzung und Freigabe je priorisiertem Risiko.
 	\item \textbf{Review von Datenindikatoren und Modellindikatoren:}
-				fester Bestandteil der Reviews ist eine kurze Prüfung,
-				ob Datenqualität, Labelqualität und Modellgüte stabil sind
-				oder ob sich Drift und Qualitätsverschlechterungen abzeichnen.
+				Kurzprüfung von Daten-/Labelqualität, Modellgüte sowie Drift-Anzeichen.
 	\item \textbf{Nachvollziehbarkeit der Arbeitsergebnisse:}
-				Entscheidungen sollten auf reproduzierbaren Artefakten beruhen,
-				insbesondere auf versionierten Datenständen,
-				dokumentierten Experimentläufen und klaren Modellfreigaben.
+				Entscheidungen auf reproduzierbaren Artefakten (Versionen, Experimente, Freigaben).
 \end{itemize}
 
 \subsection{Frühwarnmechanismen und Eskalation}
 Monitoring ist besonders effektiv,
 wenn es neben der reinen Statuspflege auch messbare Warnsignale nutzt.
-Solche Frühwarnindikatoren werden oft als Key Risk Indicators verstanden.
-Sie operationalisieren Risiken durch beobachtbare Größen,
-die auf eine drohende Verschlechterung hinweisen \cite{Tiemeyer2023}.
+Solche Frühwarnindikatoren (Key Risk Indicators) operationalisieren Risiken über
+beobachtbare Größen \cite{Tiemeyer2023}.
 
-Für die Praxis ist entscheidend,
-dass zu jedem Indikator Schwellenwerte und Reaktionen definiert werden.
-Ein einfaches Prinzip ist:
+Wesentlich ist die Definition von Schwellenwerten und Reaktionen:
 \begin{itemize}
   \item \textbf{Beobachten:}
-				Indikator zeigt eine Entwicklung, die noch im erwarteten Rahmen liegt.
+				Entwicklung liegt im erwarteten Rahmen.
   \item \textbf{Reagieren:}
-				Indikator überschreitet einen Grenzwert,
-				Maßnahmen werden ausgelöst und terminiert.
+				Grenzwert überschritten; Maßnahmen werden ausgelöst und terminiert.
   \item \textbf{Eskalieren:}
-				Indikator erreicht einen kritischen Wert,
-				Entscheidung über Pause, Kurskorrektur oder Abbruch wird herbeigeführt
-				und im Reporting nachvollziehbar dokumentiert.
+				kritischer Wert; Entscheidung über Pause/Korrektur/Abbruch und Reporting.
 \end{itemize}
 
-In Data Science Projekten sollten Frühwarnindikatoren bewusst sowohl
-prozessuale als auch technische Signale abdecken.
+In Data-Science-Projekten sollten KRIs sowohl prozessuale als auch technische Signale abdecken.
 Beispiele sind eine Verschlechterung der Datenqualität,
 eine sinkende Modellgüte in kritischen Segmenten,
 eine steigende Fehlerquote in der Datenpipeline
@@ -78,33 +50,22 @@ um Drift und versteckte technische Abhängigkeiten früh sichtbar zu machen
 \cite{Sculley2015}.
 
 \subsection{Data Science spezifisches Monitoring im Sinne von MLOps}
-In Data Science Projekten umfasst Monitoring nicht nur Zeit, Budget und Scope.
-Ein zentraler Risikotreiber ist die Veränderung der Modellleistung im Betrieb.
-Typische Ursachen sind Data Drift, Concept Drift oder eine Veränderung der
-Einsatzbedingungen.
-In der Praxis bedeutet das,
-dass neben Projektkennzahlen auch Modellkennzahlen und Datenkennzahlen kontinuierlich
-überwacht werden \cite{Sculley2015,Amershi2019}.
+Ein zentraler Risikotreiber ist die Veränderung der Modellleistung im Betrieb (z.B. Data/Concept Drift).
+Neben Projektkennzahlen sind daher Daten- und Modellkennzahlen kontinuierlich zu überwachen \cite{Sculley2015,Amershi2019}.
 
 Ein weiterer, für Data Science typischer Aspekt ist,
 dass sich Risiken oft als technische Schuld in Datenabhängigkeiten und Modellabhängigkeiten
 manifestieren.
 Beispiele sind Abweichungen zwischen Training und Serving,
 fragile Featuredefinitionen oder nicht dokumentierte Datenvorverarbeitung.
-Monitoring sollte deshalb auch die Stabilität der gesamten Kette von Datenquelle
-über Featureberechnung bis zur Inferenz abdecken \cite{Sculley2015}.
+Monitoring sollte daher die Ende-zu-Ende-Kette von Datenquelle über Featureberechnung bis Inferenz abdecken \cite{Sculley2015}.
 
 Ansätze aus dem MLOps Umfeld betonen,
 dass Monitoring technisch unterstützt werden muss,
 beispielsweise durch Logging, automatisierte Tests, Dashboards und Alerting,
 damit Qualitätsabweichungen früh erkannt und reproduzierbar behoben werden können
 \cite{Amershi2019}.
-Dieses Verständnis passt gut zu iterativen Prozessmodellen wie dem DASC PM,
-weil neue Erkenntnisse aus dem Betrieb wieder in die Entwicklung zurückgeführt
-werden können.
-Damit wird Monitoring zu einem formalen Rückkopplungsmechanismus,
-der Iterationen und Entscheidungspunkte im DASC PM datenbasiert unterstützt
-\cite{schulz_dasc-pm_2022}.
+Damit wird Monitoring zum formalen Rückkopplungsmechanismus für Iterationen und Entscheidungspunkte im DASC PM \cite{schulz_dasc-pm_2022}.
 
 Für das Monitoring in Data Science Projekten sind typischerweise folgende
 Signalgruppen relevant \cite{Sculley2015,Amershi2019}:

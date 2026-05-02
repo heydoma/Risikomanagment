@@ -1,27 +1,18 @@
 \section{Case-Study 2: Jumbo - Personalisierung der Customer Journey} \label{sec:case_study_2}
-Die folgende Fallstudie beschäftigt sich mit der Initiative der niederländischen Supermarktkette Jumbo, 
-die nach der Einführung eines neuen Treueprogramms mit einem exponentiellen Anstieg der Datenmengen konfrontiert 
-wurde und ihre Infrastruktur daraufhin anpasste, um den entstehenden Datenstrom effizient verarbeiten zu können. 
-Neben dem stationären Einkaufserlebnis bietet Jumbo parallel umfangreiche Online-Dienste an, wodurch insbesondere 
-digitale Kundendaten stark zunahmen. Die anfängliche Überforderung interner Ressourcen führte zu langen 
-Verarbeitungszeiten und stellte den zentralen Auslöser für die technologische Transformation dar (Databricks Use Cases). 
-Zudem verzeichnete das Unternehmen nach ihrer Expansion nach Belgien einen erheblichen Anstieg in der Produktnachfrage, 
-was den Druck weiter erhöhte. Ergänzend implementierte Jumbo daher gemeinsam mit Bloomreach KI-gestützte Personalisierungsmechanismen, 
-wodurch das Online-Einkaufserlebnis deutlich personalisierter gestaltet werden konnte.
+Diese Fallstudie betrachtet die Initiative der niederländischen Supermarktkette Jumbo,
+die nach Einführung eines neuen Treueprogramms mit stark steigenden Datenmengen konfrontiert war
+und ihre Dateninfrastruktur zur effizienten Verarbeitung anpasste.
+Durch die parallele Nutzung stationärer und digitaler Kanäle wuchsen insbesondere digitale Kundendaten;
+Engpässe in internen Ressourcen führten zu langen Verarbeitungszeiten und lösten die Transformation aus.
+Ergänzend wurden gemeinsam mit Bloomreach KI-gestützte Personalisierungsmechanismen eingeführt.
 
 \subsection{Risk Gate 1: Definition der Problemstellung}
-Nach Definition des Problems welches die Initiierung des Projekts rechtfertigt, 
-folgt nach der RM-Extension für das DASC-PM das erste Risk Gate. 
-Im Rahmen der Risk Gates wird entlang der folgenden Kette gearbeitet: 
-Identifikation/Ausgangslage, Bewertung der Risiken, Definition und Durchführung der 
-Maßnahmen zur Risikominimierung (Safeguards), Gate-Entscheidung und Dokumentation des Prozesses.
-Zur Identifikation der potenziellen Risiken, welche während der Phase auftreten können erfolgte 
-eine Orientierung an den zuvor beschriebenen potenziellen Risiken in Data Science Projekten und 
-den definierten Bewertungsmechanismen, Maßnahmen zur Risikominimierung und Monitorings. 
+Nach der Problemdefinition wird das erste Risk Gate gemäß RM-Extension durchlaufen
+(vgl. \hyperref[sec:analyseansatz]{Analyseansatz in Kapitel \enquote{Anwendung der RM-Extension auf die Case-Studys}}).
+Die Risikoidentifikation orientiert sich an den zuvor beschriebenen Risikotypen in Data-Science-Projekten.
 
-Die folgende Tabelle stellt daher die Risiken dar, welche in der Phase des Problem Statements 
-relevant sind und durch das erste Risk Gate entsprechend adressiert werden sollten:
-\begin{table}[H]
+Tabelle~\ref{tab:risiken_problem_statement} fasst die in dieser Phase relevanten Risiken zusammen.
+\begin{table}[!htbp]
 \centering
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{|p{5cm}|p{10cm}|}
@@ -51,12 +42,11 @@ müssen entsprechende Anforderungen bereits zu Beginn des Projekts definiert wer
 \label{tab:risiken_problem_statement}
 \end{table}
 
-Anschließend kann die Analyse der identifizierten Risiken anhand der 
-FMEA (Fehlermöglichkeits- und Einflussanalyse) durchgeführt werden. Hierfür wird dem entsprechenden 
-Risiko pro Bewertungskriterium (Auftrittswahrscheinlichkeit, Bedeutung, Entdeckungswahrscheinlichkeit) 
-ein Wert auf einer Skala von 1 - 10 zugeteilt:
+Die Bewertung erfolgt anhand der FMEA (Fehlermöglichkeits- und Einflussanalyse).
+Pro Risiko werden Auftrittswahrscheinlichkeit (A), Bedeutung (B) und Entdeckungswahrscheinlichkeit (E)
+auf einer Skala von 1 bis 10 bewertet.
 
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{|p{3cm}|p{4.9cm}|p{3cm}|p{4.9cm}|}
@@ -93,17 +83,12 @@ Ressourcen\-überforderung
 \label{tab:kriterien_rpz}
 \end{table}
 
-Anhand des Risikoregisters, welche die einzelnen KRI's enthält, 
-können die RPZ (Risikoprioritätszahlen) gebildet werden, um im Folgenden die 
-Maßnahmenbildung parallel zur Priorisierung der Risiken einzuordnen. 
-Hierfür wird die folgende Formel angewandt: \\
-\textbf{RPZ = A x B x E}
+Aus dem Risikoregister werden daraus Risikoprioritätszahlen (RPZ) gebildet:
+\textbf{RPZ = A x B x E}.
+Je höher die RPZ, desto höher die Priorität der Risikosteuerung.
+Tabelle~\ref{tab:rpz_risiken} zeigt die resultierende Priorisierung.
 
-Die Ergebnisse dieser Berechnung lassen sich mit einer Zahl zwischen 1 und 1000 abbilden. 
-Dabei gilt, je höher der RPZ, desto schwerwiegender ist das potenzieller Risiko und desto stärker sollte dies im RM priorisiert werden.
-Das Ergebnis im Rahmen dieser Case-Study wird mithilfe der kommenden Tabelle dargestellt:
-
-\begin{table}[H]
+\begin{table}[!htbp]
 \centering
 \begin{tabular}{|p{9cm}|c|}
 \hline
@@ -117,37 +102,20 @@ Bias Quellen & $(8 \times 8 \times 9) = 576$ \\ \hline
 \label{tab:rpz_risiken}
 \end{table}
 
-Organisationshandbuch - Fehlermöglichkeits- und Einflussanalyse
-Aus der Berechnung der einzelnen RPZ’s lässt sich bereits die Hierarchie der Risiken ableiten.  
-Im Folgenden werden daher für die Minimierung des Risikos von Bias-Quellen im Datensatz, daraufhin für das Risiko fehlender Interpretierbarkeit, 
-Ressourcenüberforderungen und zu guter letzt potenziell fehlende Business Perspektive Maßnahmen bzw. 
-Safeguards definiert und angewendet, um eine grüne Ampelentscheidung stützen und zur nächsten Phase des DASC-PM übergehen zu können.
+Aus den RPZ ergibt sich eine klare Priorisierung.
+Im Fokus stehen insbesondere Bias-Quellen, Interpretierbarkeit und Ressourcenüberforderung;
+für diese Risiken werden Safeguards definiert, um eine belastbare Gate-Entscheidung zu ermöglichen.
 
-Als Maßnahmenstrategie, um diese Risiken entgegenzuwirken hätte Jumbo in der Phase der Problemdefinition 
-die Risikovermeidung und Risikoakzeptanz anwenden können. Risikovermeidung in dem Sinne, 
-dass sämtliche problematische Datenquellen entweder bereinigt oder erst gar nicht in den Datensatz eingeschlossen werden. 
-Im Hinblick auf die Anfordeurngen, die der EU-AI-Act an Unternehmen stellt, ist diese Maßnahme 
-sogar notwendig um rechtliche Vorgaben zu erfüllen und Bußgelder oder sogar das Verbot 
-des Personalisierungssystems zu verhindern (siehe Kapitel ,,Definitionen''). 
-Des Weiteren kann das Risiko einer fehlenden Business Perspektive, 
-fehlenden Interpretierbarkeit sowie eine Ressourcenüberforderung durch eine entsprechende 
-Kommunikationsstrategie vermieden werden. In diesem Rahmen ist die Durchführung einer Anforderungsanalyse 
-(auch ,,Requirement Engineering'') zu empfehlen. 
-Hierfür sollten vor Allem die Mitglieder des Projektteams konsultiert werden, 
-ihre professionelle Einschätzungen und Anforderungen eingeholt und 
-mithilfe der bestehenden Mittel mit den Anforderungen des Unternehmens in Einklang gebracht werden. 
-Die konkreten Schritte zur Durchführung der Analyse unterteilen sich in diesem Kontext in ,,Ermitteln'', 
-,,Dokumentieren'', ,,Prüfen und Abstimmen'' sowie ,,Verwalten''. Damit lassen sich 
-entsprechende Ziel- und Erfolgsmetriken rechtzeitig definieren und ein allgemeines Verständnis 
-im Team kann geschaffen werden, um so den Erfolg des Projekts nachhaltig zu gewährleisten. 
-Letztendlich können die Risiken nie vollkommen eliminiert werden. 
-Sie können bestmöglich vermieden und minimiert werden, wie bereits beschreiben \notiz{(siehe Kapitel xy)}, 
-es bleibt jedoch ein Restrisiko bestehen, das zu überwachen ist. \notiz{(Hermann, Schulz)}
+Als Maßnahmen bieten sich in dieser Phase insbesondere Risikovermeidung und gezielte Risikoakzeptanz an.
+Risikovermeidung umfasst hier v.a. konsequente Datenbereinigung bzw. den Ausschluss problematischer Datenquellen;
+dies ist vor dem Hintergrund regulatorischer Anforderungen (z.B. EU-AI-Act) zentral.
+Eine strukturierte Anforderungsanalyse (Requirements Engineering) reduziert zudem Risiken aus fehlender
+Business-Perspektive, mangelnder Interpretierbarkeit und Ressourcenüberforderung, indem Ziel- und Erfolgsmetriken
+früh definiert und abgestimmt werden.
 
-Da sich sämtliche Risiken im grünen bis gelben Bereich befinden ( >0 = Grün, >300 = Gelb, > 600 = Rot) 
-wird die Ampel in der Entscheidungsphase somit auf Gelb gesetzt und die Erlaubnis für den Fortgang im Prozess gewährt. 
-Das fortgehende Monitoring ist dabei weiterhin Teil des Risikomanagements. 
-In der nächsten Phase werden die Risiken daraufhin überprüft und nach Durchführung der Maßnahmen erneut bewertet.
+\paragraph*{Gate-Entscheidung.}
+Da die Risiken überwiegend im grünen bis gelben Bereich liegen (>0 = Grün, >300 = Gelb, >600 = Rot),
+wird das Gate mit \textbf{Gelb} bewertet und der Fortgang unter Monitoring-Auflagen freigegeben.
 
 
 \subsection{Risk Gate 2: Datenverständnis und -vorbereitung}
@@ -157,86 +125,51 @@ oder Zugriffshürden. Aus dem Grund, dass personenbezogene Daten eine übergeord
 um ein personalisiertes Einkaufserlebnis bieten zu können, entsteht zusätzlich ein 
 erhebliches Risiko gegen rechtliche Rahmenwerke zu verstoßen, beispielsweise die DSGVO oder der EU-AI-Act. \cite{schulz_dasc-pm_2022}
 
-Voraussetzung für die Bewertung des Risikos ,,Bias'', ,,Mangelnde Interpretierbarkeit'', 
-,,fehlende Integration der Business Perspektive'' sowie ,,Ressourcenüberforderung'' 
-sind die zuvor definierten und durchgeführten Risikominimierungsstrategien ,,Datenbereinigung'' \& ,,Stakeholdermanagement''.
-Die Ergebnisse der Ermittlung der RPZ ergeben die folgende Risikopriorisierung: 
+Auf Basis der zuvor umgesetzten Maßnahmen (u.a. Datenbereinigung und Stakeholdermanagement)
+ergibt sich folgende Risikopriorisierung: Bias RPZ 18 (Grün), Datenverfügbarkeit/Zugriff RPZ 50 (Grün),
+rechtliche Verstöße RPZ 360 (Gelb) (vgl. Anhang \ref{appendix:risk_gate_2_cs_2} und \ref{appendix:risk_gate_2_cs_2_result}).
 
-Bias = RPZ18, grüne Ampel;Mangelnde Datenverfügbarkeit und Zugriffshürden = RPZ50, 
-grüne Ampel; Rechtliche Verstöße = RPZ360, gelbe Ampel (siehe Anhang, \ref{appendix:risk_gate_2_cs_2} \& \ref{appendix:risk_gate_2_cs_2_result})
+Zur Risikominimierung eignen sich insbesondere Risikovermeidung und proaktiver Schutz.
+Operationalisiert wird dies u.a. über benannte Data Owner (Datenzugriff/-verfügbarkeit), explorative Datenanalyse
+zur frühen Fehlererkennung sowie Privacy Impact Assessments zur Sicherstellung der Rechtskonformität.
+Eine durchgängige Dokumentation ist für Transparenz- und Reproduzierbarkeitsanforderungen erforderlich. \cite{EUAIAct2024}
 
-Geeignete Maßnahmen, um diese Risiken zu minimieren, lassen sich mithilfe des Risikominimierungsansätze 
-,,Risikovermeidung'' und ,,proaktiver Schutz'' definieren. Um das Risiko einer mangelnden Datenverfügbarkeit 
-oder eines eingeschränkten Zugriffs auf Daten zu verhindern, sollten bereits am Anfang Data 
-Owner bestimmt und fortwährend in den operativen Tagesablauf mit integriert werden. Ihre Verantwortung 
-ist fortfolgend die Sicherstellung eines ausreichend vielfältigen und vor allem zugreifbaren Datensatzes 
-sowie die Beschaffung weiterer Daten im Fall einer Notwendigkei. Des Weiteren empfiehlt sich in dieser 
-Phase eine explorative Datenanalyse, um Zusammenhänge und Ausreißer frühzeitig zu identifizieren und kollektiv 
-zu verstehen sowie Fehlerquellen zu eliminieren. Abschließend sollten sogenannte ,,Privacy Impact Assesments'' durchgeführt werden, 
-um die regelkonforme Durchführung des Projekts entlang der gesetzlichen Vorgaben zu gewährleisten. 
-Hierfür empfehlen sich die Compliance Checker der Bundesregierung, welche beispielsweise im Rahmen des EU-AI-Acts angeboten werden. 
-Abschließen ist zu betonen, dass in dieser Phase, so wie auch in den anderen frei Phasen, die Projektschritte und 
--entscheidungen genau dokumentiert werden müssen, nicht nur, um Transparenzpflichten im Umgang mit KI zu erfüllen 
-(siehe Kapitel ,,Zentrale Begriffe''), sondern auch um die Reproduzierbarkeit der Ergebnisse zu sicherzustellen und 
-die getroffenen Entscheidungen auch im Nachhinein gegenüber relevanten Stakeholdern verteidigen zu können. \cite{EUAIAct2024} (Borus, 2020)
-
-Aufgrund der überwiegenden Klassifizierung der Risiken als geringfügig riskant 
-(=Grüne Ampel) wird der Fortgang des Projekts gewährt und zur dritten Phase (,,Evaluierung'') übergegangen. 
-Der fortlaufende Monitoring-Prozess sowie die abschließende Dokumentation der Entscheidungen und Ergebnisse wird hier vorausgesetzt.
+\paragraph*{Gate-Entscheidung.}
+Überwiegend \textbf{Grün} (ein Risiko \textbf{Gelb}); Fortgang in Phase 3 unter fortlaufendem Monitoring und Dokumentationspflicht.
 
 \subsection{Risk Gate 3: Evaluierung/Analyse}
-Ausgangslage
+Die Evaluierungsphase bündelt die modellbezogenen Risiken: Overfitting, Bias, mangelnde Interpretierbarkeit,
+mangelnde Datenverfügbarkeit, Ressourcenüberforderung und fehlende Business-Perspektive.
+Im Fokus steht die Frage, ob das Modell unter realistischen Bedingungen stabil, erklärbar und fachlich anschlussfähig bleibt.
 
-Overfitting
-Bias
-mangelnde Interpretierbarkeit
-mangelnde Datenverfügbarkeit und Zugriffsbeschränkungen
-Ressourcenüberforderung
-fehlende Integration der Business Perspektive
+Die Bewertung fällt hier entsprechend differenziert aus: Technisch kritische Risiken wie Overfitting und geringe Robustheit
+wirken sich direkt auf die Modellleistung aus, während fehlende Interpretierbarkeit und fehlende Business-Perspektive
+vor allem die spätere Anwendbarkeit und Akzeptanz schwächen.
 
+Als Maßnahmen sind insbesondere Robustheitsprüfungen des Modells, erneute Abstimmung mit den Fachbereichen,
+Prüfung der Datenverfügbarkeit sowie ergänzende Analysen zur Erklärbarkeit vorgesehen.
 
-Bewertung
-
-Maßnahmen
-Robustheitsprüfung des Modells
-
-
-Gate-Entscheidung
+\paragraph*{Gate-Entscheidung.}
+Die Freigabe erfolgt erst, wenn die Modellstabilität nachvollziehbar belegt und die offenen fachlichen Risiken reduziert sind.
 
 \subsection{Risk Gate 4: Nutzbarmachung}
-Ausgangslage
-Technische inkompatibilität
-mangelnde Akzeptanz beim Endanwender
-fehlende Nachhaltigkeit / dauerhafte Standfestigkeit der Anwendung
-Bias
-Black-Box Problem
-Mangelnde Datenverfügbarkeit und Zugriffsmöglichkeiten
-fehlende Integration der Business Perspektive
-Data Drift
-Bewertung
+In der Nutzbarmachung verschiebt sich das Risiko auf den Betrieb: technische Inkompatibilität,
+mangelnde Akzeptanz bei den Endanwendern, fehlende Nachhaltigkeit, Bias, Black-Box-Effekte,
+mangelnde Datenverfügbarkeit, fehlende Business-Perspektive und Data Drift.
 
-Maßnahmen
-Testumgebung / Testläufe
-Erstellen von Schulungsunterlagen
-Model-Lifecycle-Management
-Sammeln und Auswerten von Fehlerberichten sowie Überprüfung der Effizienz der IT Infrastruktur
+Die Bewertung konzentriert sich auf die Betriebsfähigkeit des Systems, die Nachvollziehbarkeit der Entscheidungen
+und die Frage, ob das Modell im Alltag tatsächlich akzeptiert und dauerhaft nutzbar bleibt.
 
-Gate-Entscheidung
+Geeignete Maßnahmen sind Testumgebungen und Testläufe, Schulungsunterlagen, Model-Lifecycle-Management
+sowie das systematische Sammeln und Auswerten von Fehlerberichten zur Überprüfung der IT-Infrastruktur.
+
+\paragraph*{Gate-Entscheidung.}
+Die Nutzbarmachung wird nur freigegeben, wenn Betrieb, Akzeptanz und Stabilität nachweislich gesichert sind.
 
 \subsection{Praxistauglichkeit}
-Zusammenfassend zeigt sich, dass die entwickelte Risikomanagement-Erweiterung eine sinnvolle Ergänzung zum 
-klassischen Projektmanagement in Data-Science-Projekten darstellt. Sie unterstützt nicht nur die regelkonforme 
-Durchführung im Hinblick auf regulatorische Anforderungen, sondern verbessert zugleich die 
-Kommunikation zwischen den Stakeholdern und reduziert dadurch potenzielle finanzielle, 
-technologische oder auch organisatorische Risiken für das gesamte Unternehmen.
-
-Gleichzeitig ist die Umsetzung mit einem erhöhten operativen Aufwand verbunden, 
-insbesondere durch zusätzliche Kontroll- und Entscheidungsprozesse innerhalb der Risk Gates. 
-Um diesen Aufwand langfristig effizient bewältigen zu können, wird eine enge Zusammenarbeit mit der 
-Fachabteilung Human Resources empfohlen, damit notwendige Fachkompetenzen frühzeitig aufgebaut werden können. 
-Neben Data-Science-Know-how spielt hierbei insbesondere Qualitätsmanagement eine zentrale Rolle. 
-Durch qualifizierte Qualitätsmanager sowie die Kooperation mit Data Ownern kann eine nachhaltige 
-und ressourcenschonende Steuerung des Risikomanagements unterstützt werden.
-
-Letztlich muss jedoch jedes Unternehmen individuell bewerten, ob und in welchem Umfang 
-die entwickelte RM-Extension im jeweiligen organisatorischen und wirtschaftlichen Kontext sinnvoll eingesetzt werden kann.
+Die RM-Extension ergänzt klassisches Projektmanagement in Data-Science-Projekten,
+unterstützt regulatorische Konformität und verbessert die Stakeholder-Kommunikation.
+Der zusätzliche operative Aufwand entsteht v.a. durch Kontroll- und Gate-Prozesse;
+zur effizienten Umsetzung sind Rollen, Kompetenzen und Verantwortlichkeiten (z.B. Data Owner, Qualitätsmanagement)
+frühzeitig zu verankern.
+Der konkrete Umfang der Anwendung bleibt kontextabhängig.
