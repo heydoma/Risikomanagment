@@ -1,10 +1,25 @@
 \section{Case-Study 2: Jumbo - Personalisierung der Customer Journey} \label{sec:case_study_2}
-Die folgende Fallstudie beschäftigt sich mit der Initiative der niederländischen Supermarktkette Jumbo, die nach der Einführung eines neuen Treueprogramms mit einem exponentiellen Anstieg der Datenmengen konfrontiert wurde und ihre Infrastruktur daraufhin anpasste, um den entstehenden Datenstrom effizient verarbeiten zu können. Neben dem stationären Einkaufserlebnis bietet Jumbo parallel umfangreiche Online-Dienste an, wodurch insbesondere digitale Kundendaten stark zunahmen. Die anfängliche Überforderung interner Ressourcen führte zu langen Verarbeitungszeiten und stellte den zentralen Auslöser für die technologische Transformation dar (Databricks Use Cases). Zudem verzeichnete das Unternehmen nach ihrer Expansion nach Belgien einen erheblichen Anstieg in der Produktnachfrage, was den Druck weiter erhöhte. Ergänzend implementierte Jumbo daher gemeinsam mit Bloomreach KI-gestützte Personalisierungsmechanismen, wodurch das Online-Einkaufserlebnis deutlich personalisierter gestaltet werden konnte.
+Die folgende Fallstudie beschäftigt sich mit der Initiative der niederländischen Supermarktkette Jumbo, 
+die nach der Einführung eines neuen Treueprogramms mit einem exponentiellen Anstieg der Datenmengen konfrontiert 
+wurde und ihre Infrastruktur daraufhin anpasste, um den entstehenden Datenstrom effizient verarbeiten zu können. 
+Neben dem stationären Einkaufserlebnis bietet Jumbo parallel umfangreiche Online-Dienste an, wodurch insbesondere 
+digitale Kundendaten stark zunahmen. Die anfängliche Überforderung interner Ressourcen führte zu langen 
+Verarbeitungszeiten und stellte den zentralen Auslöser für die technologische Transformation dar (Databricks Use Cases). 
+Zudem verzeichnete das Unternehmen nach ihrer Expansion nach Belgien einen erheblichen Anstieg in der Produktnachfrage, 
+was den Druck weiter erhöhte. Ergänzend implementierte Jumbo daher gemeinsam mit Bloomreach KI-gestützte Personalisierungsmechanismen, 
+wodurch das Online-Einkaufserlebnis deutlich personalisierter gestaltet werden konnte.
 \subsection{Risk Gate 1: Definition der Problemstellung}
-Nach Definition des Problems welches die Initiierung des Projekts rechtfertigt, folgt nach der RM-Extension für das DASC-PM das erste Risk Gate. Im Rahmen der Risk Gates wird entlang der folgenden Kette gearbeitet: Identifikation/Ausgangslage, Bewertung der Risiken, Definition und Durchführung der Maßnahmen zur Risikominimierung (Safeguards), Gate-Entscheidung und Dokumentation des Prozesses.
-Zur Identifikation der potenziellen Risiken, welche während der Phase auftreten können erfolgte eine Orientierung an den zuvor beschriebenen potenziellen Risiken in Data Science Projekten und den definierten Bewertungsmechanismen, Maßnahmen zur Risikominimierung und Monitorings. 
+Nach Definition des Problems welches die Initiierung des Projekts rechtfertigt, 
+folgt nach der RM-Extension für das DASC-PM das erste Risk Gate. 
+Im Rahmen der Risk Gates wird entlang der folgenden Kette gearbeitet: 
+Identifikation/Ausgangslage, Bewertung der Risiken, Definition und Durchführung der 
+Maßnahmen zur Risikominimierung (Safeguards), Gate-Entscheidung und Dokumentation des Prozesses.
+Zur Identifikation der potenziellen Risiken, welche während der Phase auftreten können erfolgte 
+eine Orientierung an den zuvor beschriebenen potenziellen Risiken in Data Science Projekten und 
+den definierten Bewertungsmechanismen, Maßnahmen zur Risikominimierung und Monitorings. 
 
-Die folgende Tabelle stellt daher die Risiken dar, welche in der Phase des Problem Statements relevant sind und durch das erste Risk Gate entsprechend adressiert werden sollten:
+Die folgende Tabelle stellt daher die Risiken dar, welche in der Phase des Problem Statements 
+relevant sind und durch das erste Risk Gate entsprechend adressiert werden sollten:
 \begin{table}[H]
 \centering
 \renewcommand{\arraystretch}{1.3}
@@ -14,23 +29,31 @@ Die folgende Tabelle stellt daher die Risiken dar, welche in der Phase des Probl
 
 Fehlende Integration der Business Perspektive 
 (Data Science Methodologies Current Challenges and Future)
-& Data-Science-Projekte, die ihren Fokus ausschließlich auf die technische Performance legen und den geschäftlichen Mehrwert nicht ausreichend herausarbeiten, gefährden die Kommunikation mit Stakeholdern sowie den potenziellen Projekterfolg. \\ \hline
+& Data-Science-Projekte, die ihren Fokus ausschließlich auf die technische Performance legen 
+und den geschäftlichen Mehrwert nicht ausreichend herausarbeiten, gefährden die Kommunikation 
+mit Stakeholdern sowie den potenziellen Projekterfolg. \\ \hline
 
 Ressourcen\-überforderung
-& Aufgrund der hohen Unsicherheit in Data-Science-Projekten kann es dazu kommen, dass zu wenig Ressourcen eingeplant werden, um die im Projektverlauf anfallenden Aufgaben angemessen bewältigen zu können. \\ \hline
+& Aufgrund der hohen Unsicherheit in Data-Science-Projekten kann es dazu kommen, dass zu wenig 
+Ressourcen eingeplant werden, um die im Projektverlauf anfallenden Aufgaben angemessen bewältigen zu können. \\ \hline
 
 Bias-Quellen
-& Bias-Quellen können die Qualität und Fairness der eingesetzten Modelle negativ beeinflussen. Daher muss frühzeitig identifiziert werden, wo potenzielle Verzerrungen entstehen können und wie diese verhindert werden können. \\ \hline
+& Bias-Quellen können die Qualität und Fairness der eingesetzten Modelle negativ beeinflussen. 
+Daher muss frühzeitig identifiziert werden, wo potenzielle Verzerrungen entstehen können und wie diese verhindert werden können. \\ \hline
 
 Fehlende Interpretierbarkeit (DS\_Projektorganisation)
-& Sollte ein hohes Maß an Nachvollziehbarkeit der eingesetzten Modelle erforderlich sein, müssen entsprechende Anforderungen bereits zu Beginn des Projekts definiert werden. \\ \hline
+& Sollte ein hohes Maß an Nachvollziehbarkeit der eingesetzten Modelle erforderlich sein, 
+müssen entsprechende Anforderungen bereits zu Beginn des Projekts definiert werden. \\ \hline
 
 \end{tabular}
 \caption{Relevante Risiken im ersten Risk Gate der Problem-Statement-Phase, eigene Darstellung}
 \label{tab:risiken_problem_statement}
 \end{table}
 
-Anschließend kann die Analyse der identifizierten Risiken anhand der FMEA (Fehlermöglichkeits- und Einflussanalyse) durchgeführt werden. Hierfür wird dem entsprechenden Risiko pro Bewertungskriterium (Auftrittswahrscheinlichkeit, Bedeutung, Entdeckungswahrscheinlichkeit) ein Wert auf einer Skala von 1 - 10 zugeteilt:
+Anschließend kann die Analyse der identifizierten Risiken anhand der 
+FMEA (Fehlermöglichkeits- und Einflussanalyse) durchgeführt werden. Hierfür wird dem entsprechenden 
+Risiko pro Bewertungskriterium (Auftrittswahrscheinlichkeit, Bedeutung, Entdeckungswahrscheinlichkeit) 
+ein Wert auf einer Skala von 1 - 10 zugeteilt:
 
 \begin{table}[H]
 \centering
@@ -69,10 +92,14 @@ Ressourcen\-überforderung
 \label{tab:kriterien_rpz}
 \end{table}
 
-Anhand des Risikoregisters, welche die einzelnen KRI's enthält, können die RPZ (Risikoprioritätszahlen) gebildet werden, um im Folgenden die Maßnahmenbildung parallel zur Priorisierung der Risiken einzuordnen. Hierfür wird die folgende Formel angewandt:
+Anhand des Risikoregisters, welche die einzelnen KRI's enthält, 
+können die RPZ (Risikoprioritätszahlen) gebildet werden, um im Folgenden die 
+Maßnahmenbildung parallel zur Priorisierung der Risiken einzuordnen. 
+Hierfür wird die folgende Formel angewandt:
 \textbf{RPZ = A x B x E}
 
-Die Ergebnisse dieser Berechnung lassen sich mit einer Zahl zwischen 1 und 1000 abbilden. Dabei gilt, je höher der RPZ, desto schwerwiegender ist das potenzieller Risiko und desto stärker sollte dies im RM priorisiert werden.
+Die Ergebnisse dieser Berechnung lassen sich mit einer Zahl zwischen 1 und 1000 abbilden. 
+Dabei gilt, je höher der RPZ, desto schwerwiegender ist das potenzieller Risiko und desto stärker sollte dies im RM priorisiert werden.
 Das Ergebnis im Rahmen dieser Case-Study wird mithilfe der kommenden Tabelle dargestellt:
 
 \begin{table}[H]
@@ -90,24 +117,71 @@ Bias Quellen & $(8 \times 8 \times 9) = 576$ \\ \hline
 \end{table}
 
 Organisationshandbuch - Fehlermöglichkeits- und Einflussanalyse
-Aus der Berechnung der einzelnen RPZ’s lässt sich bereits die Hierarchie der Risiken ableiten.  Im Folgenden werden daher für die Minimierung des Risikos von Bias-Quellen im Datensatz, daraufhin für das Risiko fehlender Interpretierbarkeit, Ressourcenüberforderungen und zu guter letzt potenziell fehlende Business Perspektive Maßnahmen bzw. Safeguards definiert und angewendet, um eine grüne Ampelentscheidung stützen und zur nächsten Phase des DASC-PM übergehen zu können.
+Aus der Berechnung der einzelnen RPZ’s lässt sich bereits die Hierarchie der Risiken ableiten.  
+Im Folgenden werden daher für die Minimierung des Risikos von Bias-Quellen im Datensatz, daraufhin für das Risiko fehlender Interpretierbarkeit, 
+Ressourcenüberforderungen und zu guter letzt potenziell fehlende Business Perspektive Maßnahmen bzw. 
+Safeguards definiert und angewendet, um eine grüne Ampelentscheidung stützen und zur nächsten Phase des DASC-PM übergehen zu können.
 
-Als Maßnahmenstrategie, um diese Risiken entgegenzuwirken hätte Jumbo in der Phase der Problemdefinition die Risikovermeidung und Risikoakzeptanz anwenden können. Risikovermeidung in dem Sinne, dass sämtliche problematische Datenquellen entweder bereinigt oder erst gar nicht in den Datensatz eingeschlossen werden. Im Hinblick auf die Anfordeurngen, die der EU-AI-Act an Unternehmen stellt, ist diese Maßnahme sogar notwendig um rechtliche Vorgaben zu erfüllen und Bußgelder oder sogar das Verbot des Personalisierungssystems zu verhindern (siehe Kapitel "Definitionen). Des Weiteren kann das Risiko einer fehlenden Business Perspektive, fehlenden Interpretierbarkeit sowie eine Ressourcenüberforderung durch eine entsprechende Kommunikationsstrategie vermieden werden. In diesem Rahmen ist die Durchführung einer Anforderungsanalyse (auch "Requirement Engineering") zu empfehlen. Hierfür sollten vor Allem die Mitglieder des Projektteams konsultiert werden, ihre professionelle Einschätzungen und Anforderungen eingeholt und mithilfe der bestehenden Mittel mit den Anforderungen des Unternehmens in Einklang gebracht werden. Die konkreten Schritte zur Durchführung der Analyse unterteilen sich in diesem Kontext in "Ermitteln", "Dokumentieren", "Prüfen und Abstimmen" sowie "Verwalten". Damit lassen sich entsprechende Ziel- und Erfolgsmetriken rechtzeitig definieren und ein allgemeines Verständnis im Team kann geschaffen werden, um so den Erfolg des Projekts nachhaltig zu gewährleisten. Letztendlich können die Risiken nie vollkommen eliminiert werden. Sie können bestmöglich vermieden und minimiert werden, wie bereits beschreiben (siehe Kapitel xy), es bleibt jedoch ein Restrisiko bestehen, das zu überwachen ist. (Hermann, Schulz)
+Als Maßnahmenstrategie, um diese Risiken entgegenzuwirken hätte Jumbo in der Phase der Problemdefinition 
+die Risikovermeidung und Risikoakzeptanz anwenden können. Risikovermeidung in dem Sinne, 
+dass sämtliche problematische Datenquellen entweder bereinigt oder erst gar nicht in den Datensatz eingeschlossen werden. 
+Im Hinblick auf die Anfordeurngen, die der EU-AI-Act an Unternehmen stellt, ist diese Maßnahme 
+sogar notwendig um rechtliche Vorgaben zu erfüllen und Bußgelder oder sogar das Verbot 
+des Personalisierungssystems zu verhindern (siehe Kapitel "Definitionen). 
+Des Weiteren kann das Risiko einer fehlenden Business Perspektive, 
+fehlenden Interpretierbarkeit sowie eine Ressourcenüberforderung durch eine entsprechende 
+Kommunikationsstrategie vermieden werden. In diesem Rahmen ist die Durchführung einer Anforderungsanalyse 
+(auch "Requirement Engineering") zu empfehlen. 
+Hierfür sollten vor Allem die Mitglieder des Projektteams konsultiert werden, 
+ihre professionelle Einschätzungen und Anforderungen eingeholt und 
+mithilfe der bestehenden Mittel mit den Anforderungen des Unternehmens in Einklang gebracht werden. 
+Die konkreten Schritte zur Durchführung der Analyse unterteilen sich in diesem Kontext in "Ermitteln", 
+"Dokumentieren", "Prüfen und Abstimmen" sowie "Verwalten". Damit lassen sich 
+entsprechende Ziel- und Erfolgsmetriken rechtzeitig definieren und ein allgemeines Verständnis 
+im Team kann geschaffen werden, um so den Erfolg des Projekts nachhaltig zu gewährleisten. 
+Letztendlich können die Risiken nie vollkommen eliminiert werden. 
+Sie können bestmöglich vermieden und minimiert werden, wie bereits beschreiben (siehe Kapitel xy), 
+es bleibt jedoch ein Restrisiko bestehen, das zu überwachen ist. (Hermann, Schulz)
 
-Da sich sämtliche Risiken im grünen bis gelben Bereich befinden ( >0 = Grün, >300 = Gelb, > 600 = Rot) wird die Ampel in der Entscheidungsphase somit auf Gelb gesetzt und die Erlaubnis für den Fortgang im Prozess gewährt. Das fortgehende Monitoring ist dabei weiterhin Teil des Risikomanagements. In der nächsten Phase werden die Risiken daraufhin überprüft und nach Durchführung der Maßnahmen erneut bewertet.
+Da sich sämtliche Risiken im grünen bis gelben Bereich befinden ( >0 = Grün, >300 = Gelb, > 600 = Rot) 
+wird die Ampel in der Entscheidungsphase somit auf Gelb gesetzt und die Erlaubnis für den Fortgang im Prozess gewährt. 
+Das fortgehende Monitoring ist dabei weiterhin Teil des Risikomanagements. 
+In der nächsten Phase werden die Risiken daraufhin überprüft und nach Durchführung der Maßnahmen erneut bewertet.
 
 
 \subsection{Risk Gate 2: Datenverständnis und -vorbereitung}
-Neben dem weiterhin bestehenden Risiko des Bias, ergeben sich in der Phase der Datenvorbereitung ("Data Provision") zudem Risiken im Bezug auf mangelnde Datenverfügbarkeit oder Zugriffshürden. Aus dem Grund, dass personenbezogene Daten eine übergeordnete Rolle spielen, um ein personalisiertes Einkaufserlebnis bieten zu können, entsteht zusätzlich ein erhebliches Risiko gegen rechtliche Rahmenwerke zu verstoßen, beispielsweise die DSGVO oder der EU-AI-Act. \cite{schulz_dasc-pm_2022}
+Neben dem weiterhin bestehenden Risiko des Bias, ergeben sich in der Phase der 
+Datenvorbereitung ("Data Provision") zudem Risiken im Bezug auf mangelnde Datenverfügbarkeit 
+oder Zugriffshürden. Aus dem Grund, dass personenbezogene Daten eine übergeordnete Rolle spielen, 
+um ein personalisiertes Einkaufserlebnis bieten zu können, entsteht zusätzlich ein 
+erhebliches Risiko gegen rechtliche Rahmenwerke zu verstoßen, beispielsweise die DSGVO oder der EU-AI-Act. \cite{schulz_dasc-pm_2022}
 
-Voraussetzung für die Bewertung des Risikos "Bias", "Mangelnde Interpretierbarkeit", "fehlende Integration der Business Perspektive" sowie "Ressourcenüberforderung" sind die zuvor definierten und durchgeführten Risikominimierungsstrategien "Datenbereinigung" & "Stakeholdermanagement".
+Voraussetzung für die Bewertung des Risikos "Bias", "Mangelnde Interpretierbarkeit", 
+"fehlende Integration der Business Perspektive" sowie "Ressourcenüberforderung" 
+sind die zuvor definierten und durchgeführten Risikominimierungsstrategien "Datenbereinigung" \& "Stakeholdermanagement".
 Die Ergebnisse der Ermittlung der RPZ ergeben die folgende Risikopriorisierung: 
 
-Bias = RPZ18, grüne Ampel;Mangelnde Datenverfügbarkeit und Zugriffshürden = RPZ50, grüne Ampel; Rechtliche Verstöße = RPZ360, gelbe Ampel (siehe Anhang, A.3.1 & A.3.2)
+Bias = RPZ18, grüne Ampel;Mangelnde Datenverfügbarkeit und Zugriffshürden = RPZ50, 
+grüne Ampel; Rechtliche Verstöße = RPZ360, gelbe Ampel (siehe Anhang, A.3.1 \& A.3.2)
 
-Geeignete Maßnahmen, um diese Risiken zu minimieren, lassen sich mithilfe des Risikominimierungsansätze "Risikovermeidung" und "proaktiver Schutz" definieren. Um das Risiko einer mangelnden Datenverfügbarkeit oder eines eingeschränkten Zugriffs auf Daten zu verhindern, sollten bereits am Anfang Data Owner bestimmt und fortwährend in den operativen Tagesablauf mit integriert werden. Ihre Verantwortung ist fortfolgend die Sicherstellung eines ausreichend vielfältigen und vor allem zugreifbaren Datensatzes sowie die Beschaffung weiterer Daten im Fall einer Notwendigkei. Des Weiteren empfiehlt sich in dieser Phase eine explorative Datenanalyse, um Zusammenhänge und Ausreißer frühzeitig zu identifizieren und kollektiv zu verstehen sowie Fehlerquellen zu eliminieren. Abschließend sollten sogenannte "Privacy Impact Assesments" durchgeführt werden, um die regelkonforme Durchführung des Projekts entlang der gesetzlichen Vorgaben zu gewährleisten. Hierfür empfehlen sich die Compliance Checker der Bundesregierung, welche beispielsweise im Rahmen des EU-AI-Acts angeboten werden. Abschließen ist zu betonen, dass in dieser Phase, so wie auch in den anderen frei Phasen, die Projektschritte und -entscheidungen genau dokumentiert werden müssen, nicht nur, um Transparenzpflichten im Umgang mit KI zu erfüllen (siehe Kapitel "Zentrale Begriffe"), sondern auch um die Reproduzierbarkeit der Ergebnisse zu sicherzustellen und die getroffenen Entscheidungen auch im Nachhinein gegenüber relevanten Stakeholdern verteidigen zu können. \cite{EUAIAct2024} (Borus, 2020)
+Geeignete Maßnahmen, um diese Risiken zu minimieren, lassen sich mithilfe des Risikominimierungsansätze 
+"Risikovermeidung" und "proaktiver Schutz" definieren. Um das Risiko einer mangelnden Datenverfügbarkeit 
+oder eines eingeschränkten Zugriffs auf Daten zu verhindern, sollten bereits am Anfang Data 
+Owner bestimmt und fortwährend in den operativen Tagesablauf mit integriert werden. Ihre Verantwortung 
+ist fortfolgend die Sicherstellung eines ausreichend vielfältigen und vor allem zugreifbaren Datensatzes 
+sowie die Beschaffung weiterer Daten im Fall einer Notwendigkei. Des Weiteren empfiehlt sich in dieser 
+Phase eine explorative Datenanalyse, um Zusammenhänge und Ausreißer frühzeitig zu identifizieren und kollektiv 
+zu verstehen sowie Fehlerquellen zu eliminieren. Abschließend sollten sogenannte "Privacy Impact Assesments" durchgeführt werden, 
+um die regelkonforme Durchführung des Projekts entlang der gesetzlichen Vorgaben zu gewährleisten. 
+Hierfür empfehlen sich die Compliance Checker der Bundesregierung, welche beispielsweise im Rahmen des EU-AI-Acts angeboten werden. 
+Abschließen ist zu betonen, dass in dieser Phase, so wie auch in den anderen frei Phasen, die Projektschritte und 
+-entscheidungen genau dokumentiert werden müssen, nicht nur, um Transparenzpflichten im Umgang mit KI zu erfüllen 
+(siehe Kapitel "Zentrale Begriffe"), sondern auch um die Reproduzierbarkeit der Ergebnisse zu sicherzustellen und 
+die getroffenen Entscheidungen auch im Nachhinein gegenüber relevanten Stakeholdern verteidigen zu können. \cite{EUAIAct2024} (Borus, 2020)
 
-Aufgrund der überwiegenden Klassifizierung der Risiken als geringfügig riskant (=Grüne Ampel) wird der Fortgang des Projekts gewährt und zur dritten Phase ("Evaluierung") übergegangen. Der fortlaufende Monitoring-Prozess sowie die abschließende Dokumentation der Entscheidungen und Ergebnisse wird hier vorausgesetzt.
+Aufgrund der überwiegenden Klassifizierung der Risiken als geringfügig riskant 
+(=Grüne Ampel) wird der Fortgang des Projekts gewährt und zur dritten Phase ("Evaluierung") übergegangen. 
+Der fortlaufende Monitoring-Prozess sowie die abschließende Dokumentation der Entscheidungen und Ergebnisse wird hier vorausgesetzt.
 
 \subsection{Risk Gate 3: Evaluierung/Analyse}
 Ausgangslage
@@ -149,8 +223,19 @@ Sammeln und Auswerten von Fehlerberichten sowie Überprüfung der Effizienz der 
 Gate-Entscheidung
 
 \subsection{Praxistauglichkeit}
-Zusammenfassend zeigt sich, dass die entwickelte Risikomanagement-Erweiterung eine sinnvolle Ergänzung zum klassischen Projektmanagement in Data-Science-Projekten darstellt. Sie unterstützt nicht nur die regelkonforme Durchführung im Hinblick auf regulatorische Anforderungen, sondern verbessert zugleich die Kommunikation zwischen den Stakeholdern und reduziert dadurch potenzielle finanzielle, technologische oder auch organisatorische Risiken für das gesamte Unternehmen.
+Zusammenfassend zeigt sich, dass die entwickelte Risikomanagement-Erweiterung eine sinnvolle Ergänzung zum 
+klassischen Projektmanagement in Data-Science-Projekten darstellt. Sie unterstützt nicht nur die regelkonforme 
+Durchführung im Hinblick auf regulatorische Anforderungen, sondern verbessert zugleich die 
+Kommunikation zwischen den Stakeholdern und reduziert dadurch potenzielle finanzielle, 
+technologische oder auch organisatorische Risiken für das gesamte Unternehmen.
 
-Gleichzeitig ist die Umsetzung mit einem erhöhten operativen Aufwand verbunden, insbesondere durch zusätzliche Kontroll- und Entscheidungsprozesse innerhalb der Risk Gates. Um diesen Aufwand langfristig effizient bewältigen zu können, wird eine enge Zusammenarbeit mit der Fachabteilung Human Resources empfohlen, damit notwendige Fachkompetenzen frühzeitig aufgebaut werden können. Neben Data-Science-Know-how spielt hierbei insbesondere Qualitätsmanagement eine zentrale Rolle. Durch qualifizierte Qualitätsmanager sowie die Kooperation mit Data Ownern kann eine nachhaltige und ressourcenschonende Steuerung des Risikomanagements unterstützt werden.
+Gleichzeitig ist die Umsetzung mit einem erhöhten operativen Aufwand verbunden, 
+insbesondere durch zusätzliche Kontroll- und Entscheidungsprozesse innerhalb der Risk Gates. 
+Um diesen Aufwand langfristig effizient bewältigen zu können, wird eine enge Zusammenarbeit mit der 
+Fachabteilung Human Resources empfohlen, damit notwendige Fachkompetenzen frühzeitig aufgebaut werden können. 
+Neben Data-Science-Know-how spielt hierbei insbesondere Qualitätsmanagement eine zentrale Rolle. 
+Durch qualifizierte Qualitätsmanager sowie die Kooperation mit Data Ownern kann eine nachhaltige 
+und ressourcenschonende Steuerung des Risikomanagements unterstützt werden.
 
-Letztlich muss jedoch jedes Unternehmen individuell bewerten, ob und in welchem Umfang die entwickelte RM-Extension im jeweiligen organisatorischen und wirtschaftlichen Kontext sinnvoll eingesetzt werden kann.
+Letztlich muss jedoch jedes Unternehmen individuell bewerten, ob und in welchem Umfang 
+die entwickelte RM-Extension im jeweiligen organisatorischen und wirtschaftlichen Kontext sinnvoll eingesetzt werden kann.
