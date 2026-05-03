@@ -142,10 +142,10 @@ um ein personalisiertes Einkaufserlebnis bieten zu können, entsteht zusätzlich
 erhebliches Risiko gegen rechtliche Rahmenwerke zu verstoßen, beispielsweise die DSGVO oder der EU-AI-Act. \cite{schulz_dasc-pm_2022}
 
 Auf Basis der zuvor umgesetzten Maßnahmen (u.a. Datenbereinigung und Anforderungsanalyse)
-ergibt sich folgende Risikopriorisierung: Bias RPZ 18 (Grün), Datenverfügbarkeit/Zugriff RPZ 50 (Grün),
-rechtliche Verstöße RPZ 360 (Gelb) (vgl. Anhang \ref{appendix:risk_gate_2_cs_2} und \ref{appendix:risk_gate_2_cs_2_result}).
+ergibt sich folgende Risikopriorisierung: Bias (RPZ 18), Datenverfügbarkeit/Zugriffshürden (RPZ 50),
+rechtliche Verstöße (RPZ 360) (vgl. Anhang \ref{appendix:risk_gate_2_cs_2} und \ref{appendix:risk_gate_2_cs_2_result}).
 
-Geeignete Maßnahmen zur Minimierung dieser Risiken lassen sich insbesondere 
+Geeignete Maßnahmen zur Minimierung der phasenspezifischen Risiken lassen sich insbesondere 
 durch Risikovermeidung und proaktiven Schutz definieren. 
 Zur Vermeidung mangelnder Datenverfügbarkeit oder eingeschränkter Zugriffe 
 sollten frühzeitig Data Owner benannt und dauerhaft in operative Prozesse integriert werden. 
@@ -166,19 +166,52 @@ wird der Fortgang des Projekts gewährt und zur dritten Phase
 Dokumentation der Ergebnisse werden dabei vorausgesetzt.
 
 \subsection{Risk Gate 3: Evaluierung/Analyse}
+In der Phase der Evaluierung stehen die Modellbildung sowie geeignete Analyseverfahren im Mittelpunkt. 
+Dabei muss insbesondere das Risiko des Overfittings adressiert und in das Risikoregister aufgenommen werden. 
+Ein überangepasstes Modell könnte im Kontext der Personalisierungsstrategie von Jumbo zwar in der Trainingsphase gute Ergebnisse liefern, 
+bei neuen Kunden oder veränderten Rahmenbedingungen jedoch an Generalisierbarkeit verlieren. 
+Die Folge wären irrelevante Produktempfehlungen und ein entsprechend sinkender Mehrwert für die Endkunden \cite{schulz_dasc-pm_2022}.
 
-Die überwiegende Klassifizierung der Risiken als geringfügig Riskant 
-ermöglicht hier eine grüne Entscheidung und den Übergang des Projekts in die vierte Phase.
+Nach der Erstellung des Risikoregisters (vgl. Kapitel A.4.3) und der anschließenden Berechnung der RPZs (vgl. A.4.4) ergibt sich folgende Priorisierung: 
+Rechtliche Verstöße (RPZ 270), Overfitting (RPZ 126), mangelnde Datenverfügbarkeit bzw. Zugriffshürden (RPZ 120), mangelnde Interpretierbarkeit (RPZ 30), Ressourcenüberforderung (RPZ 12) sowie fehlende Integration der Business-Perspektive (RPZ 4). 
+Die zuvor definierten Maßnahmen führten bereits zu einer Reduktion einzelner Risiken, beispielsweise bei rechtlichen Verstößen von RPZ 360 auf RPZ 270. Aufgrund der folglichen Klassifizierung als geringfügig riskant (Grüne Ampel) werden hier keine weiteren Maßnahmen zur Risikominimierung implementiert, die bereits definierte Maßnahme "Privacy Impact Assesment" bleibt von dieser Entscheidung unberührt.
 
+Zur Minimierung des Overfitting-Risikos empfiehlt sich insbesondere Robustheitsprüfungen des Modells, beispielsweise mithilfe des Tools ,,ROBUSCOPE'' des Fraunhofer-Instituts [Quelle]. 
+Zusätzlich bleibt die kontinuierliche Dokumentation von Entscheidungen und Ergebnissen erforderlich \cite{schulz_dasc-pm_2022}.
+
+Da sich sämtliche Risiken dieser Phase im grünen Risikobereich befinden, werden keine weiteren Maßnahmen für zuvor identifizierte Risiken definiert. Zudem wird eine grüne Gate-Entscheidung getroffen und der Übergang in die vierte Phase freigegeben.
 
 \subsection{Risk Gate 4: Nutzbarmachung}
+In der Phase der Nutzbarmachung treten insbesondere Risiken im Hinblick auf technische Inkompatibilität mit der bestehenden IT-Infrastruktur sowie eine mangelnde Akzeptanz der Endanwender, beispielsweise durch unzureichende Intuitivität des Systems, in den Vordergrund.
+Ein weiteres phasenspezifisches Risiko ist eine nicht spezifizierte Handlungsweise im Fehlerfall. Hierdurch kann es erneut zu langen Problembearbeitungszeiten kommen infolge dessen das Vertrauen der Kunden sttrapaziert wird und das Unternehmen hierdurch Image- und entsprechende finanzielle Schäden davontragen kann.
 
+Basierend auf den zuvor durchgeführten Minimierungsstrategien, wie z.B. die Robustheitsprüfung oder die Anforderungsanalyse, ergibt sich nach Erstellung des Risikoregisters (vgl. Kapitel A.4.5) sowie der Berechnung der RPZ (vgl. Kapitel A.4.6) folgende Priorisierung der Risiken entlang aufsteigender Risikoprioritätszahlen: 
+Mangelnde Akzeptanz beim Endanwender (RPZ 350), nicht spezifizierte Handlungsweise im Fehlerfall (RPZ 280), Rechtliche Verstöße (RPZ 270), mangelnde Datenverfügbarkeit/Zugriffshürden (RPZ 50), Inkompatibilität mit der IT-Infrastruktur (RPZ 21), Bias (RPZ 18) 
+Bezüglich der Inkompatibilität mit der IT-Infrastruktur wurde in die Entscheidung die Information mit einbezogen, dass Jumbo parallel zur Personalisierungsstrategie das Ziel verfolgt seine IT-Infrastruktur entsprechend zu modernisieren. Bereits erfolgte Schritte in diese Richtung wurden daher als gegeben angesehen.
 
+Geeignete Maßnahmen zur Minimierung der phasenspezifischen Risiken fokussiere sich inbesondere auf die Durchführung von Tests in realistischen Testumgebungen sowie die frühe Beteiligung der Endanwender durch Schulungsunterlagen, Workshops oder die Definition eines zielgruppenspezifischen UX-Designs. Im Kontext LEH wäre dies beispielsweise durch kleine verschriftlichte Anwendungshinweise oder Informationshappen in einer App umzusetzen.
+Als letzte Instanz sollte zudem die Compliance-Abteilung des Unternehmens konsultiert werden sowie übergreifende Lehrkonzepte entwickelt werden, um auch die Akzeptanz der Kollegen aus verschiedenen Fachbereichen im Unternehmen gewährleisten zu können. Durch die unternehmensinterne Unterstützung kann 
+gleichzeitig der Start eines neuen Projekts in Zukunft ereleichtert werden.
 
-\subsection{Praxistauglichkeit}
-Die RM-Extension ergänzt klassisches Projektmanagement in Data-Science-Projekten,
-unterstützt regulatorische Konformität und verbessert die Stakeholder-Kommunikation.
-Der zusätzliche operative Aufwand entsteht v.a. durch Kontroll- und Gate-Prozesse;
-zur effizienten Umsetzung sind Rollen, Kompetenzen und Verantwortlichkeiten (z.B. Data Owner, Qualitätsmanagement)
-frühzeitig zu verankern.
-Der konkrete Umfang der Anwendung bleibt kontextabhängig.
+Aufgrund der Einstufung der verbleibenden Risiken als kontrollierbar bzw. geringfügig riskant (Grün) wird der Fortgang in der Entshceidungsphase gewährt ( = Grüne Ampel).
+Ein kontinuierliches Monitoring sowie ein Model-Lifecycle-Management bilden die Basis der anschließend letzten Phase, weshalb kein fünftes Risk Gate implementiert wurde.
+
+\subsection{Praxistauglichkeit im Kontext}
+Zusammenfassend zeigt sich, dass die entwickelte RM-Erweiterung eine sinnvolle Ergänzung 
+zum klassischen Projektmanagement darstellt. 
+Sie unterstützt im Rahmen digitaler Projekte, wie bei Jumbo, nicht nur die Einhaltung regulatorischer Anforderungen, 
+sondern verbessert zugleich die Kommunikation zwischen den Stakeholdern 
+und reduziert dadurch potenzielle finanzielle, technologische und organisatorische Risiken.
+
+Gleichzeitig ist die Umsetzung allerdings mit zusätzlichem operativem Aufwand verbunden, 
+insbesondere durch Kontroll- und Entscheidungsprozesse innerhalb der Risk Gates. 
+Mit jeder Projektphase steigt dabei die Komplexität, da Risiken aus vorherigen Phasen erneut überprüft werden müssen. 
+Obwohl sich Risiken durch Gegenmaßnahmen reduzieren können, besteht ebenso die Möglichkeit einer erneuten Verschärfung, 
+wodurch zusätzliche Maßnahmen erforderlich werden können. 
+Zur langfristig effizienten Umsetzung empfiehlt sich daher eine enge Zusammenarbeit mit Human Resources, 
+um notwendige Fachkompetenzen frühzeitig aufzubauen. 
+Neben Data-Scientists spielen insbesondere Qualitätsmanager eine zentrale Rolle, die in Zusammenarbeit mit Data Ownern eine nachhaltige Steuerung des Risikomanagements unterstützt sicherstellen können.
+
+Letztlich obliegt es den Unternehmen, zu entscheiden, 
+ob und in welchem Umfang die entwickelte RM-Extension 
+im jeweiligen organisatorischen Kontext sinnvoll eingesetzt werden kann.
