@@ -18,7 +18,7 @@ Die Entdeckbarkeit beschreibt dabei, wie schwer ein Risiko frühzeitig zu erkenn
 Als pragmatische Schwellenwerte werden gesetzt: Grün unter 100, Gelb 100 bis 300, Rot über 300.
 Das Registerformat entspricht dem Artefakt im Anhang; dort ist auch die Status-Historie dokumentiert.
 
-\subsection{Gedankenexperiment entlang der DASC-PM-Phasen}
+\subsection{Gedankenexperiment und detaillierte Analyse}
 
 \subsubsection{Phase 1: Problem- und Zieldefinition}
 \paragraph*{Ausgangslage und Risiko.}
@@ -55,7 +55,7 @@ Unklare Verantwortlichkeiten in der Freigabe & 4 & 6 & 4 & 96 & Grün \\
 
 \paragraph*{Maßnahmen.}
 Gesteuert wird über verbindliche Governance-Kriterien (Freigaben, dokumentierte
-Risikoakzeptanz) und einen Eskalationspfad für Zielkonflikte (Tab.~\hyperref[tab:cs1_phase1_massnahmen]{\ref{tab:cs1_phase1_massnahmen}}).
+Risikoakzeptanz) und einen Eskalationspfad für Zielkonflikte (Tab.~\ref{tab:cs1_phase1_massnahmen}).
 
 \paragraph*{KRI.}
 Der Gate-Status hängt an der Vollständigkeit der Governance-Artefakte: offene Freigabepunkte müssen 0 sein,
@@ -118,7 +118,7 @@ Datenschutz- und Compliance-Lücken & 5 & 7 & 4 & 140 & Gelb \\
 \paragraph*{Maßnahmen.}
 Die Steuerung kombiniert Data-Quality-Gates, Feature-Governance und Bias-Prüfungen;
 kritische Merkmale werden im Datenfreigabeprozess gemeinsam durch Fachbereich,
-Data Science und Compliance bewertet (Tab.~\hyperref[tab:cs1_phase2_massnahmen]{\ref{tab:cs1_phase2_massnahmen}}).
+Data Science und Compliance bewertet (Tab.~\ref{tab:cs1_phase2_massnahmen}).
 
 \paragraph*{KRI.}
 Als KRI dienen die Pflichtfeldvollständigkeit der Trainingsdaten (Soll: mindestens 98\%)
@@ -184,7 +184,7 @@ Geringe Erklärbarkeit kritischer Entscheidungen & 4 & 5 & 4 & 80 & Grün \\
 
 \paragraph*{Maßnahmen.}
 Steuerung über Robustheits-/Sensitivitätsanalysen, Erklärbarkeit (z.B. SHAP/LIME)
-und Mindestkriterien je Segment; Grenzfälle werden manuell geprüft (Tab.~\hyperref[tab:cs1_phase3_massnahmen]{\ref{tab:cs1_phase3_massnahmen}}).
+und Mindestkriterien je Segment; Grenzfälle werden manuell geprüft (Tab.~\ref{tab:cs1_phase3_massnahmen}).
 
 \paragraph*{KRI.}
 Als KRI gelten eine Segment-AUC von mindestens 0.75 und ein maximaler Performance-Gap zwischen Segmenten von 0.05.
@@ -250,7 +250,7 @@ Unzureichendes Pilot-Monitoring & 4 & 5 & 5 & 100 & Gelb \\
 \paragraph*{Maßnahmen.}
 Für den Übergang in den Betrieb werden Fallback/Rollback, KRI-Eskalationslogik und
 regelmäßiges Reporting umgesetzt; Verantwortlichkeiten und Reaktionszeiten für Incidents
-werden verbindlich festgelegt (Tab.~\hyperref[tab:cs1_phase4_massnahmen]{\ref{tab:cs1_phase4_massnahmen}}).
+werden verbindlich festgelegt (Tab.~\ref{tab:cs1_phase4_massnahmen}).
 
 \paragraph*{KRI.}
 Im Pilotbetrieb gilt ein Population Stability Index (PSI) unter 0.20 als grün; die Schnittstellenfehlerquote muss unter 1\% bleiben.
@@ -346,3 +346,14 @@ Als Alarm-KRI gilt ein PSI über 0.25; zusätzlich wird die Reaktionszeit auf In
 Die RM-Strategie ist in diesem Szenario gut anwendbar: Gate-Entscheidungen strukturieren den Verlauf,
 und offene Risiken werden per Carry-Forward-Logik konsequent nachverfolgt, ohne dass jede Abweichung
 automatisch zum Projektstopp führt.
+
+\subsection{Reflexion der RM-Strategie am Beispiel SafeLend}
+
+Die Anwendung auf SafeLend zeigt, dass die entwickelte RM-Strategie die realen Herausforderungen von Data-Science-Projekten
+in regulierten Kontexten adressiert. Gate-Entscheidungen strukturieren den Verlauf,
+und offene Risiken werden über die Carry-Forward-Logik konsequent nachverfolgt, ohne dass jede Abweichung
+automatisch zum Projektstopp führt. Dies balanciert Kontrolle und pragmatische Fortschrittsfeuerung.
+
+Natürlich erfordert eine solch umfassende Risikosteuerung zusätzliche Ressourcen für Governance-Prozesse, Monitoring und tiefergehende Analysen.
+Diese Investition muss jedes Projekt für sich bewerten. Persönlich würde ich sie jedoch auf jeden Fall durchführen,
+da die erhöhte Kontrolle und Sicherheit insbesondere in regulierten Kontexten wie SafeLend den Aufwand vollkommen rechtfertigt.

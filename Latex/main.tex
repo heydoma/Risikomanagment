@@ -18,7 +18,7 @@
 \usepackage{microtype}
 \usepackage{csquotes}
 \usepackage{textcomp}
-\usepackage{xcolor} 
+\usepackage{xcolor}
 \usepackage{float}
 
 % --- Layout ---
@@ -40,7 +40,10 @@
 \usepackage[numbers]{natbib}
 \usepackage[hidelinks]{hyperref}
 \usepackage{url}
+\urlstyle{same}
 
+% Überschriften in derselben Schriftfamilie wie der Fließtext
+\setkomafont{disposition}{\normalfont\bfseries}
 \setkomafont{paragraph}{\normalfont\bfseries}
 
 \input{commands/notes.tex}
@@ -110,7 +113,7 @@
 % Inhalt (Baukasten über \input)
 % ==========================================================
 
-\cleardoublepage
+\clearpage
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
@@ -122,12 +125,12 @@
 \input{chapters/06_diskussion/chapter}
 \input{chapters/07_fazit/chapter}
 
-\cleardoublepage
+\clearpage
 \phantomsection
 \bibliographystyle{abbrvnat}
 \bibliography{bib/Quellen_Sebastiaan,bib/Quellen_Marvin,bib/Quellen_Jana}
 
-\cleardoublepage
+\clearpage
 \phantomsection
 \input{backmatter/anhang/anhang}
 
