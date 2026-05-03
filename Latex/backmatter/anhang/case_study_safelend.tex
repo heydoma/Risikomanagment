@@ -1,0 +1,79 @@
+\section{Case-Study-Dossier: Projekt SafeLend (Generiert mit Gemini)}
+
+\subsection{Unternehmenskontext und Ausgangslage}
+Die \enquote{SafeLend Bank} ist ein etabliertes Kreditinstitut,
+das auf Konsumkredite für Privatkunden spezialisiert ist.
+Die Kreditprüfung erfolgt bisher über ein hybrides Verfahren
+aus statistischen Schwellenwerten und manueller Endprüfung
+durch Kreditanalysten.
+Durch den Wettbewerbsdruck digitaler Anbieter ist die mittlere
+Bearbeitungszeit von 48 Stunden nicht mehr wettbewerbsfähig.
+Projektziel ist eine Senkung der Durchlaufzeit auf unter 10 Minuten.
+
+\subsection{Zielsetzung des Projekts}
+Ziel ist die Entwicklung eines Machine-Learning-basierten
+Scoring-Modells für automatisierte Kreditentscheidungen.
+Das Modell soll auf Basis historischer Transaktionsdaten,
+Auskunftei-Informationen und demografischer Merkmale
+die Ausfallwahrscheinlichkeit
+\enquote{Probability of Default} robuster prognostizieren
+als das bisherige Verfahren.
+Zusätzlich sollen operative Kosten reduziert
+und Entscheidungsqualität sowie Skalierbarkeit erhöht werden.
+
+\subsection{Datenbasis und technische Infrastruktur}
+Als Datengrundlage dienen rund 500.000 historische Kreditfälle
+aus den letzten zehn Jahren.
+
+Interne Daten umfassen Kontobewegungen der letzten 12 Monate,
+Gehaltszuflüsse, bisheriges Zahlungsverhalten
+sowie Mahn- und Rückstandsverläufe.
+
+Externe Daten umfassen Bonitätsinformationen von Auskunfteien
+sowie makroökonomische Indikatoren
+wie regionale Arbeitslosenquote und Zinsniveau.
+
+Die technische Umsetzung erfolgt cloudbasiert.
+Das Modell wird als API-Service in die bestehende Banking-App integriert,
+um Echtzeitentscheidungen im Antragsprozess zu unterstützen.
+
+\subsection{Rahmenbedingungen und Herausforderungen}
+Das Projekt bewegt sich in einem volatilen und regulierten Umfeld.
+
+Regulatorisch unterliegt die Bank den relevanten Aufsichtsanforderungen,
+insbesondere den Anforderungen an Nachvollziehbarkeit,
+Dokumentation und Kontrollierbarkeit von Kreditentscheidungen.
+
+Marktseitig verändert sich das Kundenverhalten
+unter volatilen Rahmenbedingungen.
+Hieraus entsteht ein zentrales Risiko in Form von Data Drift,
+wenn historische Trainingsdaten künftige Muster
+nicht mehr ausreichend repräsentieren.
+
+Zusätzlich ist sicherzustellen,
+dass systematische Benachteiligungen
+zum Beispiel über indirekte Merkmalszusammenhänge
+früh erkannt und verhindert werden.
+
+\subsection{Projektorganisation}
+Das Vorhaben wird interdisziplinär umgesetzt.
+Beteiligt sind Fachabteilung, IT, externe Data-Science-Rollen
+sowie Risiko- und Compliance-Funktionen.
+Die Gesamtleitung liegt beim Head of Digital Banking.
+Die operative Abstimmung erfolgt in wöchentlichen Sprints.
+
+Im Projektverlauf bestehen erkennbare Spannungen:
+Kreditanalysten adressieren Auswirkungen auf bestehende Rollenbilder,
+während Data-Science-Rollen zunächst stärker
+auf Modellmetriken fokussieren.
+Damit ist eine explizite Governance- und Kommunikationsstruktur
+projektkritisch.
+
+\subsection{Zeitplan und Ressourcen}
+Der geplante Umsetzungszeitraum beträgt neun Monate,
+unterteilt in eine Pilotphase
+\enquote{Proof of Concept}
+und einen stufenweisen Rollout.
+Das Gesamtbudget beträgt 550.000 Euro
+einschließlich externer Beratung und Cloud-Ressourcen.
+Der Go-Live ist für das folgende Geschäftsjahr vorgesehen.
