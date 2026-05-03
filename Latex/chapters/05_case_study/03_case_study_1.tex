@@ -12,11 +12,11 @@ Rahmenbedingungen, Organisation, Ressourcen) ist im Anhang dokumentiert.
 \paragraph*{Risikobewertung und Schwellenwerte.}
 Für das Scoring wird in dieser Fallstudie die Logik
 $\text{Score} = \text{Eintrittswahrscheinlichkeit} \times \text{Schadensauswirkung} \times \text{Entdeckbarkeit}$
-auf einer Skala von 1 bis 5 je Dimension genutzt.
+auf einer Skala von 1 bis 10 je Dimension genutzt.
 Die Entdeckbarkeit beschreibt dabei, wie schwer ein Risiko frühzeitig zu erkennen ist
-(1 = leicht, 5 = kaum ohne explizite Analyse).
-Als Schwellenwerte werden gesetzt: Grün bis 20, Gelb bis 50, Rot über 50.
-Das Registerformat entspricht dem Artefakt im Anhang.
+(1 = leicht, 10 = kaum ohne explizite Analyse).
+Als pragmatische Schwellenwerte werden gesetzt: Grün unter 100, Gelb 100 bis 300, Rot über 300.
+Das Registerformat entspricht dem Artefakt im Anhang; dort ist auch die Status-Historie dokumentiert.
 
 \subsection{Gedankenexperiment entlang der DASC-PM-Phasen}
 
@@ -32,11 +32,11 @@ eine Risikoakzeptanzmatrix und ein initialer Governance-Entwurf.
 
 \paragraph*{Bewertung und Begründung.}
 Zielkonflikte zwischen Geschwindigkeit, Fachanforderungen und Compliance sind in
-frühen Phasen typisch und grundsätzlich steuerbar; Eintritt: 3.
+frühen Phasen typisch und grundsätzlich steuerbar; Eintritt: 5.
 Fehlsteuerungen wirken in alle Folgephasen und verursachen hohe Korrekturkosten;
-Auswirkung: 4.
+Auswirkung: 6.
 Zielschieflagen werden häufig erst nach getroffenen Weichenstellungen sichtbar;
-Entdeckbarkeit: 4.
+Entdeckbarkeit: 6.
 
 \begin{table}[!htbp]
 \centering
@@ -44,18 +44,22 @@ Entdeckbarkeit: 4.
 \hline
 \textbf{Risiko} & \textbf{Eintritt} & \textbf{Auswirkung} & \textbf{Entdeck.} & \textbf{Score} & \textbf{Kategorie} \\
 \hline
-Zielschieflage durch Zielkonflikte & 3 & 4 & 4 & 48 & Gelb \\
-Fehlende Governance-Transparenz & 3 & 3 & 3 & 27 & Gelb \\
-Unklare Verantwortlichkeiten in der Freigabe & 2 & 4 & 2 & 16 & Grün \\
+Zielschieflage durch Zielkonflikte & 5 & 6 & 6 & 180 & Gelb \\
+Fehlende Governance-Transparenz & 5 & 5 & 5 & 125 & Gelb \\
+Unklare Verantwortlichkeiten in der Freigabe & 4 & 6 & 4 & 96 & Grün \\
 \hline
 \end{tabular}
-\caption{Phase 1: Qualitative Priorisierung der Risiken}
+\caption{Phase 1: FMEA-basierte Priorisierung der Risiken}
 \label{tab:cs1_phase1_risiken}
 \end{table}
 
 \paragraph*{Maßnahmen.}
 Gesteuert wird über verbindliche Governance-Kriterien (Freigaben, dokumentierte
 Risikoakzeptanz) und einen Eskalationspfad für Zielkonflikte (Tab.~\hyperref[tab:cs1_phase1_massnahmen]{\ref{tab:cs1_phase1_massnahmen}}).
+
+\paragraph*{KRI.}
+Der Gate-Status hängt an der Vollständigkeit der Governance-Artefakte: offene Freigabepunkte müssen 0 sein,
+die Dokumentationsvollständigkeit der Ziel- und Rollenfestlegung muss 100\% erreichen.
 
 \begin{table}[!htbp]
 \centering
@@ -72,8 +76,8 @@ Eskalationspfad & Management-Prozess für Konflikte zwischen Business Value, Com
 \end{table}
 
 \paragraph*{Gate-Entscheidung.}
-\textbf{Freigabe unter Auflagen.} Governance-Maßnahmen starten parallel;
-Risk Owner werden benannt und die Entscheidungen im Risikoregister dokumentiert.
+\textbf{Freigabe unter Auflagen.} Governance-Maßnahmen starten parallel; Risk Owner werden benannt
+und die Entscheidungen im Risikoregister dokumentiert.
 
 \subsubsection{Phase 2: Datenverständnis und Datenvorbereitung}
 \paragraph*{Ausgangslage und Risiko.}
@@ -88,11 +92,13 @@ Ein Modell, das auf solchen Daten trainiert wird,
 würde diese Verzerrung erlernen und fortschreiben.
 
 \paragraph*{Bewertung und Begründung.}
-Historische Datenschnitte sind oft nicht repräsentativ für aktuelle/future Kontexte;
-Bias in Bestandsdaten ist daher plausibel (Eintritt: 3).
-Eine verzerrte Datengrundlage schwächt das Modell fundamental und kann systematische
-Fehlentscheidungen mit finanziellen und reputativen Schäden erzeugen (Auswirkung: 5).
-Latente Verzerrungen sind ohne explizite Analysen schwer erkennbar (Entdeckbarkeit: 5).
+Historische Datenschnitte sind oft nicht repräsentativ für aktuelle und zukünftige Kontexte;
+deshalb bewerten wir die Eintrittswahrscheinlichkeit von Bias in Bestandsdaten mit 6.
+Die Auswirkung liegt bei 10, weil eine verzerrte Datengrundlage das Modell fundamental schwächt
+und systematische Fehlentscheidungen mit finanziellen und reputativen Schäden erzeugen kann.
+Die Entdeckbarkeit setzen wir auf 9: Technische Qualitätsfehler werden über Great-Expectations-Checks,
+Schema- und Vollständigkeitsprüfungen sowie einfache Verteilungs- und Segmenttests früh sichtbar,
+während verdeckte Proxy-Bias-Muster ohne gezielte Fairness-Analysen schwerer erkennbar bleiben.
 
 \begin{table}[!htbp]
 \centering
@@ -100,12 +106,12 @@ Latente Verzerrungen sind ohne explizite Analysen schwer erkennbar (Entdeckbarke
 \hline
 \textbf{Risiko} & \textbf{Eintritt} & \textbf{Auswirkung} & \textbf{Entdeck.} & \textbf{Score} & \textbf{Kategorie} \\
 \hline
-Datenqualität und Bias in historischen Daten & 3 & 5 & 5 & 75 & Rot \\
-Unvollständige Datenabdeckung & 2 & 4 & 3 & 24 & Gelb \\
-Datenschutz- und Compliance-Lücken & 3 & 4 & 2 & 24 & Gelb \\
+Datenqualität und Bias in historischen Daten & 6 & 10 & 9 & 540 & Rot \\
+Unvollständige Datenabdeckung & 4 & 7 & 5 & 140 & Gelb \\
+Datenschutz- und Compliance-Lücken & 5 & 7 & 4 & 140 & Gelb \\
 \hline
 \end{tabular}
-\caption{Phase 2: Qualitative Priorisierung der Risiken}
+\caption{Phase 2: FMEA-basierte Priorisierung der Risiken}
 \label{tab:cs1_phase2_risiken}
 \end{table}
 
@@ -113,6 +119,11 @@ Datenschutz- und Compliance-Lücken & 3 & 4 & 2 & 24 & Gelb \\
 Die Steuerung kombiniert Data-Quality-Gates, Feature-Governance und Bias-Prüfungen;
 kritische Merkmale werden im Datenfreigabeprozess gemeinsam durch Fachbereich,
 Data Science und Compliance bewertet (Tab.~\hyperref[tab:cs1_phase2_massnahmen]{\ref{tab:cs1_phase2_massnahmen}}).
+
+\paragraph*{KRI.}
+Als KRI dienen die Pflichtfeldvollständigkeit der Trainingsdaten (Soll: mindestens 98\%)
+und die Differenz der Ablehnungsquoten zwischen Postleitzahlen-Clustern (Soll: maximal 5\%).
+Great-Expectations-Checks und statistische Verteilungsprüfungen operationalisieren die Entdeckbarkeit.
 
 \begin{table}[!htbp]
 \centering
@@ -132,8 +143,8 @@ Bias-Monitoring & Prüfung auf Diskriminierung und Ausschluss instabiler Merkmal
 \paragraph*{Gate-Entscheidung.}
 \textbf{Stopp und Nachsteuerung.} Freigabe erst nach technischer Umsetzung der
 Datenqualitätsregeln und Wirksamkeitsnachweis im Risikoregister.
-Nach Umsetzung sinkt der Score (Re-Bewertung) auf 10, sodass eine Freigabe unter Auflagen möglich wird.
-Offenes Risiko aus Phase~1: Score unverändert, weiterhin Gelb.
+Nach Umsetzung sinkt der Score auf 300, sodass eine Freigabe unter Auflagen möglich wird.
+Offenes Risiko aus Phase 1: Score unverändert, weiterhin Gelb.
 
 \subsubsection{Phase 3: Modellierung und Evaluierung}
 \paragraph*{Ausgangslage und Risiko.}
@@ -149,12 +160,12 @@ zum Beispiel Fehlklassifikationskosten
 und Auswirkungen auf das Kreditportfolio.
 
 \paragraph*{Bewertung und Begründung.}
-In dieser Phase können bei der Modellselektion,
-insbesondere über heterogene Kundensegmente,
-instabile Ergebnisse auftreten.
-Eintritt: 3.
-Fehlklassifikationen wirken im Betrieb direkt auf Kreditentscheidungen und Risikoexposition (Auswirkung: 4).
-Schwächen in Teilgruppen können hinter globalen Kennzahlen verborgen bleiben (Entdeckbarkeit: 3).
+In dieser Phase können bei der Modellselektion, insbesondere über heterogene Kundensegmente,
+instabile Ergebnisse auftreten. Die Eintrittswahrscheinlichkeit liegt bei 5.
+Fehlklassifikationen wirken im Betrieb direkt auf Kreditentscheidungen und Risikoexposition,
+woraus wir eine Auswirkung von 6 ableiten.
+Schwächen in Teilgruppen können hinter globalen Kennzahlen verborgen bleiben;
+deshalb liegt die Entdeckbarkeit bei 5.
 
 \begin{table}[!htbp]
 \centering
@@ -162,18 +173,21 @@ Schwächen in Teilgruppen können hinter globalen Kennzahlen verborgen bleiben (
 \hline
 \textbf{Risiko} & \textbf{Eintritt} & \textbf{Auswirkung} & \textbf{Entdeck.} & \textbf{Score} & \textbf{Kategorie} \\
 \hline
-Instabile Modellgüte über Segmente & 3 & 4 & 3 & 36 & Gelb \\
-Overfitting bei der Modellselektion & 3 & 4 & 2 & 24 & Gelb \\
-Geringe Erklärbarkeit kritischer Entscheidungen & 3 & 3 & 2 & 18 & Grün \\
+Instabile Modellgüte über Segmente & 5 & 6 & 5 & 150 & Gelb \\
+Overfitting bei der Modellselektion & 5 & 6 & 4 & 120 & Gelb \\
+Geringe Erklärbarkeit kritischer Entscheidungen & 4 & 5 & 4 & 80 & Grün \\
 \hline
 \end{tabular}
-\caption{Phase 3: Qualitative Priorisierung der Risiken}
+\caption{Phase 3: FMEA-basierte Priorisierung der Risiken}
 \label{tab:cs1_phase3_risiken}
 \end{table}
 
 \paragraph*{Maßnahmen.}
 Steuerung über Robustheits-/Sensitivitätsanalysen, Erklärbarkeit (z.B. SHAP/LIME)
 und Mindestkriterien je Segment; Grenzfälle werden manuell geprüft (Tab.~\hyperref[tab:cs1_phase3_massnahmen]{\ref{tab:cs1_phase3_massnahmen}}).
+
+\paragraph*{KRI.}
+Als KRI gelten eine Segment-AUC von mindestens 0.75 und ein maximaler Performance-Gap zwischen Segmenten von 0.05.
 
 \begin{table}[!htbp]
 \centering
@@ -193,8 +207,8 @@ Manuelle Fachprüfung & Verpflichtende Prüfung bei Grenzentscheidungen durch Fa
 \paragraph*{Gate-Entscheidung.}
 \textbf{Freigabe unter Auflagen.} Drift-relevante Merkmale und Schwellenwerte für das
 Betriebsmonitoring werden definiert und dokumentiert.
-Carry-Forward-Prüfung: Governance-Risiko aus Phase~1 wechselt auf Grün (Regeln/Wege erprobt);
-Datenrisiko aus Phase~2 wechselt auf Grün (Qualitätsregeln bewährt, keine kritischen Proxy-Effekte).
+Carry-Forward-Prüfung: Das Governance-Risiko aus Phase 1 wechselt auf Grün (Regeln/Wege erprobt);
+das Datenrisiko aus Phase 2 wechselt auf Grün (Qualitätsregeln bewährt, keine kritischen Proxy-Effekte).
 
 \subsubsection{Phase 4: Pilotierung und Nutzbarmachung}
 \paragraph*{Ausgangslage und Risiko.}
@@ -213,10 +227,10 @@ um operative Schwachstellen vor dem breiten Rollout zu identifizieren.
 
 \paragraph*{Bewertung und Begründung.}
 Im Pilot sind erste Drift-Signale plausibel, aber noch nicht voll geschäftskritisch;
-Eintritt: 3.
-Ein unerkannter Drift skaliert im Vollbetrieb zu erheblichen Fehlentscheidungen (Auswirkung: 4).
-Im Pilot ist das KRI-Set noch nicht vollständig kalibriert; frühe Signale können übersehen werden
-(Entdeckbarkeit: 3).
+deshalb liegt die Eintrittswahrscheinlichkeit bei 5. Ein unerkannter Drift skaliert im Vollbetrieb
+zu erheblichen Fehlentscheidungen, weshalb die Auswirkung bei 6 liegt. Das KRI-Set ist im Pilot
+noch nicht vollständig kalibriert; deshalb können frühe Signale übersehen werden, weshalb wir die
+Entdeckbarkeit mit 5 ansetzen.
 
 \begin{table}[!htbp]
 \centering
@@ -224,12 +238,12 @@ Im Pilot ist das KRI-Set noch nicht vollständig kalibriert; frühe Signale kön
 \hline
 \textbf{Risiko} & \textbf{Eintritt} & \textbf{Auswirkung} & \textbf{Entdeck.} & \textbf{Score} & \textbf{Kategorie} \\
 \hline
-Beginnende Drift im Pilotbetrieb & 3 & 4 & 3 & 36 & Gelb \\
-Schnittstellenfehler in der Ende-zu-Ende-Kette & 3 & 3 & 2 & 18 & Grün \\
-Unzureichendes Pilot-Monitoring & 3 & 3 & 3 & 27 & Gelb \\
+Beginnende Drift im Pilotbetrieb & 5 & 6 & 5 & 150 & Gelb \\
+Schnittstellenfehler in der Ende-zu-Ende-Kette & 4 & 5 & 4 & 80 & Grün \\
+Unzureichendes Pilot-Monitoring & 4 & 5 & 5 & 100 & Gelb \\
 \hline
 \end{tabular}
-\caption{Phase 4: Qualitative Priorisierung der Risiken}
+\caption{Phase 4: FMEA-basierte Priorisierung der Risiken}
 \label{tab:cs1_phase4_risiken}
 \end{table}
 
@@ -237,6 +251,9 @@ Unzureichendes Pilot-Monitoring & 3 & 3 & 3 & 27 & Gelb \\
 Für den Übergang in den Betrieb werden Fallback/Rollback, KRI-Eskalationslogik und
 regelmäßiges Reporting umgesetzt; Verantwortlichkeiten und Reaktionszeiten für Incidents
 werden verbindlich festgelegt (Tab.~\hyperref[tab:cs1_phase4_massnahmen]{\ref{tab:cs1_phase4_massnahmen}}).
+
+\paragraph*{KRI.}
+Im Pilotbetrieb gilt ein Population Stability Index (PSI) unter 0.20 als grün; die Schnittstellenfehlerquote muss unter 1\% bleiben.
 
 \begin{table}[!htbp]
 \centering
@@ -254,7 +271,7 @@ KRI-Eskalationslogik & Drift-Indikatoren mit definierten Schwellenwerten und Rep
 \end{table}
 
 \paragraph*{Gate-Entscheidung.}
-Das verbliebene offene Risiko aus Phase~3 wird abschließend geprüft:
+Das verbliebene offene Risiko aus Phase 3 wird abschließend geprüft:
 Die Pilotphase hat keine kritischen Segmentschwächen gezeigt
 und die Drift-Indikatoren liegen stabil unterhalb der definierten Schwellenwerte.
 Das Modellrisiko wechselt auf Grün.
@@ -275,15 +292,12 @@ Es liegt also nicht nur ein technisches Signal,
 sondern auch ein geschäftskritisches Portfoliorisiko vor.
 
 \paragraph*{Bewertung und Begründung.}
-Im laufenden Betrieb wirken reale Marktveränderungen auf die Merkmalsverteilungen.
-Gleichzeitig sinkt die Modellgüte in kritischen Segmenten.
-Die Eintrittswahrscheinlichkeit für dieses Ereignis wird mit 4 bewertet,
-da Drift im Lebenszyklus eines Modells erwartet wird.
-Die Auswirkung wird auf 5 gesetzt,
-weil technische und fachliche Signale gleichzeitig negativ sind
-und dadurch Fehlentscheidungen sowie Portfoliorisiken real werden.
-Die Entdeckbarkeit ist begrenzt, da sich Auswirkungen auf Portfolioebene zeitverzögert
-akkumulieren (Drift: 3; Portfoliorisiko: 4).
+Im laufenden Betrieb wirken reale Marktveränderungen auf die Merkmalsverteilungen,
+während die Modellgüte in kritischen Segmenten sinkt. Deshalb bewerten wir die
+Eintrittswahrscheinlichkeit für Data Drift mit 7. Die Auswirkung setzen wir auf 8,
+weil technische und fachliche Signale gleichzeitig negativ sind und dadurch Fehlentscheidungen
+sowie Portfoliorisiken real werden. Die Entdeckbarkeit ist begrenzt, da sich Auswirkungen auf
+Portfolioebene zeitverzögert akkumulieren; deshalb liegt sie bei 7.
 
 \begin{table}[!htbp]
 \centering
@@ -291,12 +305,12 @@ akkumulieren (Drift: 3; Portfoliorisiko: 4).
 \hline
 \textbf{Risiko} & \textbf{Eintritt} & \textbf{Auswirkung} & \textbf{Entdeck.} & \textbf{Score} & \textbf{Kategorie} \\
 \hline
-Data Drift in kritischen Segmenten & 4 & 5 & 3 & 60 & Rot \\
-Portfoliorisiko durch Fehlklassifikationen & 4 & 4 & 4 & 64 & Rot \\
-Verzögerte Incident-Reaktion & 3 & 4 & 4 & 48 & Gelb \\
+Data Drift in kritischen Segmenten & 7 & 8 & 7 & 392 & Rot \\
+Portfoliorisiko durch Fehlklassifikationen & 8 & 8 & 7 & 448 & Rot \\
+Verzögerte Incident-Reaktion & 5 & 6 & 5 & 150 & Gelb \\
 \hline
 \end{tabular}
-\caption{Phase 5: Qualitative Priorisierung der Risiken}
+\caption{Phase 5: FMEA-basierte Priorisierung der Risiken}
 \label{tab:cs1_phase5_risiken}
 \end{table}
 
@@ -323,6 +337,9 @@ Monitoring-Takt und KRI-Schwellen werden neu kalibriert,
 das Reporting-Intervall verkürzt.
 Eine formale Re-Freigabe des vollautomatisierten Betriebs
 erfolgt erst nach stabilen Indikatoren über einen definierten Zeitraum.
+
+\paragraph*{KRI.}
+Als Alarm-KRI gilt ein PSI über 0.25; zusätzlich wird die Reaktionszeit auf Incidents auf maximal 30 Minuten begrenzt.
 
 \medskip
 \noindent

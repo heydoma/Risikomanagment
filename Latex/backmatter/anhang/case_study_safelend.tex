@@ -77,3 +77,50 @@ und einen stufenweisen Rollout.
 Das Gesamtbudget beträgt 550.000 Euro
 einschließlich externer Beratung und Cloud-Ressourcen.
 Der Go-Live ist für das folgende Geschäftsjahr vorgesehen.
+
+\subsection{Risikeregister mit Status-Historie}
+Die folgende Übersicht dokumentiert die Carry-Forward-Logik des SafeLend-Projekts.
+Die Spalte Status-Historie zeigt, wie sich einzelne Risiken über die DASC-PM-Phasen entwickeln.
+
+\begin{longtable}{@{}p{3.8cm}p{3.4cm}p{2.0cm}p{2.1cm}p{3.8cm}p{3.9cm}@{}}
+\caption{SafeLend-Risikoregister mit Status-Historie}
+\label{tab:safelend_status_history}
+\toprule
+\textbf{Risiko} & \textbf{KRI / Trigger} & \textbf{Eintritt} & \textbf{Aus\allowbreak wirkung} & \textbf{Status-Historie} & \textbf{Maßnahmen / Owner} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Risiko} & \textbf{KRI / Trigger} & \textbf{Eintritt} & \textbf{Aus\allowbreak wirkung} & \textbf{Status-Historie} & \textbf{Maßnahmen / Owner} \\
+\midrule
+\endhead
+
+Zielschieflage und Governance-Lücken
+& Dokumentationsvollständigkeit der Governance-Artefakte = 100\%
+& 5
+& 6
+& Phase 1: Gelb \textrightarrow{} Phase 2: Gelb \textrightarrow{} Phase 3: Grün
+& Verbindliche Freigaben, Risk Owner, Eskalationspfad / Projektleitung \\
+
+Datenqualität und Bias in historischen Daten
+& Pflichtfeldvollständigkeit $\geq$ 98\%, Ablehnungsquoten-Differenz $\leq$ 5\%
+& 6
+& 10
+& Phase 2: Rot \textrightarrow{} Phase 3: Grün
+& Data-Quality-Gates, Great Expectations, Fairness-Prüfungen / Data Science \& Compliance \\
+
+Instabile Modellgüte über Segmente
+& Segment-AUC $\geq$ 0.75, Performance-Gap $\leq$ 0.05
+& 5
+& 6
+& Phase 3: Gelb \textrightarrow{} Phase 4: Gelb
+& Robustheitsanalysen, SHAP/LIME, manuelle Fachprüfung / Data Science \\
+
+Data Drift im Betrieb
+& PSI $> 0.25$ oder Incident-Reaktionszeit $> 30$ Min.
+& 7
+& 8
+& Phase 4: Gelb \textrightarrow{} Phase 5: Rot
+& Monitoring-Takt anpassen, Re-Training, Fallback / IT \& Risk Management \\
+
+\bottomrule
+\end{longtable}
