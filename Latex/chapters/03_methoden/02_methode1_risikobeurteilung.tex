@@ -1,8 +1,12 @@
 \section{Methode 1: Risikobeurteilung} \label{sec:methode1}
 Die Risikobeurteilung (Risk Assessment) ist ein Kernbaustein des Risikomanagements.
 Sie liefert eine nachvollziehbare Bewertung als Grundlage für Priorisierung und Maßnahmen \citep{walder_risikomanagement_2017}.
-Dieses Kapitel fasst Methoden zur Risikoidentifikation und -bewertung zusammen und ordnet sie für Data-Science-Projekte ein.
-Im Fokus steht eine ursachenorientierte Betrachtung, da Daten- und Modellrisiken häufig über Ursachen (nicht nur Folgen) wirksam werden.
+
+Dafür sollen in diesem Kapitel unterschiedliche Methoden der Risikoidentifikation und -bewertung aufgeführt werden, die später Anwendung in 
+der Risikomanagement Strategie in Data-Science Projekten finden kann. Die Identifikation von Risiken im klassischen Rahmen bezieht sich 
+vorwiegend auf die Folgen, also eine wirkungsbezogene Betrachtung. Dies gilt bei den Zielen eines Data-Science Projektes ebenso, nur
+dass die Ursachenbezogene Risikobetrachtung, gerade mit Hinblick auf die Daten- und Modellrisiken mehr Potenzial zur Analyse bieten.
+Somit wird sich dieses Kapitel primär auf eine ursachenbezogene Sichtweise der Risikobeurteilung fokussieren.
 
 \subsection{Identifikation}
 Zur Identifikation von Risiken eignen sich etablierte Methoden \citep{blender_risiken_2025}:
@@ -66,18 +70,32 @@ Viele Data-Science-nahe Ansätze liefern deshalb Indikatorwerte, die als (semi-)
 
 \begin{enumerate}
     \item \textbf{Datenqualität} \\
-    EDA und automatisierte Checks (z.B. Great Expectations) unterstützen die frühe Erkennung von
-    Ausreißern, Schemaänderungen und Verteilungseffekten \citep{noauthor_home_nodate}.
+    Die strikte Trennung von Trainings- und Testdaten entspricht einer Sensitivitätsanalyse, 
+    bei der kleine Änderungen im System oder Modell auf ihre Auswirkungen hin überprüft werden. 
+    Eine ausführliche Explorative Datenanalyse (EDA) ist dabei essenziell, 
+    um das Potenzial der Daten zu verstehen und mögliche Risiken frühzeitig zu identifizieren. 
+    Tools wie Great Expectations oder Pandas Profiling ermöglichen es, 
+    bereits während der Datenerhebung die Verteilung der Daten zu analysieren und Ausreißer zu identifizieren \citep{noauthor_home_nodate}.
     \item \textbf{Modell-Robustheit} \\
-    Monte-Carlo-Simulationen und Sensitivitätsanalysen prüfen Stabilität unter variierten Annahmen
-    und Datenlagen \citep{gleisner_risikoaggregation_2019}.
+    Die Monte-Carlo-Simulation kann genutzt werden, um die Robustheit eines Modells zu testen. 
+    Durch die Simulation verschiedener Szenarien lassen sich insbesondere Daten-Biases 
+    und die Modellperformance analysieren. 
+    Dies ermöglicht eine fundierte Bewertung der Stabilität des Modells unter unterschiedlichen Bedingungen \citep{gleisner_risikoaggregation_2019}.
     \item \textbf{Drift-Phenomäne} \\
-    Kontinuierliches Monitoring macht zeitliche Veränderungen von Daten und Modellgüte sichtbar
-    und unterstützt dynamische Re-Bewertungen \citep{pelosi_explainability_2025}.
+    Um Drift-Phänomene zu erkennen, können kontinuierliche Monitoring-Systeme eingesetzt werden, 
+    die Abweichungen in den Daten oder der Modellperformance über die Zeit hinweg überwachen. 
+    Dies entspricht einer dynamischen Form der Szenarioanalyse, bei der nicht nur statische Risiken, 
+    sondern auch zeitliche Veränderungen berücksichtigt werden \citep{pelosi_explainability_2025}.
     \item \textbf{Erklärbarkeit der Ergebnisse} \\
-    Interpretierbarkeit ist besonders in regulierten Domänen zentral.
-    SHAP \citep{lundberg_unified_2017} und LIME \citep{ribeiro_why_2016} unterstützen die nachvollziehbare
-    Attribution von Modellentscheidungen und helfen, Proxy-Effekte zu erkennen.
+    In vielen Data-Science-Projekten, insbesondere in regulierten Branchen wie Finanzen oder Gesundheitswesen, 
+    ist die Interpretierbarkeit von Modellen ein zentrales Risiko. 
+    Komplexe Modelle wie Deep-Learning-Netzwerke oder Ensemble-Methoden liefern zwar oft hohe Vorhersagegenauigkeiten, 
+    ihre Entscheidungsprozesse sind jedoch schwer nachvollziehbar („Black-Box-Problem“). 
+    Dies kann zu rechtlichen, ethischen oder operativen Risiken führen, 
+    wenn Stakeholder oder Aufsichtsbehörden die Entscheidungsgrundlagen nicht verstehen oder vertrauen.
+    Zur Analyse dieses Bereichs werden z.B. SHAP-Werte (SHapley Additive exPlanations) \citep{lundberg_unified_2017} oder 
+    LIME (Local Interpretable Model-agnostic Explanations) \citep{ribeiro_why_2016} eingesetzt. Beide Methoden erlauben eine 
+    quantitative Analyse der Modelle und wie sie im inneren Entscheidungen treffen.
 \end{enumerate}
 
 \subsubsection*{Bewertung und Ergebnisartefakte}
