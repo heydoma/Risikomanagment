@@ -1,37 +1,215 @@
 \section{Case-Study 3: Fish Stunning - Erfolgsquotenbestimmung} \label{sec:case_study_3}
+Im Rahmen der vorliegenden Arbeit wird eine Fallstudie herangezogen, 
+um die entwickelte Strategie zur Risikobehandlung in einem praxisnahen Anwendungskontext zu demonstrieren. 
+Die Fallstudie basiert auf einem Projekt aus dem industriellen Umfeld der 
+Firma Baader sowie deren Tochtergesellschaft TriVision. 
+Aufgrund eingeschränkter Verfügbarkeit projektspezifischer Dokumentation 
+und fehlender direkter Projektbeteiligung des Autors erhebt die Darstellung 
+keinen Anspruch auf vollständige empirische Abbildung. 
+Stattdessen wird der Anwendungsfall in abstrahierter und teilweise 
+hypothetisch ergänzter Form rekonstruiert, um eine konsistente und für die Analyse geeignete Ausgangsbasis zu schaffen.
 
-Bei der Firma Baader wurde vergangenes Jahr ein Projekt durchgeführt, welches als Ziel hatte 
-eine Modellgestützte Überprüfung des ,,Stunning-Prozesses'' hinsichtlich seiner Erfolgsquote 
-zu erstellen. Hintergrund dazu ist eine Initiative für das Tierwohl die es unerlässlich macht,
-dass die Fische beim ,,Stunning'' so schnell wie möglich betäubt werden, um nicht zu leiden.
+Gegenstand des betrachteten Projekts ist die Entwicklung eines 
+optischen Erkennungssystems zur Bewertung des Betäubungserfolgs von Fischen 
+in einer industriellen Verarbeitungsanlage. 
+Konkret soll auf Basis von Live-Bilddaten einer Fisch Verarbeitungsmaschine automatisiert bestimmt werden, 
+ob ein Fisch ordnungsgemäß ,,gestunnt'' wurde, bevor der Prozess fortgeführt wird. Zielgröße des Systems ist die Ermittlung einer Erfolgsquote, 
+welche insbesondere vor dem Hintergrund tierschutzrechtlicher Anforderungen von zentraler Bedeutung ist. 
+Wird eine definierte Mindestquote unterschritten, sind entsprechende Gegenmaßnahmen einzuleiten, 
+beispielsweise in Form technischer Wartung oder Anpassung der Prozessparameter.
 
-Dafür wurde mit der Tochtergesellschaft ,,Trivision'' eine optische Überprüfungslösung entwickelt.
+Die technische Umsetzung erfolgt mittels eines neuronalen Netzes aus 
+dem Bereich des Maschinelles Lernen, das unter Verwendung der Softwarebibliothek TensorFlow entwickelt wurde. 
+Für den produktiven Einsatz wird das Modell in das interoperable Open Neural Network Exchange-Format überführt, 
+um eine Ausführung auf spezialisierter Zielhardware zu ermöglichen. 
+Der Entwicklungsprozess kann dabei nicht als streng methodisch oder agil strukturiert beschrieben werden, 
+sondern folgte eher einem iterativen „Trial-and-Error“-Ansatz, was zusätzliche Unsicherheiten 
+hinsichtlich Modellqualität und Systemstabilität impliziert. Eine abschließende wiederkehrende 
+Modellevaluation ist nicht vorgesehen.
 
-\notiz{Im folgenden wird zunächst beschrieben wie Baader in Zusammenarbeit mit Trivision das 
-Projekt durchgeführt hat und danach wird der Alternativweg mit DASC-PM und Risk-Extension 
-durchgeführt und kann dem direkt gegenübergestellt werden.}
+Vor dem Hintergrund dieses Anwendungsszenarios ergeben sich verschiedene potenzielle Risikofelder. 
+Hierzu zählen insbesondere datengetriebene Risiken wie ein möglicher 
+Data Drift infolge veränderter Umweltbedingungen (z. B. Lichtverhältnisse), der die Modellperformance 
+negativ beeinflussen kann. Darüber hinaus bestehen erhebliche ethische Risiken, 
+insbesondere im Fall von Fehlklassifikationen, bei denen nicht korrekt betäubte Tiere fälschlicherweise 
+als betäubt erkannt werden. Ergänzend sind auch betriebswirtschaftliche und reputationsbezogene Risiken 
+zu berücksichtigen, etwa wenn das System beim Kunden nicht zuverlässig operationalisiert 
+werden kann oder die erwartete Leistungsfähigkeit nicht erreicht wird.
 
-\notiz{Das Kernprojekt wurde nicht mit einem Prozessmodell durchgeführt, sondern als 
-typisches Proof of Concept Projekt, wo durch ,,Try and Error'' der Projektfortschritt. }
+Die nachfolgende Analyse nutzt dieses Szenario als strukturierte Grundlage, 
+um die entwickelte Strategie zur systematischen Identifikation, 
+Bewertung und Behandlung von Risiken exemplarisch anzuwenden und deren praktische Umsetzbarkeit zu demonstrieren.
+
+\subsection{Semi-quantitative Bewertungsstruktur}
+
+Für die Durchführung des Gedankenexperiments wird eine semi-quantitative Bewertungsstruktur 
+zur Risikobewertung verwendet. Die Bewertung erfolgt auf einer ordinalen 
+Skala von 1 bis 5 und orientiert sich konzeptionell an der \textit{Fehlermöglichkeits- und -einflussanalyse} (FMEA), 
+wird jedoch gezielt erweitert.
+
+Im Gegensatz zur klassischen FMEA, die typischerweise auf einer multiplikativen 
+Verknüpfung der Bewertungsdimensionen basiert, 
+wird in der vorliegenden Arbeit ein gewichtetes additives Modell eingesetzt. 
+Ziel dieser Anpassung ist es, eine unverhältnismäßige Skalierung der Risikowerte 
+zu vermeiden und gleichzeitig eine transparente Priorisierung der einzelnen Bewertungsdimensionen zu ermöglichen.
+
+Die Bewertungsstruktur umfasst die folgenden drei Kennziffern:
+\begin{itemize}
+    \item Eintrittswahrscheinlichkeit (1 = unwahrscheinlich, 5 = sehr wahrscheinlich)
+    \item Auswirkung (1 = gering , 5 = stark)
+    \item Entdeckbarkeit (1 = schwer, 5 = leicht)
+\end{itemize}
+
+Diese werden unterschiedlich gewichtet, um ihrer relativen Bedeutung im Anwendungskontext Rechnung zu tragen. 
+Die Gewichtung ist in Tabelle \ref{tab:gewichtung} dargestellt.
+
+\begin{table}[h]
+\centering
+\label{tab:gewichtung}
+    \begin{tabular}{l c}
+    \hline
+    \textbf{Kennziffer} & \textbf{Gewichtung} \\
+    \hline
+    Eintrittswahrscheinlichkeit & 0{,}4 \\
+    Auswirkung                  & 0{,}4 \\
+    Entdeckbarkeit              & 0{,}2 \\
+    \hline
+    \end{tabular}
+\caption{Gewichtung der Bewertungsdimensionen}
+\end{table}
+
+Die Aggregation der Einzelbewertungen zu einem Key Risk Indicator (KRI) erfolgt über folgende Formel:
+
+\begin{equation}
+KRI = 0{,}4 \cdot Eintrittswahrscheinlichkeit + 0{,}4 \cdot Auswirkung + 0{,}2 \cdot Entdeckbarkeit
+\end{equation}
+
+Durch diese additive Verknüpfung ergibt sich ein Wertebereich von minimal 1 bis maximal 5. 
+Diese KRI's bilden die Entscheidungsgrundlage der Risk-Gates welche sich, 
+wie in Tabelle \ref{tab:risikoklassen} darstellt.
+
+\begin{table}[h]
+\centering
+\label{tab:risikoklassen}
+    \begin{tabular}{c l l}
+    \hline
+    \textbf{KRI} & \textbf{Risikokategorie} & \textbf{Ampelstatus} \\
+    \hline
+    $1 \leq x < 2$ & geringes Risiko        & grün \\
+    $2 \leq x < 4$ & erhöhtes Risiko       & gelb \\
+    $4 \leq x \leq 5$ & hohes Risiko          & rot \\
+    \hline
+    \end{tabular}
+\caption{Risikoklassen und Bewertungsskala}
+\end{table}
+
+Die gewählte Kategorisierung ist bewusst konservativ ausgestaltet. 
+Insbesondere erfolgt die Einordnung in kritische Bereiche (gelb bzw. rot) vergleichsweise früh. 
+Diese Entscheidung basiert auf der Annahme, dass im betrachteten Anwendungskontext 
+ein hoher Fokus auf der schnellen Operationalisierung technischer Systeme liegt, 
+wodurch Risiken potenziell unterbewertet werden könnten.
+
+Die vorliegende Einteilung stellt somit einen bewussten methodischen Gegenpol dar, 
+der eine frühzeitige Sensibilisierung für kritische Entwicklungen unterstützt und eine strengere 
+Risikosteuerung im weiteren Verlauf des Entwicklungs- und Einführungsprozesses fördert.
+
+Die Integration von Ergebnissen aus weiterführenden Analyseverfahren 
+(z.\,B. Sensitivitätsanalysen) in die vorliegende Bewertungsstruktur erfolgt 
+über geeignete Transformations- bzw. Mapping-Ansätze. 
+Dabei werden methodenspezifische Kennzahlen in die einheitliche Risikoskala überführt. 
+
+Für die Nachverfolgung der Risiken und späteren Gegenüberstellung, werden die KRI's samt 
+ihrer Maßnahmen in einem Risk-Register verwaltet und zusammengeführt. Dieses bildet 
+zusätzlich noch den KRI vorher und nachher ab, wodurch eine Verändung direkt sichtbar wird. 
+
+Im folgenden Abschnitt werden die Phasen des DASC-PM gedanklich durchgeführt,
+die möglichen Risiken identifiziert und in die eingangs vorgestellte Risikobewertung
+überführt. Abschließend zu jeder Phase wird auf die entsprechende Entscheidung in 
+dem korrespondierenden Risk-Gate eingegangen.
 
 \subsection{Phase 1: Problem Statement}
-\notiz{}
+
+    Mögliche Risiken dieser Phase: 
+    - Keine besonders relevanten bzw. interessanten Risiken hier. Es werden 
+    keine Personenbezogenen Daten erhoben, Das Ziel ist klar definiert, 
+    Ressourcen werden von TriVision gestellt bzw. dort wird es umgesetzt,
+    diese Anpassung ist gefordert und somit ist der Businesscase auch gegeben,
+
+    \paragraph{Das Risk-Gate bleibt auf Grün} da hier keine relevanten Risiken identifiziert werden konnten.
 
 \subsection{Phase 2: Data Provisioning}
-\notiz{}
-
+    Mögliche Risiken dieser Phase: 
+    - Ausgewähltes Kamerasystem zu schlecht und somit ist die Datenqualität nicht ausreichend. (Maßnahme -> Bessere Kamera)
+        - Die erste Datensichtung hat gezeigt dass die Datenqualität der Videoaufnahmen zu schlecht sein könnte, um daraus 
+          tatsächlich ein Modell zu trainieren.
+        - (E)intrittswahrscheinlichkeit = 2 - Es könnte auch ausreichen und das Kamerasystem ist günstiger als das nächste Upgrade.
+        - (A)uswirkung = 5 - Produkt funktioniert nicht zuverlässig
+        - (Ent)deckbarkeit = 2 - Kein aktives Kontrollsystem, aber im weiteren Prozess würde es auffallen.
+        KRI = 2 * 0.4 + 5 * 0.4 + 2 * 0.2 = 3.2 
+    - Infrastruktur nicht ausreichend für die Datenmengen (Maßnahmen -> Videos nur kurz speichern und dann löschen, Direkte Verbindung von Modell zu Kamera)
+        - Die entstandenen Aufnahmen sind sehr groß und die ersten Architekturkonzepte sahen einen Transport über das Netzwerk vor. Zudem sollten
+        die Videos für eine definierte Zeit zur Nachverfolgung gespeichert werden.
+        - E = 2 - Die erste Analyse hat gezeigt, dass es grundsätzlich möglich ist, aber es bestehen Sorgen, dass die Zukünftige Last das System überfordern könnte.
+        - A = 5 - Das System würde zusammenbrechen und somit gar nicht funktionieren.
+        - Ent = 5 - Fällt während der Entwicklung und ggf. in der Produktion auf.
+        KRI = 2 * 0.4 + 5 * 0.4 + 5 * 0.2 = 3.8
+    \paragraph{Dieser Abschnitt schließt mit einer gelben Ampel ab} und erlaubt ein Fortfahren in die nächste Phase. Es werden 
+    lediglich zwei Risiken aufgenommen, die bis auf weiteres beobachtet werden müssen. 
+    
 \subsection{Phase 3: Analysis}
-\notiz{}
+    Mögliche Risiken dieser Phase: 
+    - Zuverlässigkeit der Ergebnisse (Analyse und KRI durch Performance Indicator und Modellkennziffern.)
+        - Es besteht ein Ethisches Risiko, wenn die Ergebnisse nicht korrekt klassifizieren. Dadurch würden 
+        Fische automatisiert als ,,betäubt'' gezählt werden und die Erfolgsquote würde fälschlicherweise 
+        als hoch eingestuft werden. Dadurch würde Tierleid in Kauf genommen werden.
+        Das Modell wurde anhand der bestehenden Videos trainiert, da keine neue Kamera besorgt wurde. 
+        Die Trainingsdaten wurden gelabelt und waren in ausreichendem Umfang vorhanden.
+        Die Kontrolle der Modellperformance wurde anhand der typischen Metriken durchgeführt.
+        Im Anhang ist eine Liste mit den erhobenen Performance Parametern die durch eine 
+        Schwellwertbasierte Einordnung in KRI's überführt wurden. Im Hauptmarkt für diese Maschine 
+        wird eine Betäubung von 100\% angestrebt, es gibt aber keine absolute regulatorische Vorgabe dazu \citep{espmark_assessment_2025}. Dies wird regelmäßig kontrolliert und durch eine 
+        Institution nachverfolgt. Fabriken müssen schließen, wenn dies nicht gewährleistet werden kann.
+        - Folgende Metriken wurden weiter betrachtet und in Risiken überführt:
+            - (FNR) Fehlklassifikation: Nicht betäubter Fisch wird als betäubt erkannt (kritischer False Negative Fall) 
+                - Aus der ,,schlechten'' False Negative Quote von 25\% lässt sich eine hohe Eintrittswahrscheinlichkeit anleiten
+                  E = 4
+                  Der Kontext ist sehr schwerwiegend, da hier auch Tierwohl Bedenken bzw. regulatorische Quoten nicht mehr eingehalten werden können
+                  A = 5
+                  Diese Metriken werden bei jedem Training erzeugt und somit gibt es hier eine wahrscheinliche Entdeckung dieses Risikos.
+                  Ent = 2
+                  KRI = 4 * 0.4 + 5 * 0.4 + 2 * 0.2 = 4.0
+            - (Recall) Unzureichende Erkennungsrate tatsächlich betäubter Fische (Recall-Schwäche)
+                  Der Recall ist ebenfalls unzureichend da nur ca. 72\% der Fische korrekt positiv klassifiziert werden.
+                  E = 4
+                  Die Einordnung dieser Bewertung ist ähnlich zu dem vorherigen.
+                  A = 5
+                  Ent = 2
+                  KRI = 4 * 0.4 + 5 * 0.4 + 2 * 0.2 = 4.0
+            - (ROC-AUC) Geringe Trennschärfe des Modells (unsichere Klassifikation)
+                  Der AUC Wert von 0.80 zeigt eine über alle Schwellwerte genaue gewichtung 
+                  des ,,korrekten'' Falls bzw. Outcomes über den falschen. Das ist ebenfalls noch nicht gut genug.
+                  E = 4
+                  A = 5
+                  Ent = 2
+                  KRI = 4 * 0.4 + 5 * 0.4 + 2 * 0.2 = 4.0
+    \paragraph{Das Risk-Gate zeigt nach dieser Phase eine rote Ampel} die sich aus den kritischen Performance Ergebnissen 
+    der Entwicklung ergibt. Hier ergeben sich nun Maßnahmen, die die gesammelten Risiken addressieren.
+
+    \notiz{TODO: Maßnahmen und Bearbeitung beschreiben -> Freigabe durch Verbesserung der Metriken -> Weiterführung des Prozesses}
 
 \subsection{Phase 4: Deployment}
-\notiz{}
+    Mögliche Risiken dieser Phase: 
+    - Data-Drift durch z.B. sich ändernde Lichtverhältnisse (Jahreszeitenabhängiges Nebenlicht in Norwegen ist sehr unterschiedlich. Maßnahme: Hardware nachrüsten für Beleuchtung oder softwareseitig nachbelichten.)
+        - (Performance Drop) Instabilität bei veränderten Umweltbedingungen (z.\,B. Lichtverhältnisse, Data Drift)
+    - Andere Fischzüchtungen führen ggf. zu Modell-Drift da sie sich anders verhalten (Andere Zuchtbecken führen ggf. zu anderen Ergebnissen. Maßnahmen: Datenerhebung aus mehreren Zuchtbecken bzw. Verteilung erweitern.)
 
 \subsection{Phase 5: Usage}
-\notiz{}
+    Mögliche Risiken dieser Phase: 
+    - Alle vorherigen Risiken. (Maßnahme: Automatisierte Überprüfung der Ergebnisse auf regelmäßiger Basis)
+
 
 \subsection{Ergebnisse des Gedankenexperiment}
 Die Durchführung des Gedankenexperiments hat gezeigt, dass der Einsatz sowohl eines 
-strukturierten Prozessmodells, als auch einer darin integrierten Risikobetrachtung 
-zu mehr Übersicht bei der Projektdurchführung sorgt. Die Integration der 
-Risk-Gates in den Entwicklungsprozess, in Kombination zu einer CI/CD Pipeline
+Prozessmodells, als auch einer darin integrierten Risikobetrachtung 
+zu mehr Sicherheit bei der Projektdurchführung sorgen kann.
 
