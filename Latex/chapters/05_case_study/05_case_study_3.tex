@@ -63,7 +63,7 @@ Die Bewertungsstruktur umfasst die folgenden drei Kennziffern:
 Diese werden unterschiedlich gewichtet, um ihrer relativen Bedeutung im Anwendungskontext Rechnung zu tragen. 
 Die Gewichtung ist in Tabelle \ref{tab:gewichtung} dargestellt.
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \label{tab:gewichtung}
     \begin{tabular}{l c}
@@ -88,9 +88,8 @@ Durch diese additive Verknüpfung ergibt sich ein Wertebereich von minimal 1 bis
 Diese KRI's bilden die Entscheidungsgrundlage der Risk-Gates welche sich, 
 wie in Tabelle \ref{tab:risikoklassen} darstellt.
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
-\label{tab:risikoklassen}
     \begin{tabular}{c l l}
     \hline
     \textbf{KRI} & \textbf{Risikokategorie} & \textbf{Ampelstatus} \\
@@ -101,17 +100,8 @@ wie in Tabelle \ref{tab:risikoklassen} darstellt.
     \hline
     \end{tabular}
 \caption{Risikoklassen und Bewertungsskala}
+\label{tab:risikoklassen}
 \end{table}
-
-Die gewählte Kategorisierung ist bewusst konservativ ausgestaltet. 
-Insbesondere erfolgt die Einordnung in kritische Bereiche (gelb bzw. rot) vergleichsweise früh. 
-Diese Entscheidung basiert auf der Annahme, dass im betrachteten Anwendungskontext 
-ein hoher Fokus auf der schnellen Operationalisierung technischer Systeme liegt, 
-wodurch Risiken potenziell unterbewertet werden könnten.
-
-Die vorliegende Einteilung stellt somit einen bewussten methodischen Gegenpol dar, 
-der eine frühzeitige Sensibilisierung für kritische Entwicklungen unterstützt und eine strengere 
-Risikosteuerung im weiteren Verlauf des Entwicklungs- und Einführungsprozesses fördert.
 
 Die Integration von Ergebnissen aus weiterführenden Analyseverfahren 
 (z.\,B. Sensitivitätsanalysen) in die vorliegende Bewertungsstruktur erfolgt 
@@ -133,13 +123,15 @@ dem korrespondierenden Risk-Gate eingegangen.
     - Keine besonders relevanten bzw. interessanten Risiken hier. Es werden 
     keine Personenbezogenen Daten erhoben, Das Ziel ist klar definiert, 
     Ressourcen werden von TriVision gestellt bzw. dort wird es umgesetzt,
-    diese Anpassung ist gefordert und somit ist der Businesscase auch gegeben,
+    diese Anpassung ist gefordert und somit ist der Businesscase auch gegeben.
 
-    \paragraph{Das Risk-Gate bleibt auf Grün} da hier keine relevanten Risiken identifiziert werden konnten.
+    \paragraph{Das Risk-Gate bleibt auf Grün} da hier keine relevanten Risiken identifiziert werden konnten
+    (vgl. Tabelle \hyperref[tab:cs3_phase1_risiko_verfolgung_tabelle]{\ref{tab:cs3_phase1_risiko_verfolgung_tabelle}}).
 
 \subsection{Phase 2: Data Provisioning}
     Mögliche Risiken dieser Phase: 
-    - Ausgewähltes Kamerasystem zu schlecht und somit ist die Datenqualität nicht ausreichend. (Maßnahme -> Bessere Kamera)
+    (vgl. Tabelle \hyperref[tab:cs3_phase2_risiken_tabelle]{\ref{tab:cs3_phase2_risiken_tabelle}})
+    - Ausgewähltes Kamerasystem könnte zu schlecht sein und somit die Datenqualität negativ beeinflussen.
         - Die erste Datensichtung hat gezeigt dass die Datenqualität der Videoaufnahmen zu schlecht sein könnte, um daraus 
           tatsächlich ein Modell zu trainieren.
         - (E)intrittswahrscheinlichkeit = 2 - Es könnte auch ausreichen und das Kamerasystem ist günstiger als das nächste Upgrade.
@@ -151,12 +143,16 @@ dem korrespondierenden Risk-Gate eingegangen.
         die Videos für eine definierte Zeit zur Nachverfolgung gespeichert werden.
         - E = 2 - Die erste Analyse hat gezeigt, dass es grundsätzlich möglich ist, aber es bestehen Sorgen, dass die Zukünftige Last das System überfordern könnte.
         - A = 5 - Das System würde zusammenbrechen und somit gar nicht funktionieren.
-        - Ent = 5 - Fällt während der Entwicklung und ggf. in der Produktion auf.
-        KRI = 2 * 0.4 + 5 * 0.4 + 5 * 0.2 = 3.8
+        - Ent = 2 - Fällt während der Entwicklung und ggf. in der Produktion auf.
+        KRI = 2 * 0.4 + 5 * 0.4 + 2 * 0.2 = 3.2
+
     \paragraph{Dieser Abschnitt schließt mit einer gelben Ampel ab} und erlaubt ein Fortfahren in die nächste Phase. Es werden 
-    lediglich zwei Risiken aufgenommen, die bis auf weiteres beobachtet werden müssen. 
+    lediglich zwei Risiken aufgenommen, die bis auf weiteres beobachtet werden müssen 
+    (vgl. Tabelle \hyperref[tab:cs3_phase2_risiko_verfolgung_tabelle]{\ref{tab:cs3_phase2_risiko_verfolgung_tabelle}}). 
     
 \subsection{Phase 3: Analysis}
+    Bei der Analyse des Videomaterials hat man direkt den Weg über ein Neuronales Netz gewählt, um 
+    dessen Performance mit den bestehenden Daten zu bestimmen.
     Mögliche Risiken dieser Phase: 
     - Zuverlässigkeit der Ergebnisse (Analyse und KRI durch Performance Indicator und Modellkennziffern.)
         - Es besteht ein Ethisches Risiko, wenn die Ergebnisse nicht korrekt klassifizieren. Dadurch würden 
@@ -166,12 +162,17 @@ dem korrespondierenden Risk-Gate eingegangen.
         Die Trainingsdaten wurden gelabelt und waren in ausreichendem Umfang vorhanden.
         Die Kontrolle der Modellperformance wurde anhand der typischen Metriken durchgeführt.
         Im Anhang ist eine Liste mit den erhobenen Performance Parametern die durch eine 
-        Schwellwertbasierte Einordnung in KRI's überführt wurden. Im Hauptmarkt für diese Maschine 
-        wird eine Betäubung von 100\% angestrebt, es gibt aber keine absolute regulatorische Vorgabe dazu \citep{espmark_assessment_2025}. Dies wird regelmäßig kontrolliert und durch eine 
-        Institution nachverfolgt. Fabriken müssen schließen, wenn dies nicht gewährleistet werden kann.
-        - Folgende Metriken wurden weiter betrachtet und in Risiken überführt:
+        Schwellwertbasierte Einordnung in KRI's überführt wurden. 
+        
+        Im Hauptmarkt für diese Maschine wird eine Betäubung von 100\% angestrebt, 
+        es gibt aber keine absolute regulatorische Vorgabe dazu \citep{espmark_assessment_2025}. 
+        Dies wird regelmäßig kontrolliert und durch eine Institution nachverfolgt. 
+        Fabriken müssen schließen, wenn dies nicht gewährleistet werden kann.
+        
+        - Folgende bei der Modellentwicklung Metriken wurden weiter betrachtet und in Risiken überführt 
+        (vgl. Tabelle \hyperref[tab:cs3_phase3_kri_mapping_tabelle_1]{\ref{tab:cs3_phase3_kri_mapping_tabelle_1}}).:
             - (FNR) Fehlklassifikation: Nicht betäubter Fisch wird als betäubt erkannt (kritischer False Negative Fall) 
-                - Aus der ,,schlechten'' False Negative Quote von 25\% lässt sich eine hohe Eintrittswahrscheinlichkeit anleiten
+                - Aus der ,,schlechten'' False Negative Quote von 25\% lässt sich eine hohe Eintrittswahrscheinlichkeit ableiten
                   E = 4
                   Der Kontext ist sehr schwerwiegend, da hier auch Tierwohl Bedenken bzw. regulatorische Quoten nicht mehr eingehalten werden können
                   A = 5
@@ -179,7 +180,7 @@ dem korrespondierenden Risk-Gate eingegangen.
                   Ent = 2
                   KRI = 4 * 0.4 + 5 * 0.4 + 2 * 0.2 = 4.0
             - (Recall) Unzureichende Erkennungsrate tatsächlich betäubter Fische (Recall-Schwäche)
-                  Der Recall ist ebenfalls unzureichend da nur ca. 72\% der Fische korrekt positiv klassifiziert werden.
+                  Der Recall ist ebenfalls unzureichend, da nur ca. 72\% der Fische die als betäubt klassifiziert werden auch tatsächlich betäubt sind.
                   E = 4
                   Die Einordnung dieser Bewertung ist ähnlich zu dem vorherigen.
                   A = 5
@@ -192,24 +193,86 @@ dem korrespondierenden Risk-Gate eingegangen.
                   A = 5
                   Ent = 2
                   KRI = 4 * 0.4 + 5 * 0.4 + 2 * 0.2 = 4.0
+
     \paragraph{Das Risk-Gate zeigt nach dieser Phase eine rote Ampel} die sich aus den kritischen Performance Ergebnissen 
-    der Entwicklung ergibt. Hier ergeben sich nun Maßnahmen, die die gesammelten Risiken addressieren.
+    der Entwicklung ergibt. Hier ergeben sich nun Maßnahmen, die die gesammelten Risiken addressieren 
+    (vgl. Tabelle \hyperref[tab:cs3_phase3_risiko_verfolgung_tabelle_1]{\ref{tab:cs3_phase3_risiko_verfolgung_tabelle_1}}).
+    
+    Die Analyse hat gezeigt, dass eine Überführung in ein technisch Nutzbares Artefakt an dieser 
+    Stelle noch nicht möglich ist, da das Risiko für Schäden durch Fehlinterpretationen zu hoch ist. Dies 
+    kann auch mit den Identifizierten Risiken aus der vorherigen Phase zusammenhängen. Allem
+    vorran die vergleichsweise schlechte Qualität der Bilder von dem gewählten Kamerasystem.
+    
+    Eine geeignete Maßnahme ist hier also der Austausch des Kamerasystems und ein erneutes
+    labeln der Daten. Dadurch hat sich ebenfalls das Risiko bzgl. der Datenqualität aus dem Kamerasystem, in der Phase des Data-Provisioning, 
+    minimiert. Die Eintrittswahrscheinlichkeit und die Erkennbarkeit ist hier auf 1 gefallen
+    (vgl. Tabelle \hyperref[tab:cs3_phase3_kri_mapping_tabelle_2]{\ref{tab:cs3_phase3_kri_mapping_tabelle_2}}).
 
-    \notiz{TODO: Maßnahmen und Bearbeitung beschreiben -> Freigabe durch Verbesserung der Metriken -> Weiterführung des Prozesses}
+    - (FNR) Fehlklassifikation: Nicht betäubter Fisch wird als betäubt erkannt (kritischer False Negative Fall) 
+        - Aus der ,,annehmbaren'' False Negative Quote von 9\% lässt sich eine mittlere Eintrittswahrscheinlichkeit ableiten
+            E = 3
+            Der Kontext ist sehr schwerwiegend, da hier auch Tierwohl Bedenken bzw. regulatorische Quoten nicht mehr eingehalten werden können
+            A = 5
+            Diese Metriken werden bei jedem Training erzeugt und somit gibt es hier eine wahrscheinliche Entdeckung dieses Risikos.
+            Ent = 2
+            KRI = 3 * 0.4 + 5 * 0.4 + 2 * 0.2 = 3.6
+    - (Recall) Unzureichende Erkennungsrate tatsächlich betäubter Fische (Recall-Schwäche)
+            Der Recall ist ausreichend bei 90\%.
+            E = 3
+            Die Einordnung dieser Bewertung ist ähnlich zu dem vorherigen.
+            A = 5
+            Ent = 2
+            KRI = 4 * 0.4 + 5 * 0.4 + 2 * 0.2 = 3.6
+    - (ROC-AUC) Geringe Trennschärfe des Modells (unsichere Klassifikation)
+            Der AUC Wert von 0.90 ist für das weitere Vorankommen annehmbar.
+            E = 3
+            A = 5
+            Ent = 2
+            KRI = 4 * 0.4 + 5 * 0.4 + 2 * 0.2 = 3.6
 
+    \paragraph{Das Risk-Gate zeigt im zweiten Anlauf eine gelbe Ampel} und erlaubt bei stetiger Überwachung der Performance Metriken 
+    ein voranschreiten in die nächste Phase des Deployments 
+    (vgl. Tabelle \hyperref[tab:cs3_phase3_risiko_verfolgung_tabelle_2]{\ref{tab:cs3_phase3_risiko_verfolgung_tabelle_2}}).
+    
 \subsection{Phase 4: Deployment}
+    Das System bestehend aus Industrie PC und Kamera, werden bei einem bereitwilligen Kunden 
+    zum Test aufgebaut und erprobt. Dabei zeigt sich eine Änderung der Aufnahmebedingungen für 
+    die Kamera.
     Mögliche Risiken dieser Phase: 
-    - Data-Drift durch z.B. sich ändernde Lichtverhältnisse (Jahreszeitenabhängiges Nebenlicht in Norwegen ist sehr unterschiedlich. Maßnahme: Hardware nachrüsten für Beleuchtung oder softwareseitig nachbelichten.)
-        - (Performance Drop) Instabilität bei veränderten Umweltbedingungen (z.\,B. Lichtverhältnisse, Data Drift)
-    - Andere Fischzüchtungen führen ggf. zu Modell-Drift da sie sich anders verhalten (Andere Zuchtbecken führen ggf. zu anderen Ergebnissen. Maßnahmen: Datenerhebung aus mehreren Zuchtbecken bzw. Verteilung erweitern.)
+    - Data-Drift durch z.B. sich ändernde Lichtverhältnisse (Jahreszeitenabhängiges Nebenlicht in Norwegen ist sehr unterschiedlich.)
+        Die geänderten Nutzungsbedingungen des Systems zeigen sich beim Kunden und lassen vermuten, dass die ausleuchtung der Maschine 
+        nicht gut genug ist, um eine zuverlässige Klassifikation durchzuführen. Somit bildet die im Modell enthaltene Datenverteilung 
+        nicht die Realität in dieser Umgebung ab und muss näher untersucht werden.
 
+        Dafür wurde eine Sensitivitätsanalysen durchgeführt, um den Performance Drop anhand von sich ändernden Lichtverhältnissen
+        zu messen. 
+        Dieser lag in diesem Fall nur bei 5\% und war damit im akzeptablen Raum mit knappem Abstand zu einer schlechteren Performance(vgl. Tabelle \hyperref[tab:cs3_phase4_kri_mapping]{\ref{tab:cs3_phase4_kri_mapping}}).
+        Risiko:
+        - (Model Performance Drop bei 5\%) Instabilität bei veränderten Umweltbedingungen (z.\,B. Lichtverhältnisse, Data Drift)
+            E = 2 - Annehmbarer Performance Drop bei schlechten Lichtverhältnissen.
+            A = 4 - Wenn der Drift schlimmer wird, wäre das Produkt unbrauchbar
+            Ent = 2 - Würde stetig überwacht werden und zeitnahe auffallen.
+            KRI = 2 * 0.4 + 4 * 0.4 + 2 * 0.2 = 2.8
+
+    Das eingangs aufgenommene Risiko der IT-Infrastruktur gilt als Minimiert, da es bei dem Testkunden zu keinerlei Engpässen kam.
+    Das Risiko muss weiterhin beobachtet werden, aber ist weiterhin nicht kritisch.
+
+    \paragraph{Die erfassten KRI's lassen das Risk-Gate auf gelb stehen} und erlauben den Beginn der nächste Phase
+    (vgl. Tabelle \hyperref[tab:cs3_phase4_risiko_verfolgung_tabelle]{\ref{tab:cs3_phase4_risiko_verfolgung_tabelle}}).
+
+    
 \subsection{Phase 5: Usage}
-    Mögliche Risiken dieser Phase: 
-    - Alle vorherigen Risiken. (Maßnahme: Automatisierte Überprüfung der Ergebnisse auf regelmäßiger Basis)
+    Die Phase der Nutzung hat kein Abschließendes Risk-Gate, da hier eine kontinuierliche Überprüfung 
+    bzw. ein Monitoring des Analyseartefakts durchgeführt werden muss. Dies soll die 
+    zuvor gesammelten Risiken aus dem Risk-Register aufgreifen und automatisiert aufbereiten.
+    Sollte eine der Metriken auffällig abfallen, so muss das Prozessmodell erneut angestoßen werden.
 
 
 \subsection{Ergebnisse des Gedankenexperiment}
 Die Durchführung des Gedankenexperiments hat gezeigt, dass der Einsatz sowohl eines 
 Prozessmodells, als auch einer darin integrierten Risikobetrachtung 
-zu mehr Sicherheit bei der Projektdurchführung sorgen kann.
+zu mehr Sicherheit bei der Projektdurchführung sorgen kann. 
+Man kann feststellen, dass die Einschätzung in der Phase des Data-Provisioning bzgl.
+des Kamerasystems falsch war und ggf. mit dem Hintergedanken der Kostenersparnis und 
+des Vorankommens im Projekt getroffen wurde.
 
