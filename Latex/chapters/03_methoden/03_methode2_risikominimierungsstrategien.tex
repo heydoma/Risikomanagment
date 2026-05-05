@@ -32,9 +32,12 @@ Um Risiken entsprechend zu behandeln, können zunächst riskante Vorgehensweisen
    Zu guter Letzt bleibt nach Durchführung aller bereits beschriebenen Safeguards jedoch ein Restrisiko bestehen, das nicht eliminiert werden kann. 
    Dieses muss so genau wie möglich bestimmt und laufend überwacht werden (vgl. \hyperref[sec:risiko_monitoring]{Kapitel~3.4}). Im Falle eines zunehmenden Restrisikos sind zusätzliche Maßnahmen einzuleiten.
 
-   Klassische Safeguards zum Zwecke der IT-Sicherheit bilden im Rahmen von Data Science Projekten zwar ein solides Fundament greifen aber aufgrund der hohen Komplexität von Data Science Projekten zu kurz. Spezifische Risiken, wie "Bias", "Overfitting" oder "mangelnde Interpretierbarkeit der entwickelten Modelle"
-   erfordern eine Evplution von einem statischen Risikomanagement hin zu einem automatisierten effizienten Risikomanagement durch MLOps. Hierfür eignen sich insbesondere Tools, wie "MLflow", "SHAP" oder "DQLabs". Diese dienen insbesondere der automatisierten Erkennung von dehlenden oder fehlerhaften Daten (DQLabs), 
-   dem automatischen Tracking von Experimenten und der automatischen Identifikation von Bias und entsprechend verhinderten Freigabe eines Modells nach Übershcreiten bestimmter Schwellwerte (McKinsey9):
+Klassische Safeguards zur Gewährleistung der IT-Sicherheit bilden im Kontext von Data-Science-Projekten zwar ein solides Fundament,
+greifen jedoch aufgrund der erhöhten Komplexität dieser Projekte häufig zu kurz. Spezifische Risiken wie Bias, Overfitting oder mangelnde
+Interpretierbarkeit erfordern daher eine Weiterentwicklung von einem statischen hin zu einem automatisierten und effizienten Risikomanagement
+im Sinne von MLOps. Hierfür eignen sich insbesondere Tools wie MLflow, SHAP oder DQLabs, die unter anderem die Datenqualität durch die Erkennung 
+fehlerhafter oder fehlender Daten sichern (DQLabs), das Tracking von Experimenten sowie die Identifikation von Bias unterstützen (MLflow) und gleichzeitig 
+die Interpretierbarkeit von Modellen verbessern (SHAP). Darüber hinaus kann das Deployment von Modellen bei Überschreitung definierter Schwellenwerte automatisiert verhindert werden (vgl. McKinsey).
 
 \subsection{Weitere Maßnahmen}
 
