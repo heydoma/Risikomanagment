@@ -112,167 +112,194 @@ Für die Nachverfolgung der Risiken und späteren Gegenüberstellung, werden die
 ihrer Maßnahmen in einem Risk-Register verwaltet und zusammengeführt. Dieses bildet 
 zusätzlich noch den KRI vorher und nachher ab, wodurch eine Verändung direkt sichtbar wird. 
 
-Im folgenden Abschnitt werden die Phasen des DASC-PM gedanklich durchgeführt,
-die möglichen Risiken identifiziert und in die eingangs vorgestellte Risikobewertung
-überführt. Abschließend zu jeder Phase wird auf die entsprechende Entscheidung in 
-dem korrespondierenden Risk-Gate eingegangen.
+\subsection{Gedankenexperiment entlang der DASC-PM-Phasen}
 
-\subsection{Phase 1: Problem Statement}
+Im Folgenden werden die Phasen des DASC-PM gedanklich durchlaufen, phasenspezifische
+Risiken identifiziert und in die eingangs vorgestellte Risikobewertung überführt.
+Abschließend wird je Phase die korrespondierende Risk-Gate-Entscheidung dokumentiert.
 
-    Mögliche Risiken dieser Phase: 
-    - Keine besonders relevanten bzw. interessanten Risiken hier. Es werden 
-    keine Personenbezogenen Daten erhoben, Das Ziel ist klar definiert, 
-    Ressourcen werden von TriVision gestellt bzw. dort wird es umgesetzt,
-    diese Anpassung ist gefordert und somit ist der Businesscase auch gegeben.
+\subsubsection{Phase 1: Problem Statement}
 
-    \paragraph{Das Risk-Gate bleibt auf Grün} da hier keine relevanten Risiken identifiziert werden konnten
-    (vgl. Tabelle \hyperref[tab:cs3_phase1_risiko_verfolgung_tabelle]{\ref{tab:cs3_phase1_risiko_verfolgung_tabelle}}).
+In dieser Phase werden Projektziel, Rahmenbedingungen und Ressourcenverfügbarkeit
+definiert. Im vorliegenden Projektkontext ist das Ziel klar spezifiziert, die Umsetzung
+erfolgt durch TriVision, der Business Case ist durch eine bestehende Anforderung
+gegeben, und es werden in dieser Phase keine personenbezogenen Daten erhoben.
+Eine Identifikation kritischer Risiken ist unter diesen Voraussetzungen nicht möglich.
 
-\subsection{Phase 2: Data Provisioning}
-    Mögliche Risiken dieser Phase: 
-    (vgl. Tabelle \hyperref[tab:cs3_phase2_risiken_tabelle]{\ref{tab:cs3_phase2_risiken_tabelle}})
-    - Ausgewähltes Kamerasystem könnte zu schlecht sein und somit die Datenqualität negativ beeinflussen.
-        - Die erste Datensichtung hat gezeigt dass die Datenqualität der Videoaufnahmen zu schlecht sein könnte, um daraus 
-          tatsächlich ein Modell zu trainieren.
-        - (E)intrittswahrscheinlichkeit = 2 - Es könnte auch ausreichen und das Kamerasystem ist günstiger als das nächste Upgrade.
-        - (A)uswirkung = 5 - Produkt funktioniert nicht zuverlässig
-        - (Ent)deckbarkeit = 2 - Kein aktives Kontrollsystem, aber im weiteren Prozess würde es auffallen.
-        KRI = 2 * 0.4 + 5 * 0.4 + 2 * 0.2 = 3.2 
-    - Infrastruktur nicht ausreichend für die Datenmengen (Maßnahmen -> Videos nur kurz speichern und dann löschen, Direkte Verbindung von Modell zu Kamera)
-        - Die entstandenen Aufnahmen sind sehr groß und die ersten Architekturkonzepte sahen einen Transport über das Netzwerk vor. Zudem sollten
-        die Videos für eine definierte Zeit zur Nachverfolgung gespeichert werden.
-        - E = 2 - Die erste Analyse hat gezeigt, dass es grundsätzlich möglich ist, aber es bestehen Sorgen, dass die Zukünftige Last das System überfordern könnte.
-        - A = 5 - Das System würde zusammenbrechen und somit gar nicht funktionieren.
-        - Ent = 2 - Fällt während der Entwicklung und ggf. in der Produktion auf.
-        KRI = 2 * 0.4 + 5 * 0.4 + 2 * 0.2 = 3.2
+\paragraph{Gate-Entscheidung: Grün.}
+Es konnten keine relevanten Risiken identifiziert werden. Der Übergang in die
+nächste Phase erfolgt ohne Einschränkungen
+(vgl.\ Tabelle~\ref{tab:cs3_phase1_risiko_verfolgung_tabelle}).
 
-    \paragraph{Dieser Abschnitt schließt mit einer gelben Ampel ab} und erlaubt ein Fortfahren in die nächste Phase. Es werden 
-    lediglich zwei Risiken aufgenommen, die bis auf weiteres beobachtet werden müssen 
-    (vgl. Tabelle \hyperref[tab:cs3_phase2_risiko_verfolgung_tabelle]{\ref{tab:cs3_phase2_risiko_verfolgung_tabelle}}). 
-    
-\subsection{Phase 3: Analysis}
-    Bei der Analyse des Videomaterials hat man direkt den Weg über ein Neuronales Netz gewählt, um 
-    dessen Performance mit den bestehenden Daten zu bestimmen.
-    Mögliche Risiken dieser Phase: 
-    - Zuverlässigkeit der Ergebnisse (Analyse und KRI durch Performance Indicator und Modellkennziffern.)
-        - Es besteht ein Ethisches Risiko, wenn die Ergebnisse nicht korrekt klassifizieren. Dadurch würden 
-        Fische automatisiert als ,,betäubt'' gezählt werden und die Erfolgsquote würde fälschlicherweise 
-        als hoch eingestuft werden. Dadurch würde Tierleid in Kauf genommen werden.
-        Das Modell wurde anhand der bestehenden Videos trainiert, da keine neue Kamera besorgt wurde. 
-        Die Trainingsdaten wurden gelabelt und waren in ausreichendem Umfang vorhanden.
-        Die Kontrolle der Modellperformance wurde anhand der typischen Metriken durchgeführt.
-        Im Anhang ist eine Liste mit den erhobenen Performance Parametern die durch eine 
-        Schwellwertbasierte Einordnung in KRI's überführt wurden. 
-        
-        Im Hauptmarkt für diese Maschine wird eine Betäubung von 100\% angestrebt, 
-        es gibt aber keine absolute regulatorische Vorgabe dazu \citep{espmark_assessment_2025}. 
-        Dies wird regelmäßig kontrolliert und durch eine Institution nachverfolgt. 
-        Fabriken müssen schließen, wenn dies nicht gewährleistet werden kann.
-        
-        - Folgende bei der Modellentwicklung Metriken wurden weiter betrachtet und in Risiken überführt 
-        (vgl. Tabelle \hyperref[tab:cs3_phase3_kri_mapping_tabelle_1]{\ref{tab:cs3_phase3_kri_mapping_tabelle_1}}).:
-            - (FNR) Fehlklassifikation: Nicht betäubter Fisch wird als betäubt erkannt (kritischer False Negative Fall) 
-                - Aus der ,,schlechten'' False Negative Quote von 25\% lässt sich eine hohe Eintrittswahrscheinlichkeit ableiten
-                  E = 4
-                  Der Kontext ist sehr schwerwiegend, da hier auch Tierwohl Bedenken bzw. regulatorische Quoten nicht mehr eingehalten werden können
-                  A = 5
-                  Diese Metriken werden bei jedem Training erzeugt und somit gibt es hier eine wahrscheinliche Entdeckung dieses Risikos.
-                  Ent = 2
-                  KRI = 4 * 0.4 + 5 * 0.4 + 2 * 0.2 = 4.0
-            - (Recall) Unzureichende Erkennungsrate tatsächlich betäubter Fische (Recall-Schwäche)
-                  Der Recall ist ebenfalls unzureichend, da nur ca. 72\% der Fische die als betäubt klassifiziert werden auch tatsächlich betäubt sind.
-                  E = 4
-                  Die Einordnung dieser Bewertung ist ähnlich zu dem vorherigen.
-                  A = 5
-                  Ent = 2
-                  KRI = 4 * 0.4 + 5 * 0.4 + 2 * 0.2 = 4.0
-            - (ROC-AUC) Geringe Trennschärfe des Modells (unsichere Klassifikation)
-                  Der AUC Wert von 0.80 zeigt eine über alle Schwellwerte genaue gewichtung 
-                  des ,,korrekten'' Falls bzw. Outcomes über den falschen. Das ist ebenfalls noch nicht gut genug.
-                  E = 4
-                  A = 5
-                  Ent = 2
-                  KRI = 4 * 0.4 + 5 * 0.4 + 2 * 0.2 = 4.0
+\subsubsection{Phase 2: Data Provisioning}
 
-    \paragraph{Das Risk-Gate zeigt nach dieser Phase eine rote Ampel} die sich aus den kritischen Performance Ergebnissen 
-    der Entwicklung ergibt. Hier ergeben sich nun Maßnahmen, die die gesammelten Risiken addressieren 
-    (vgl. Tabelle \hyperref[tab:cs3_phase3_risiko_verfolgung_tabelle_1]{\ref{tab:cs3_phase3_risiko_verfolgung_tabelle_1}}).
-    
-    Die Analyse hat gezeigt, dass eine Überführung in ein technisch Nutzbares Artefakt an dieser 
-    Stelle noch nicht möglich ist, da das Risiko für Schäden durch Fehlinterpretationen zu hoch ist. Dies 
-    kann auch mit den Identifizierten Risiken aus der vorherigen Phase zusammenhängen. Allem
-    vorran die vergleichsweise schlechte Qualität der Bilder von dem gewählten Kamerasystem.
-    
-    Eine geeignete Maßnahme ist hier also der Austausch des Kamerasystems und ein erneutes
-    labeln der Daten. Dadurch hat sich ebenfalls das Risiko bzgl. der Datenqualität aus dem Kamerasystem, in der Phase des Data-Provisioning, 
-    minimiert. Die Eintrittswahrscheinlichkeit und die Erkennbarkeit ist hier auf 1 gefallen
-    (vgl. Tabelle \hyperref[tab:cs3_phase3_kri_mapping_tabelle_2]{\ref{tab:cs3_phase3_kri_mapping_tabelle_2}}).
+In dieser Phase werden die Videodaten erhoben und die technische Infrastruktur
+für deren Verarbeitung aufgebaut. Zwei Risiken werden identifiziert.
 
-    - (FNR) Fehlklassifikation: Nicht betäubter Fisch wird als betäubt erkannt (kritischer False Negative Fall) 
-        - Aus der ,,annehmbaren'' False Negative Quote von 9\% lässt sich eine mittlere Eintrittswahrscheinlichkeit ableiten
-            E = 3
-            Der Kontext ist sehr schwerwiegend, da hier auch Tierwohl Bedenken bzw. regulatorische Quoten nicht mehr eingehalten werden können
-            A = 5
-            Diese Metriken werden bei jedem Training erzeugt und somit gibt es hier eine wahrscheinliche Entdeckung dieses Risikos.
-            Ent = 2
-            KRI = 3 * 0.4 + 5 * 0.4 + 2 * 0.2 = 3.6
-    - (Recall) Unzureichende Erkennungsrate tatsächlich betäubter Fische (Recall-Schwäche)
-            Der Recall ist ausreichend bei 90\%.
-            E = 3
-            Die Einordnung dieser Bewertung ist ähnlich zu dem vorherigen.
-            A = 5
-            Ent = 2
-            KRI = 4 * 0.4 + 5 * 0.4 + 2 * 0.2 = 3.6
-    - (ROC-AUC) Geringe Trennschärfe des Modells (unsichere Klassifikation)
-            Der AUC Wert von 0.90 ist für das weitere Vorankommen annehmbar.
-            E = 3
-            A = 5
-            Ent = 2
-            KRI = 4 * 0.4 + 5 * 0.4 + 2 * 0.2 = 3.6
+\textbf{Unzureichende Bildqualität des gewählten Kamerasystems.}
+Die initiale Datensichtung legt nahe, dass die Qualität der Videoaufnahmen
+möglicherweise nicht ausreicht, um ein zuverlässiges Modell zu trainieren.
+Das günstigere Kamerasystem könnte jedoch auch ausreichend sein.
+\begin{itemize}
+    \item $E = 2$: Eintrittswahrscheinlichkeit gering, da die Qualität
+    grundsätzlich ausreichend sein könnte.
+    \item $A = 5$: Bei unzureichender Qualität würde das Produkt nicht
+    zuverlässig funktionieren.
+    \item $Ent = 2$: Kein aktives Kontrollsystem; das Risiko würde jedoch
+    im weiteren Prozessverlauf erkennbar.
+    \item $\text{KRI} = 2 \times 0{,}4 + 5 \times 0{,}4 + 2 \times 0{,}2 = 3{,}2$
+\end{itemize}
 
-    \paragraph{Das Risk-Gate zeigt im zweiten Anlauf eine gelbe Ampel} und erlaubt bei stetiger Überwachung der Performance Metriken 
-    ein voranschreiten in die nächste Phase des Deployments 
-    (vgl. Tabelle \hyperref[tab:cs3_phase3_risiko_verfolgung_tabelle_2]{\ref{tab:cs3_phase3_risiko_verfolgung_tabelle_2}}).
-    
-\subsection{Phase 4: Deployment}
-    Das System bestehend aus Industrie PC und Kamera, werden bei einem bereitwilligen Kunden 
-    zum Test aufgebaut und erprobt. Dabei zeigt sich eine Änderung der Aufnahmebedingungen für 
-    die Kamera.
-    Mögliche Risiken dieser Phase: 
-    - Data-Drift durch z.B. sich ändernde Lichtverhältnisse (Jahreszeitenabhängiges Nebenlicht in Norwegen ist sehr unterschiedlich.)
-        Die geänderten Nutzungsbedingungen des Systems zeigen sich beim Kunden und lassen vermuten, dass die ausleuchtung der Maschine 
-        nicht gut genug ist, um eine zuverlässige Klassifikation durchzuführen. Somit bildet die im Modell enthaltene Datenverteilung 
-        nicht die Realität in dieser Umgebung ab und muss näher untersucht werden.
+\textbf{Infrastruktur nicht ausreichend für die anfallenden Datenmengen.}
+Die Videoaufnahmen sind volumenstark; frühe Architekturkonzepte sahen einen
+Datentransport über das Netzwerk sowie eine zeitlich begrenzte Speicherung zur
+Nachverfolgung vor. Eine erste Analyse zeigt, dass der Betrieb grundsätzlich
+möglich ist, jedoch Bedenken hinsichtlich der zukünftigen Last bestehen.
+Als Gegenmaßnahme werden kurze Speicherintervalle und eine direkte Verbindung
+zwischen Kamera und Modell vorgesehen.
+\begin{itemize}
+    \item $E = 2$: Grundsätzliche Machbarkeit belegt, Überlast jedoch nicht
+    ausgeschlossen.
+    \item $A = 5$: Ein Systemausfall würde das Produkt vollständig unbrauchbar
+    machen.
+    \item $Ent = 2$: Das Risiko würde in der Entwicklung oder im Produktivbetrieb
+    erkennbar.
+    \item $\text{KRI} = 2 \times 0{,}4 + 5 \times 0{,}4 + 2 \times 0{,}2 = 3{,}2$
+\end{itemize}
 
-        Dafür wurde eine Sensitivitätsanalysen durchgeführt, um den Performance Drop anhand von sich ändernden Lichtverhältnissen
-        zu messen. 
-        Dieser lag in diesem Fall nur bei 5\% und war damit im akzeptablen Raum mit knappem Abstand zu einer schlechteren Performance(vgl. Tabelle \hyperref[tab:cs3_phase4_kri_mapping]{\ref{tab:cs3_phase4_kri_mapping}}).
-        Risiko:
-        - (Model Performance Drop bei 5\%) Instabilität bei veränderten Umweltbedingungen (z.\,B. Lichtverhältnisse, Data Drift)
-            E = 2 - Annehmbarer Performance Drop bei schlechten Lichtverhältnissen.
-            A = 4 - Wenn der Drift schlimmer wird, wäre das Produkt unbrauchbar
-            Ent = 2 - Würde stetig überwacht werden und zeitnahe auffallen.
-            KRI = 2 * 0.4 + 4 * 0.4 + 2 * 0.2 = 2.8
+\paragraph{Gate-Entscheidung: Gelb.}
+Beide Risiken werden im Risikoregister aufgenommen und weiterverfolgt.
+Der Phasenübergang ist unter kontinuierlicher Beobachtung zulässig
+(vgl.\ Tabelle~\ref{tab:cs3_phase2_risiko_verfolgung_tabelle}).
 
-    Das eingangs aufgenommene Risiko der IT-Infrastruktur gilt als Minimiert, da es bei dem Testkunden zu keinerlei Engpässen kam.
-    Das Risiko muss weiterhin beobachtet werden, aber ist weiterhin nicht kritisch.
+\subsubsection{Phase 3: Analysis}
 
-    \paragraph{Die erfassten KRI's lassen das Risk-Gate auf gelb stehen} und erlauben den Beginn der nächste Phase
-    (vgl. Tabelle \hyperref[tab:cs3_phase4_risiko_verfolgung_tabelle]{\ref{tab:cs3_phase4_risiko_verfolgung_tabelle}}).
+Die Analyse des Videomaterials erfolgt direkt über ein neuronales Netz, dessen
+Performance auf Basis der vorliegenden Daten bestimmt wird. Ein zentrales ethisches
+Risiko besteht darin, dass fehlerhafte Klassifikationen dazu führen könnten,
+nicht betäubte Fische fälschlicherweise als betäubt auszuweisen. Dies würde
+Tierleid in Kauf nehmen und regulatorische Quoten verletzen. Im Hauptmarkt
+wird eine Betäubungsquote von 100\,\% angestrebt; Betriebe müssen schließen,
+wenn diese nicht gewährleistet werden kann~\citep{espmark_assessment_2025}.
 
-    
-\subsection{Phase 5: Usage}
-    Die Phase der Nutzung hat kein Abschließendes Risk-Gate, da hier eine kontinuierliche Überprüfung 
-    bzw. ein Monitoring des Analyseartefakts durchgeführt werden muss. Dies soll die 
-    zuvor gesammelten Risiken aus dem Risk-Register aufgreifen und automatisiert aufbereiten.
-    Sollte eine der Metriken auffällig abfallen, so muss das Prozessmodell erneut angestoßen werden.
+Die Trainingsdaten wurden auf Basis der vorhandenen Videos gelabelt und waren
+in ausreichendem Umfang vorhanden. Die Modellperformance wurde anhand
+etablierter Metriken bewertet und in KRI überführt
+(vgl.\ Tabelle~\ref{tab:cs3_phase3_kri_mapping_tabelle_1}).
 
+\textbf{Erster Trainingslauf -- Ausgangsbewertung:}
 
-\subsection{Ergebnisse des Gedankenexperiment}
-Die Durchführung des Gedankenexperiments hat gezeigt, dass der Einsatz sowohl eines 
-Prozessmodells, als auch einer darin integrierten Risikobetrachtung 
-zu mehr Sicherheit bei der Projektdurchführung sorgen kann. 
-Man kann feststellen, dass die Einschätzung in der Phase des Data-Provisioning bzgl.
-des Kamerasystems falsch war und ggf. mit dem Hintergedanken der Kostenersparnis und 
-des Vorankommens im Projekt getroffen wurde.
+\textit{Fehlklassifikation (FNR): Nicht betäubter Fisch wird als betäubt erkannt.}
+\begin{itemize}
+    \item $E = 4$: Die False-Negative-Rate von 25\,\% lässt eine hohe
+    Eintrittswahrscheinlichkeit erkennen.
+    \item $A = 5$: Tierwohl und regulatorische Anforderungen können nicht
+    eingehalten werden.
+    \item $Ent = 2$: Die Metrik wird bei jedem Training erzeugt und ist damit
+    gut erkennbar.
+    \item $\text{KRI} = 4 \times 0{,}4 + 5 \times 0{,}4 + 2 \times 0{,}2 = 4{,}0$
+\end{itemize}
 
+\textit{Erkennungsrate (Recall): Unzureichende Erkennung tatsächlich betäubter Fische.}
+\begin{itemize}
+    \item $E = 4$, $A = 5$, $Ent = 2$
+    \item $\text{KRI} = 4{,}0$
+\end{itemize}
+
+\textit{Trennschärfe (ROC-AUC): Unsichere Klassifikation bei einem AUC-Wert von 0{,}80.}
+\begin{itemize}
+    \item $E = 4$, $A = 5$, $Ent = 2$
+    \item $\text{KRI} = 4{,}0$
+\end{itemize}
+
+\paragraph{Gate-Entscheidung (erster Durchlauf): Rot.}
+Alle drei Performancemetriken überschreiten den kritischen Schwellenwert.
+Eine Überführung in ein nutzbares Artefakt ist nicht zulässig
+(vgl.\ Tabelle~\ref{tab:cs3_phase3_risiko_verfolgung_tabelle_1}).
+Als Ursache wird die unzureichende Bildqualität des gewählten Kamerasystems
+identifiziert -- das bereits in Phase~2 aufgenommene Risiko hat sich
+damit materialisiert. Als Maßnahme wird das Kamerasystem ausgetauscht und
+die Daten werden mit verbesserter Aufnahmequalität neu gelabelt. Damit
+reduziert sich gleichzeitig das in Phase~2 verbliebene Datenqualitätsrisiko:
+Eintrittswahrscheinlichkeit und Entdeckbarkeit fallen auf 1.
+
+\textbf{Zweiter Trainingslauf -- Bewertung nach Kameraupgrade:}
+(vgl.\ Tabelle~\ref{tab:cs3_phase3_kri_mapping_tabelle_2})
+
+\textit{Fehlklassifikation (FNR): False-Negative-Rate nach Maßnahme bei 9\,\%.}
+\begin{itemize}
+    \item $E = 3$, $A = 5$, $Ent = 2$
+    \item $\text{KRI} = 3 \times 0{,}4 + 5 \times 0{,}4 + 2 \times 0{,}2 = 3{,}6$
+\end{itemize}
+
+\textit{Erkennungsrate (Recall): Recall nach Maßnahme bei 90\,\%.}
+\begin{itemize}
+    \item $E = 3$, $A = 5$, $Ent = 2$
+    \item $\text{KRI} = 3{,}6$
+\end{itemize}
+
+\textit{Trennschärfe (ROC-AUC): AUC-Wert nach Maßnahme bei 0{,}90.}
+\begin{itemize}
+    \item $E = 3$, $A = 5$, $Ent = 2$
+    \item $\text{KRI} = 3{,}6$
+\end{itemize}
+
+\paragraph{Gate-Entscheidung (zweiter Durchlauf): Gelb.}
+Die Performance liegt im annehmbaren Bereich. Der Übergang in die Deployment-Phase
+ist unter kontinuierlicher Überwachung der Performancemetriken zulässig
+(vgl.\ Tabelle~\ref{tab:cs3_phase3_risiko_verfolgung_tabelle_2}).
+
+\subsubsection{Phase 4: Deployment}
+
+Das System wird bei einem Pilotkunden in Betrieb genommen. Dabei zeigt sich eine
+veränderte Aufnahmesituation: Die jahreszeitlich bedingten, stark variierenden
+Lichtverhältnisse in Norwegen führen zu einer abweichenden Datenverteilung
+gegenüber den Trainingsbedingungen. Eine Sensitivitätsanalyse wird durchgeführt,
+um den Performanceabfall unter wechselnden Lichtverhältnissen zu quantifizieren
+(vgl.\ Tabelle~\ref{tab:cs3_phase4_kri_mapping}).
+
+\textbf{Data Drift durch veränderte Lichtverhältnisse (Performanceabfall 5\,\%).}
+\begin{itemize}
+    \item $E = 2$: Der gemessene Performanceabfall ist akzeptabel, liegt jedoch
+    knapp im Grenzbereich.
+    \item $A = 4$: Bei stärkerem Drift würde das Produkt unbrauchbar.
+    \item $Ent = 2$: Das Risiko wird durch kontinuierliches Monitoring zeitnah
+    erkannt.
+    \item $\text{KRI} = 2 \times 0{,}4 + 4 \times 0{,}4 + 2 \times 0{,}2 = 2{,}8$
+\end{itemize}
+
+Das in Phase~2 aufgenommene Infrastrukturrisiko gilt nach dem Pilotbetrieb als
+minimiert: Es traten keinerlei Kapazitätsengpässe auf. Das Risiko verbleibt zur
+Sicherheit im Register, ist jedoch nicht mehr kritisch.
+
+\paragraph{Gate-Entscheidung: Gelb.}
+Das Driftrisiko wird weiter beobachtet. Der Übergang in die Nutzungsphase ist
+zulässig (vgl.\ Tabelle~\ref{tab:cs3_phase4_risiko_verfolgung_tabelle}).
+
+\subsubsection{Phase 5: Usage}
+
+Die Nutzungsphase verfügt über kein abschließendes Risk Gate, da an ihre Stelle
+ein kontinuierliches Monitoring des Analyseartefakts tritt. Die im Risikoregister
+verbliebenen Risiken -- insbesondere der potenzielle Drift durch Lichtverhältnisse
+sowie die Modellperformancemetriken -- werden automatisiert überwacht. Unterschreitet
+eine der Metriken den definierten Schwellenwert, ist das DASC-PM-Prozessmodell
+erneut anzustoßen.
+
+\subsubsection{Ergebnisse des Gedankenexperiments}
+
+Das Gedankenexperiment zeigt, dass die strukturierte Kombination aus Prozessmodell
+und integrierter Risikobetrachtung nachweisbar zur Projektsicherheit beiträgt.
+Besonders deutlich wird dies am Übergang von Phase~2 zu Phase~3: Die initiale
+Einschätzung, das günstigere Kamerasystem sei ausreichend, erwies sich als
+unzutreffend. Das Risiko wurde in Phase~2 zwar korrekt aufgenommen und mit einer
+Gelb-Einstufung weitergeführt, jedoch unterschätzt -- vermutlich beeinflusst durch
+Kostenüberlegungen und den Wunsch, den Projektfortschritt nicht zu verzögern.
+Erst das Rote Risk Gate in Phase~3, ausgelöst durch kritische Performancemetriken,
+erzwang die notwendige Maßnahme: den Kameraupgrade. Dieser führte nicht nur zu
+einer deutlich verbesserten Modellgüte, sondern löste gleichzeitig das offene
+Datenqualitätsrisiko aus Phase~2 auf.
+
+Das Beispiel illustriert einen zentralen Mehrwert der RM-Extension: Die
+Carry-Forward-Logik des Gelb-Status verhindert, dass erhöhte Risiken zwischen den
+Phasen in Vergessenheit geraten, und die verbindliche Rot-Schwelle erzwingt eine
+sachlich begründete Entscheidung, bevor kritische Folgekosten entstehen.
