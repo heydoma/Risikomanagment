@@ -21,3 +21,21 @@ bestehende Projektroutinen integriert werden. Eine enge Zusammenarbeit zwischen
 Data Scientists, Risikomanagern und Domänenexpert:innen ist dabei eine 
 Grundvoraussetzung, um sowohl technische als auch organisatorische Risiken 
 adäquat abzubilden.
+
+Die entwickelte RM-Extension stellt dabei nicht den einzigen denkbaren Integrationsansatz dar. 
+Alternativ wäre eine losere Kopplung von Risikomanagement und Prozessmodell denkbar, 
+bei der Risikobeurteilungen nicht phasengebunden, sondern ereignisgetrieben durchgeführt 
+werden -- etwa ausgelöst durch signifikante Änderungen an Daten, Modellen oder Anforderungen. 
+Dieser Ansatz hätte den Vorteil einer höheren Flexibilität in stark iterativen Projekten, 
+in denen Phasengrenzen ohnehin fließend sind, ginge jedoch auf Kosten 
+der Nachvollziehbarkeit und der strukturierten Dokumentation, die gerade regulatorisch gefordert ist. 
+Ein weiterer alternativer Ansatz wäre die vollständige Einbettung des Risikomanagements in bestehende MLOps-Pipelines, 
+ohne explizite Anbindung an das DASC-PM. Tools wie MLflow oder Evidently AI ermöglichen ein kontinuierliches, 
+automatisiertes Monitoring zentraler Risikoindikatoren im laufenden Betrieb und könnten theoretisch 
+als alleiniger Steuerungsmechanismus fungieren. Allerdings decken solche Lösungen vorrangig technische 
+Modell- und Datenrisiken ab und vernachlässigen organisatorische, ethische und strategische Risikodimensionen, 
+die im DASC-PM explizit adressiert werden. Die RM-Extension positioniert sich 
+damit bewusst zwischen diesen Extremen: Sie ist stärker strukturiert als ein rein ereignisgetriebener 
+Ansatz und breiter aufgestellt als ein reines MLOps-Monitoring, zahlt dafür jedoch den 
+Preis eines höheren initialen Kalibrierungsaufwands. Welcher Ansatz im konkreten Projektkontext geeigneter ist, 
+hängt maßgeblich von der Projektgröße, dem Regulierungsumfeld und der organisatorischen Reife im Umgang mit Risikomanagement ab.
