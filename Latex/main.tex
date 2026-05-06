@@ -32,6 +32,9 @@
 \onehalfspacing
 
 % --- Mathe, Tabellen, Grafiken ---
+\usepackage{chngcntr}
+\counterwithout{table}{chapter}   % Tabellen durchlaufend nummerieren (Tab. 1, 2, 3 ...)
+\counterwithout{figure}{chapter}  % Abbildungen durchlaufend nummerieren (Abb. 1, 2, 3 ...)
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{booktabs}
