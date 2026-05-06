@@ -39,7 +39,7 @@ Daher muss frühzeitig identifiziert werden, wo potenzielle Verzerrungen entsteh
 
 Fehlende Interpretierbarkeit
 & Sollte ein hohes Maß an Nachvollziehbarkeit der eingesetzten Modelle erforderlich sein, 
-müssen entsprechende Anforderungen bereits zu Beginn des Projekts definiert werden. \\ \hline
+müssen entsprechende Anforderungen bereits zu Beginn des Projekts definiert werden \cite{schulz_dasc-pm_2022}. \\ \hline
 
 \end{tabular}
 \caption{Relevante Risiken im ersten Risk Gate der Problem-Statement-Phase, eigene Darstellung}
@@ -95,7 +95,8 @@ um Risiken zu priorisieren und entsprechende Maßnahmen zur
 Risikominimierung einzuordnen. 
 Hierzu wird folgende Formel angewandt:
 \textbf{RPZ = A x B x E}.
-Die Berechnung ergibt Werte zwischen 1 und 1000. Dabei gilt, je höher der Wert, desto schwerwiegender das Risiko. Die Ergebnisse der RPZ-Berechnung im Rahmen des ersten Risk Gates werden mithilfe der folgenden Tabelle abgebildet:
+
+Die Berechnung ergibt Werte zwischen 1 und 1000. Dabei gilt, je höher der Wert, desto schwerwiegender das Risiko [Bundesministerium]. Die Ergebnisse der RPZ-Berechnung im Rahmen des ersten Risk Gates werden mithilfe der folgenden Tabelle abgebildet:
 \begin{table}[!htbp]
 \centering
 \begin{tabular}{|p{9cm}|c|}
@@ -125,12 +126,12 @@ Zusätzlich können Risiken wie mangelnde Interpretierbarkeit, fehlende Business
 oder Ressourcenüberforderung durch eine strukturierte Kommunikationsstrategie reduziert werden. 
 Hierfür empfiehlt sich die Durchführung einer Anforderungsanalyse 
 (Requirements Engineering), bei der Anforderungen der Stakeholder erhoben, dokumentiert, geprüft und abgestimmt werden. 
-Dadurch können Zielmetriken frühzeitig definiert und ein gemeinsames Verständnis innerhalb des Teams geschaffen werden.
+Dadurch können Zielmetriken frühzeitig definiert und ein gemeinsames Verständnis innerhalb des Teams geschaffen werden [Anforderungsanalyse].
 
-Da sich die Risiken überwiegend im grünen bis gelben Bereich befinden 
+Da sich die Risiken überwiegend im gelben Bereich befinden 
 (>0 = Grün, >300 = Gelb, >600 = Rot), 
-wird die Gate-Entscheidung auf Gelb gesetzt und der weitere Projektverlauf freigegeben. 
-Das kontinuierliche Monitoring bleibt weiterhin Bestandteil des Risikomanagements.
+wird die Gate-Entscheidung auf Gelb gesetzt und der weitere Projektverlauf, vorausgesetzt, dass die definierten Maßnahmen zur Behandlung der gelben Risiken (Bias Quellen, fehlende Interpretierbarkeit und Ressourcenüberforderung) angewandt werden, freigegeben. 
+Das kontinuierliche Monitoring bleibt weiterhin Bestandteil des Risikomanagements. Im Hinblick auf grüne Risiken muss ebenfalls eine Überprüfung in jedem Risk Gate durchgeführt werden, die Besonderheit ist hier, dass potenzielle Gegenmaßnahmen definiert werden drüfen, aber nicht unmittelbar angewandt werden müssen.
 
 \subsection{Risk Gate 2: Datenverständnis und -vorbereitung}
 Neben dem weiterhin bestehenden Risiko des Bias, ergeben sich in der Phase der 
@@ -142,52 +143,52 @@ erhebliches Risiko gegen rechtliche Rahmenwerke zu verstoßen, beispielsweise di
 Auf Basis der zuvor umgesetzten Maßnahmen (u.a. Datenbereinigung und Anforderungsanalyse)
 ergibt sich folgende Risikopriorisierung: Bias (RPZ 18), Datenverfügbarkeit/Zugriffshürden (RPZ 50),
 rechtliche Verstöße (RPZ 360) (vgl. Anhang \ref{tab:cs2_app_rg2_kriterien_rpz} und \ref{tab:cs2_app_rg2_rpz_risiken}).
+Es zeigt sich, dass das Risiko "Bias" sich aufgrund der zuvor durchgeführten Minimierungsstrategien erheblich reduziert hat und folglich auf ein grünes Risikolevel herabgestuft wurde.
 
 Geeignete Maßnahmen zur Minimierung der phasenspezifischen Risiken lassen sich insbesondere 
 durch Risikovermeidung und proaktiven Schutz definieren. 
-Zur Vermeidung mangelnder Datenverfügbarkeit oder eingeschränkter Zugriffe 
+Zur Vermeidung mangelnder Datenverfügbarkeit oder eingeschränktem Zugriff. 
 sollten frühzeitig Data Owner benannt und dauerhaft in operative Prozesse integriert werden. 
 Ihre Aufgabe besteht in der Sicherstellung eines vielfältigen, zugreifbaren Datensatzes 
 sowie der Beschaffung zusätzlicher Daten bei Bedarf.
 
 Darüber hinaus empfiehlt sich eine explorative Datenanalyse, 
-um Zusammenhänge, Ausreißer und potenzielle Fehlerquellen frühzeitig zu identifizieren. 
+um Zusammenhänge, Ausreißer und potenzielle Fehlerquellen frühzeitig zu identifizieren \cite{schulz_dasc-pm_2022}. 
 Des Weiteren sollten Privacy Impact Assessments durchgeführt werden, 
 um regulatorische Anforderungen, beispielsweise im Rahmen des EU AI Acts, einzuhalten. 
 In diesem Rahmen ist zudem eine kontinuierliche Dokumentation der Projektschritte und Entscheidungen erforderlich, 
 um Transparenz, Nachvollziehbarkeit und Reproduzierbarkeit der Ergebnisse sicherzustellen 
-\cite{EUAIAct2024}.
+\cite{EUAIAct2024}, \cite{schulz_dasc-pm_2022}.
 
-Aufgrund der überwiegenden Klassifizierung der Risiken als gerinfügig kritisch (= grüne Ampel) 
-wird der Fortgang des Projekts gewährt und zur dritten Phase 
-(,,Evaluierung'') übergegangen. Fortlaufendes Monitoring sowie die 
-Dokumentation der Ergebnisse werden dabei vorausgesetzt.
+Aufgrund der überwiegenden Klassifizierung der Risiken als gerinfügig kritisch, wird die Ampel auf "Gelb" gesetzt 
+und der Fortgang des Projekts gewährt. Fortlaufendes Monitoring sowie die 
+Dokumentation der Ergebnisse werden dabei vorausgesetzt. Die Anwendung der entsprechenden Gegenmaßnahme (Privacy Impact Assesment) zur Behandlung des gelben Risikos "rechtliche Verstöße) erfolgt parallel. Die Maßnahmen zur Behandlung der grünen Risiken sind erneut optional. Es empfiehlt sich diese in einer Art "Risikogedächtnis" zu dokumentieren und im Fall einer Zunahme des Risikos wieder auf sie zurückzugreifen.
 
 \subsection{Risk Gate 3: Evaluierung/Analyse}
 In der Phase der Evaluierung stehen die Modellbildung sowie geeignete Analyseverfahren im Mittelpunkt. 
 Dabei muss insbesondere das Risiko des Overfittings adressiert und in das Risikoregister aufgenommen werden. 
 Ein überangepasstes Modell könnte im Kontext der Personalisierungsstrategie von Jumbo zwar in der Trainingsphase gute Ergebnisse liefern, 
-bei neuen Kunden oder veränderten Rahmenbedingungen jedoch an Generalisierbarkeit verlieren. 
-Die Folge wären irrelevante Produktempfehlungen und ein entsprechend sinkender Mehrwert für die Endkunden \cite{schulz_dasc-pm_2022}.
+bei neuen Kunden oder veränderten Rahmenbedingungen (z.B. neue Einkaufstrends) jedoch an Generalisierbarkeit verlieren. 
+Die Folge wären irrelevante Produktempfehlungen und ein entsprechend sinkender Mehrwert für die Endkunden.
 
-Nach der Erstellung des Risikoregisters (vgl. \hyperref[tab:cs2_app_rg3_kriterien_rpz]{Anhang A.4.3}) und der anschließenden Berechnung der RPZs (vgl. \hyperref[tab:cs2_app_rg3_rpz_risiken]{A.4.4}) ergibt sich folgende Priorisierung:
+Nach der Erstellung des Risikoregisters (vgl. \hyperref[tab:cs2_app_rg3_kriterien_rpz]{Anhang A.4.3}) und der anschließenden Berechnung der RPZs (vgl. \hyperref[tab:cs2_app_rg3_rpz_risiken]{A.4.4}) ergibt sich folgende Priorisierung: 
 Rechtliche Verstöße (RPZ 270), Overfitting (RPZ 126), mangelnde Datenverfügbarkeit bzw. Zugriffshürden (RPZ 120), mangelnde Interpretierbarkeit (RPZ 30), Ressourcenüberforderung (RPZ 12) sowie fehlende Integration der Business-Perspektive (RPZ 4). 
-Die zuvor definierten Maßnahmen führten bereits zu einer Reduktion einzelner Risiken, beispielsweise bei rechtlichen Verstößen von RPZ 360 auf RPZ 270. Aufgrund der folglichen Klassifizierung als geringfügig riskant (Grüne Ampel) werden hier keine weiteren Maßnahmen zur Risikominimierung implementiert, die bereits definierte Maßnahme ,,Privacy Impact Assessment'' bleibt von dieser Entscheidung unberührt.
+Die zuvor definierten Maßnahmen führten bereits zu einer Reduktion einzelner Risiken, beispielsweise bei rechtlichen Verstößen von RPZ 360 auf RPZ 270. Aufgrund der folglichen Klassifizierung als geringfügig riskant werden hier keine weiteren Maßnahmen zur Risikominimierung implementiert, die bereits definierte Maßnahme "Privacy Impact Assesment" bleibt von dieser Entscheidung unberührt.
 
-Zur Minimierung des Overfitting-Risikos empfiehlt sich insbesondere Robustheitsprüfungen des Modells, beispielsweise mithilfe des Tools ,,ROBUSCOPE'' des Fraunhofer-Instituts \cite{Frauenhofer_Institut}.
+Aufgrund der Klassifizierung des Risikos "Overfitting" als geringfügig ergibt sich keine zwingende Implementierung einer Gegenmaßnahme. Ausschlaggeben für diese Bewertung ist, dass ein überangepasstes Modell in der Testphase schnell identifiziert werden kann. Es empfiehlt sich daher im entscheidenden Moment eine Robustheitsprüfungen des Modells, beispielsweise mithilfe des Tools ,,ROBUSCOPE'' des Fraunhofer-Instituts [Quelle]. Aufbauen auf den Ergebnissen einer solchen Prüfung kann analysiert werden, ob sich das Risiko eines Overfittings erhöht oder reduziert hat und zusätzliche Maßnahmen implementiert werden müssen. 
 Zusätzlich bleibt die kontinuierliche Dokumentation von Entscheidungen und Ergebnissen erforderlich \cite{schulz_dasc-pm_2022}.
 
-Da sich sämtliche Risiken dieser Phase im grünen Risikobereich befinden, werden keine weiteren Maßnahmen für zuvor identifizierte Risiken definiert. Zudem wird eine grüne Gate-Entscheidung getroffen und der Übergang in die vierte Phase freigegeben.
+Da sich sämtliche Risiken dieser Phase im grünen Risikobereich befinden, sind keine Maßnahmen erforderlich. Eine grüne Gate-Entscheidung wird getroffen und der Übergang in die vierte Phase freigegeben.
 
 \subsection{Risk Gate 4: Nutzbarmachung}
 In der Phase der Nutzbarmachung stehen insbesondere Risiken hinsichtlich technischer Inkompatibilität mit der bestehenden IT-Infrastruktur sowie einer mangelnden Akzeptanz der Endanwender im Vordergrund. 
-Zusätzlich stellt eine unzureichend definierte Vorgehensweise im Fehlerfall ein relevantes Risiko dar, da hierdurch lange Problembearbeitungszeiten sowie potenzielle Reputations- und finanzielle Schäden entstehen können.
+Zusätzlich stellt eine unzureichend definierte Vorgehensweise im Fehlerfall ein relevantes Risiko dar, da hierdurch lange Problembearbeitungszeiten sowie potenzielle Reputations- und finanzielle Schäden entstehen können \cite{schulz_dasc-pm_2022}.
 
 Basierend auf den zuvor durchgeführten Minimierungsstrategien ergibt sich nach Erstellung des Risikoregisters sowie der Berechnung der RPZ folgende Priorisierung: 
 Mangelnde Akzeptanz beim Endanwender (RPZ 350), unklare Vorgehensweise im Fehlerfall (RPZ 280), rechtliche Verstöße (RPZ 270), mangelnde Datenverfügbarkeit bzw. Zugriffshürden (RPZ 50), Inkompatibilität mit der IT-Infrastruktur (RPZ 21) sowie Bias (RPZ 18). 
-Dabei wurde berücksichtigt, dass Jumbo parallel zur Personalisierungsstrategie bereits Maßnahmen zur Modernisierung der IT-Infrastruktur eingeleitet hat.
+Dabei wurde berücksichtigt, dass Jumbo parallel zur Personalisierungsstrategie bereits Maßnahmen zur Modernisierung der IT-Infrastruktur eingeleitet hat, weshalb die Bewertung des Risikos "inkompatibilität mit der bestehenden IT-Infrastruktur" vergleichsweise gering ausfällt.
 
-Geeignete Maßnahmen fokussieren insbesondere realitätsnahe Testszenarien sowie die frühzeitige Einbindung der Endanwender durch Workshops, Schulungen und zielgruppenspezifisches UX-Design. 
+Geeignete Maßnahmen fokussieren insbesondere realitätsnahe Testszenarien sowie die frühzeitige Einbindung der Endanwender durch Workshops und Schulungen. Auch hier spielt die Einbindung der Personalabteilung, insbesondere der Personalentwicklung, eine wichtige Rolle.
 
 Da die verbleibenden Risiken als kontrollierbar eingestuft werden, 
 wird eine grüne Gate-Entscheidung getroffen und der Fortgang des Projekts freigegeben. 
@@ -198,6 +199,7 @@ Die testweise Anwendung der Risikomanagement-Extension zeigt, dass sie aufgrund 
 Sie unterstützt im Rahmen digitaler Projekte, wie bei Jumbo, nicht nur die Einhaltung regulatorischer Anforderungen, 
 sondern verbessert zugleich die Kommunikation zwischen den Stakeholdern 
 und reduziert dadurch potenzielle finanzielle, technologische und organisatorische Risiken. Grundlegende Voraussetzung hierfür ist die gründliche Dokumentation der Prozesschritte, Entscheidungen und Erkenntnisse, insbesondere mit Fokus auf die Differenzierung zwischen Erkenntnissen, welche durch Fachwissen, und solche, die durch Analyseverfahren erkannt wurden. Dadurch kann eine Generalisierbarkeit der Ergebnisse sichergestellt werden.
+
 Gleichzeitig zeigt sich hingegen, dass die Extension mit einem hohen manuellen Aufwand verbunden, weshalb eine (Teil-) Automatisierung im Sinne von MLOps als sinnvoll erscheint. Nutzbare Tools in diesem Sinne sind DQLabs, MLflow und SHAP (vgl. \hyperref[sec:begriffe]{Kapitel~2.1 "Zentrale Begriffe und Frameworks"}).
 
 Der hohe operative Aufwand entsteht durch Kontroll- und Entscheidungsprozesse innerhalb der Risk Gates. 
