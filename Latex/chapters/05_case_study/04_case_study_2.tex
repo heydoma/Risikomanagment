@@ -27,7 +27,7 @@ die im Rahmen des ersten Risk Gates adressiert werden sollten:(vgl. \hyperref[se
 Fehlende Integration der Business Perspektive 
 & Data-Science-Projekte, die ihren Fokus ausschließlich auf die technische Performance legen 
 und den geschäftlichen Mehrwert nicht ausreichend herausarbeiten, gefährden die Kommunikation 
-mit Stakeholdern sowie den potenziellen Projekterfolg [Martinez]. \\ \hline
+mit Stakeholdern sowie den potenziellen Projekterfolg \cite{Martinez_2021}. \\ \hline
 
 Ressourcen\-überforderung
 & Aufgrund der hohen Unsicherheit in Data-Science-Projekten kann es dazu kommen, dass zu wenig 
@@ -96,7 +96,7 @@ Risikominimierung einzuordnen.
 Hierzu wird folgende Formel angewandt:
 \textbf{RPZ = A x B x E}.
 
-Die Berechnung ergibt Werte zwischen 1 und 1000. Dabei gilt, je höher der Wert, desto schwerwiegender das Risiko [Bundesministerium]. Die Ergebnisse der RPZ-Berechnung im Rahmen des ersten Risk Gates werden mithilfe der folgenden Tabelle abgebildet:
+Die Berechnung ergibt Werte zwischen 1 und 1000. Dabei gilt, je höher der Wert, desto schwerwiegender das Risiko \cite{Bundesministerium_2018}. Die Ergebnisse der RPZ-Berechnung im Rahmen des ersten Risk Gates werden mithilfe der folgenden Tabelle abgebildet:
 \begin{table}[!htbp]
 \centering
 \begin{tabular}{|p{9cm}|c|}
@@ -120,13 +120,13 @@ Zur Minimierung der identifizierten Risiken hätte Jumbo bereits in der Phase de
 Strategien der Risikovermeidung und Risikoakzeptanz anwenden können. 
 Problematische Datenquellen sollten dabei bereinigt oder vollständig aus dem Datensatz ausgeschlossen werden, 
 um regulatorische Verstöße im Sinne des EU AI Acts zu vermeiden 
-(siehe \hyperref[sec:begriffe]{Kapitel~2.1 ,,Zentrale Begriffe und Frameworks''}).
+(vgl. \hyperref[sec:begriffe]{Kapitel~2.1 ,,Zentrale Begriffe und Frameworks''} & \hyperref[sec:methode2]{Kapitel~3.2 ,,Prozessschritt 2: Risikobehandlung''} ).
 
 Zusätzlich können Risiken wie mangelnde Interpretierbarkeit, fehlende Business-Perspektive 
 oder Ressourcenüberforderung durch eine strukturierte Kommunikationsstrategie reduziert werden. 
 Hierfür empfiehlt sich die Durchführung einer Anforderungsanalyse 
-(Requirements Engineering), bei der Anforderungen der Stakeholder erhoben, dokumentiert, geprüft und abgestimmt werden. 
-Dadurch können Zielmetriken frühzeitig definiert und ein gemeinsames Verständnis innerhalb des Teams geschaffen werden [Anforderungsanalyse].
+\cite{Hermann_2022}, bei der Anforderungen der Stakeholder erhoben, dokumentiert, geprüft und abgestimmt werden. 
+Dadurch können Zielmetriken frühzeitig definiert und ein gemeinsames Verständnis innerhalb des Teams geschaffen werden \cite{Hermann_2022}.
 
 Da sich die Risiken überwiegend im gelben Bereich befinden 
 (>0 = Grün, >300 = Gelb, >600 = Rot), 
@@ -173,9 +173,9 @@ Die Folge wären irrelevante Produktempfehlungen und ein entsprechend sinkender 
 
 Nach der Erstellung des Risikoregisters (vgl. \hyperref[tab:cs2_app_rg3_kriterien_rpz]{Anhang A.4.3}) und der anschließenden Berechnung der RPZs (vgl. \hyperref[tab:cs2_app_rg3_rpz_risiken]{A.4.4}) ergibt sich folgende Priorisierung: 
 Rechtliche Verstöße (RPZ 270), Overfitting (RPZ 126), mangelnde Datenverfügbarkeit bzw. Zugriffshürden (RPZ 120), mangelnde Interpretierbarkeit (RPZ 30), Ressourcenüberforderung (RPZ 12) sowie fehlende Integration der Business-Perspektive (RPZ 4). 
-Die zuvor definierten Maßnahmen führten bereits zu einer Reduktion einzelner Risiken, beispielsweise bei rechtlichen Verstößen von RPZ 360 auf RPZ 270. Aufgrund der folglichen Klassifizierung als geringfügig riskant werden hier keine weiteren Maßnahmen zur Risikominimierung implementiert, die bereits definierte Maßnahme "Privacy Impact Assesment" bleibt von dieser Entscheidung unberührt.
+Die zuvor definierten Maßnahmen führten bereits zu einer Reduktion einzelner Risiken, beispielsweise bei rechtlichen Verstößen von RPZ 360 auf RPZ 270. Aus diesem Grund werden keine weiteren Maßnahmen zur Risikominimierung implementiert, die bereits definierte Maßnahme "Privacy Impact Assesment" bleibt von dieser Entscheidung unberührt.
 
-Aufgrund der Klassifizierung des Risikos "Overfitting" als geringfügig ergibt sich keine zwingende Implementierung einer Gegenmaßnahme. Ausschlaggeben für diese Bewertung ist, dass ein überangepasstes Modell in der Testphase schnell identifiziert werden kann. Es empfiehlt sich daher im entscheidenden Moment eine Robustheitsprüfungen des Modells, beispielsweise mithilfe des Tools ,,ROBUSCOPE'' des Fraunhofer-Instituts [Quelle]. Aufbauen auf den Ergebnissen einer solchen Prüfung kann analysiert werden, ob sich das Risiko eines Overfittings erhöht oder reduziert hat und zusätzliche Maßnahmen implementiert werden müssen. 
+Aufgrund der Klassifizierung des Risikos "Overfitting" als geringfügig ergibt sich auch hier keine zwingende Implementierung einer Gegenmaßnahme. Ausschlaggeben für diese Bewertung ist, dass ein überangepasstes Modell in der Testphase schnell identifiziert werden kann. Es empfiehlt sich daher im entscheidenden Moment eine Robustheitsprüfungen des Modells, beispielsweise mithilfe des Tools ,,ROBUSCOPE'' des Fraunhofer-Instituts \cite{Frauenhofer_Institut}. Aufbauen auf den Ergebnissen einer solchen Prüfung kann analysiert werden, ob sich das Risiko eines Overfittings erhöht oder reduziert hat und zusätzliche Maßnahmen implementiert werden müssen. 
 Zusätzlich bleibt die kontinuierliche Dokumentation von Entscheidungen und Ergebnissen erforderlich \cite{schulz_dasc-pm_2022}.
 
 Da sich sämtliche Risiken dieser Phase im grünen Risikobereich befinden, sind keine Maßnahmen erforderlich. Eine grüne Gate-Entscheidung wird getroffen und der Übergang in die vierte Phase freigegeben.
