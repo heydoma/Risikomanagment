@@ -61,7 +61,9 @@ Die Bewertungsstruktur umfasst die folgenden drei Kennziffern:
 \end{itemize}
 
 Diese werden unterschiedlich gewichtet, um ihrer relativen Bedeutung im Anwendungskontext Rechnung zu tragen. 
-Die Gewichtung ist in Tabelle \ref{tab:gewichtung} dargestellt.
+Die Gewichtung orientiert sich dabei an der erhöhten Relevanz von 
+Eintrittswahrscheinlichkeit und Auswirkung in kritischen Anwendungskontexten
+(vgl. Tabelle \hyperref[tab:gewichtung]{\ref{tab:gewichtung}}).
 
 \begin{table}[H]
 \centering
@@ -128,8 +130,7 @@ Eine Identifikation kritischer Risiken ist unter diesen Voraussetzungen nicht m�
 
 \paragraph{Gate-Entscheidung: Grün.}
 Es konnten keine relevanten Risiken identifiziert werden. Der Übergang in die
-nächste Phase erfolgt ohne Einschränkungen
-(vgl.\ Tabelle~\ref{tab:cs3_phase1_risiko_verfolgung_tabelle}).
+nächste Phase erfolgt ohne Einschränkungen.
 
 \subsubsection{Phase 2: Data Provisioning}
 
@@ -184,8 +185,12 @@ wenn diese nicht gewährleistet werden kann~\citep{espmark_assessment_2025}.
 
 Die Trainingsdaten wurden auf Basis der vorhandenen Videos gelabelt und waren
 in ausreichendem Umfang vorhanden. Die Modellperformance wurde anhand
-etablierter Metriken bewertet und in KRI überführt
+etablierter Metriken bewertet, als quantitative Indikatoren interpretiert und in KRI's überführt
 (vgl.\ Tabelle~\ref{tab:cs3_phase3_kri_mapping_tabelle_1}).
+
+Die Schwellenwerte für die Interpretation der Performancemetriken als quantitative Indikatoren,
+basieren auf heuristischen Annahmen und orientieren sich an Toleranzbereichen die dem Kontext 
+angemessen erscheinen.
 
 \textbf{Erster Trainingslauf -- Ausgangsbewertung:}
 
