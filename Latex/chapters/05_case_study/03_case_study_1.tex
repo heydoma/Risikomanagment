@@ -39,7 +39,7 @@ und Data-Science-Rollen tendieren dazu, Modellfragen vor Governance-Fragen zu pr
 Gleichzeitig sind Entscheidungen aus dieser Phase, etwa die Festlegung von Risikoakzeptanzgrenzen
 oder des Entscheidungsrahmens für das KI-Modell,
 in späteren Phasen kaum ohne hohe Korrekturkosten revidierbar.
-Da ein KI-gestütztes Kreditscoring nach dem EU AI Act als Hochrisikosystem eingestuft wird,
+Da ein KI-gestütztes Kreditscoring nach dem EU AI Act als Hochrisikosystem eingestuft wird \cite{EUAIAct2024},
 sind bereits ab Phase 1 dokumentierbare Governance-Strukturen regulatorisch verpflichtend.
 
 \paragraph*{Bewertung und Begründung.}
@@ -107,7 +107,7 @@ würde diese Verzerrung erlernen und fortschreiben.
 Bewertet wird das Hauptrisiko \textit{Datenqualität und Bias in historischen Daten}:
 \begin{itemize}
   \item \textbf{Eintritt (6):} Historische Datenschnitte sind oft nicht repräsentativ für aktuelle und zukünftige Kontexte.
-  \item \textbf{Auswirkung (10):} Eine verzerrte Datengrundlage schwächt das Modell fundamental und kann systematische Fehlentscheidungen mit finanziellen und reputativen Schäden erzeugen.
+  \item \textbf{Auswirkung (10):} Eine verzerrte Datengrundlage schwächt das Modell fundamental und kann systematische Fehlentscheidungen mit finanziellen und reputativen Schäden erzeugen (vgl. \hyperref[sec:methode1]{Kapitel~3.1}).
   \item \textbf{Entdeckbarkeit (9):} Technische Qualitätsfehler werden über Great-Expectations-Checks und Verteilungsprüfungen früh sichtbar; verdeckte Proxy-Bias-Muster bleiben ohne gezielte Fairness-Analysen schwerer erkennbar.
 \end{itemize}
 
@@ -165,11 +165,12 @@ Die Evaluierung erfolgt nicht nur global, sondern explizit je Kundensegment,
 um verdeckte Schwächen in risikorelevanten Teilgruppen zu erkennen.
 Neben klassischen Gütemaßen werden Entscheidungsfolgen betrachtet,
 zum Beispiel Fehlklassifikationskosten und Auswirkungen auf das Kreditportfolio.
-Besonders relevant im Kreditkontext ist dabei die asymmetrische Fehlerstruktur:
+Besonders relevant im Kreditkontext ist dabei die asymmetrische Fehlerstruktur
+(vgl. \hyperref[sec:methode1]{Kapitel~3.1}):
 Ein False Positive (zahlungsunfähiger Kunde erhält Kredit) erzeugt direkte Ausfallkosten,
 ein False Negative (kreditwürdiger Kunde wird abgelehnt) hingegen
 Reputations- und Diskriminierungsrisiken.
-Da der EU AI Act automatisierte Kreditentscheidungen als hochriskant einstuft,
+Da der EU AI Act automatisierte Kreditentscheidungen als hochriskant einstuft \cite{EUAIAct2024},
 muss das Modell für regulatorische Prüfer nachvollziehbar und erklärbar sein.
 Die Evaluierungsphase ist damit nicht nur technisch, sondern auch regulatorisch ein zentraler Kontrollpunkt.
 
@@ -197,7 +198,7 @@ Geringe Erklärbarkeit kritischer Entscheidungen & 4 & 5 & 4 & 80 & Grün \\
 \end{table}
 
 \paragraph*{Maßnahmen.}
-Steuerung über Robustheits-/Sensitivitätsanalysen, Erklärbarkeit (z.B. SHAP/LIME)
+Steuerung über Robustheits-/Sensitivitätsanalysen, Erklärbarkeit (z.B. SHAP \cite{lundberg_unified_2017}/LIME \cite{ribeiro_why_2016})
 und Mindestkriterien je Segment; Grenzfälle werden manuell geprüft (Tab.~\ref{tab:cs1_phase3_massnahmen}).
 
 \paragraph*{KRI.}
@@ -210,7 +211,7 @@ Als KRI gelten eine Segment-AUC von mindestens 0.75 und ein maximaler Performanc
 \textbf{Maßnahme} & \textbf{Details zur Umsetzung} \\
 \hline
 Sensitivitätsanalyse & Monte-Carlo-Simulation zur Prüfung der Modellstabilität je Segment. \\
-Erklärbarkeit & SHAP/LIME-Analysen zur Identifikation riskanter Muster und Proxy-Effekte. \\
+Erklärbarkeit & SHAP \cite{lundberg_unified_2017}/LIME \cite{ribeiro_why_2016}-Analysen zur Identifikation riskanter Muster und Proxy-Effekte. \\
 Manuelle Fachprüfung & Verpflichtende Prüfung bei Grenzentscheidungen durch Fachexperten. \\
 \hline
 \end{tabular}
@@ -236,7 +237,7 @@ und die erstmalige Messung von Drift-Indikatoren wie dem Population Stability In
 Im Pilot werden bewusst Szenarien mit Lastspitzen oder Ausfallsituationen getestet,
 um operative Schwachstellen vor dem breiten Rollout zu identifizieren.
 Hinzu kommt eine regulatorische Besonderheit: Das Modell muss vor dem Echtbetrieb
-eine formale interne Abnahme durch Compliance und Risikomanagement bestehen,
+eine formale interne Abnahme durch Compliance und Risikomanagement bestehen \cite{EUAIAct2024},
 was eine zusätzliche Dokumentationspflicht für alle Piloterkenntnisse erzeugt.
 In der Praxis wird häufig ein Parallelbetrieb durchgeführt, bei dem alte und neue
 Entscheidungslogik gleichzeitig laufen und die Ergebnisse verglichen werden,
