@@ -37,7 +37,8 @@ greifen jedoch aufgrund der erhöhten Komplexität dieser Projekte häufig zu ku
 Interpretierbarkeit erfordern daher eine Weiterentwicklung von einem statischen hin zu einem automatisierten und effizienten Risikomanagement
 im Sinne von MLOps. Hierfür eignen sich insbesondere Tools wie MLflow, SHAP oder DQLabs, die unter anderem die Datenqualität durch die Erkennung 
 fehlerhafter oder fehlender Daten sichern (DQLabs), das Tracking von Experimenten sowie die Identifikation von Bias unterstützen (MLflow) und gleichzeitig 
-die Interpretierbarkeit von Modellen verbessern (SHAP). Ein weiterer Vorteil ist dabei, dass Tools wie DQLabs automatisierte Warnungen bei Unter- oder Überschreitung bestimmter Metriken ausspielen können \cite{Lahiri_2024}.
+die Interpretierbarkeit von Modellen verbessern (SHAP). Ein weiterer Vorteil ist dabei, dass Tools wie DQLabs automatisierte Warnungen bei Unter- oder Überschreitung bestimmter Metriken ausspielen können (Beispiel in Python: if missing_values > 0.05:
+    raise Exception("Risk threshold exceeded - deployment blocked")) \cite{Lahiri_2024}.
 
 \subsection{Weitere Maßnahmen}
 
