@@ -85,14 +85,11 @@ Die Spalte Status-Historie zeigt, wie sich einzelne Risiken über die DASC-PM-Ph
 {\footnotesize
 \setlength{\tabcolsep}{3pt}
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}p{3.2cm}@{}}
-\caption[SafeLend-Risikoregister]{SafeLend-Risikoregister mit Status-Historie, eigene Darstellung}
-\label{tab:safelend_status_history}
-\\
 \toprule
 \textbf{Risiko} & \textbf{KRI / Trigger} & \textbf{E\,/\,A} & \textbf{Status-Historie} & \textbf{Maßnahmen / Owner} \\
 \midrule
 \endfirsthead
-\caption[]{SafeLend-Risikoregister mit Status-Historie (Fortsetzung)}\\
+\multicolumn{5}{l}{\footnotesize\textit{SafeLend-Risikoregister (Fortsetzung)}}\\
 \toprule
 \textbf{Risiko} & \textbf{KRI / Trigger} & \textbf{E\,/\,A} & \textbf{Status-Historie} & \textbf{Maßnahmen / Owner} \\
 \midrule
@@ -128,5 +125,25 @@ Data Drift im Betrieb
 & Phase 4: Gelb \textrightarrow{} Phase 5: Rot
 & Monitoring-Takt anpassen, Re-Training, Fallback / IT \& Risk Management \\
 
+Unklare Verantwortlichkeiten in der Freigabe
+& Offene Freigabepunkte = 0; alle Rollen zugewiesen
+& 4\,/\,6
+& Phase 1: Grün (passiv) \textrightarrow{} Phase 2--5: Grün (passiv)
+& Keine Maßnahme; passiv beobachtet / Projektleitung \\
+
+Geringe Erklärbarkeit kritischer Entscheidungen
+& SHAP-/LIME-Analyse je Entscheidungsklasse verfügbar
+& 4\,/\,5
+& Phase 3: Grün (passiv) \textrightarrow{} Phase 4--5: Grün (passiv)
+& Keine Maßnahme; passiv beobachtet / Data Science \\
+
+Schnittstellenfehler in der Ende-zu-Ende-Kette
+& Schnittstellenfehlerquote $< 1\%$
+& 4\,/\,5
+& Phase 4: Grün (passiv) \textrightarrow{} Phase 5: Grün (passiv)
+& Keine Maßnahme; passiv beobachtet / IT \\
+
+\caption{SafeLend-Risikoregister mit Status-Historie, eigene Darstellung}
+\label{tab:safelend_status_history}
 \end{longtable}
 }
