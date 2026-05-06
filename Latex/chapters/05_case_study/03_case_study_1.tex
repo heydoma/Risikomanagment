@@ -18,29 +18,41 @@ Die Entdeckbarkeit beschreibt dabei, wie schwer ein Risiko frühzeitig zu erkenn
 Als pragmatische Schwellenwerte werden gesetzt: Grün unter 100, Gelb 100 bis 300, Rot über 300.
 Das Registerformat entspricht dem Artefakt im Anhang; dort ist auch die Status-Historie dokumentiert.
 
+\medskip
+\noindent\textit{Hinweis: Das Szenario SafeLend wurde auf Basis eines KI-generierten Projektkontexts entwickelt
+und erhebt keinen Anspruch auf vollständige empirische Abbildung.
+Die Risikoanalyse dient der exemplarischen Anwendung der entwickelten RM-Strategie
+unter plausiblen, hypothetischen Rahmenbedingungen.}
+
 \subsection{Gedankenexperiment und detaillierte Analyse}
 
 \subsubsection{Phase 1: Problem- und Zieldefinition}
 \paragraph*{Ausgangslage und Risiko.}
-In Phase 1 werden Zielbild,
-Risikotoleranz und regulatorische Mindestanforderungen festgelegt.
-Hauptgefahr ist eine Zielschieflage,
-bei der Geschwindigkeit priorisiert wird,
+In Phase 1 werden Zielbild, Risikotoleranz und regulatorische Mindestanforderungen festgelegt.
+Hauptgefahr ist eine Zielschieflage, bei der Geschwindigkeit priorisiert wird,
 ohne Kontrollanforderungen ausreichend zu definieren.
-Als Artefakte entstehen ein erstes Zielsystem,
-eine Risikoakzeptanzmatrix und ein initialer Governance-Entwurf.
+Als Artefakte entstehen ein erstes Zielsystem, eine Risikoakzeptanzmatrix und ein initialer Governance-Entwurf.
+Im Kontext von SafeLend konkurrieren dabei mehrere Interessenlagen:
+Das Business drängt auf schnelle Markteinführung,
+die Compliance-Abteilung fordert vollständige regulatorische Absicherung,
+und Data-Science-Rollen tendieren dazu, Modellfragen vor Governance-Fragen zu priorisieren.
+Gleichzeitig sind Entscheidungen aus dieser Phase, etwa die Festlegung von Risikoakzeptanzgrenzen
+oder des Entscheidungsrahmens für das KI-Modell,
+in späteren Phasen kaum ohne hohe Korrekturkosten revidierbar.
+Da ein KI-gestütztes Kreditscoring nach dem EU AI Act als Hochrisikosystem eingestuft wird,
+sind bereits ab Phase 1 dokumentierbare Governance-Strukturen regulatorisch verpflichtend.
 
 \paragraph*{Bewertung und Begründung.}
-Zielkonflikte zwischen Geschwindigkeit, Fachanforderungen und Compliance sind in
-frühen Phasen typisch und grundsätzlich steuerbar; Eintritt: 5.
-Fehlsteuerungen wirken in alle Folgephasen und verursachen hohe Korrekturkosten;
-Auswirkung: 6.
-Zielschieflagen werden häufig erst nach getroffenen Weichenstellungen sichtbar;
-Entdeckbarkeit: 6.
+Bewertet wird das Hauptrisiko \textit{Zielschieflage durch Zielkonflikte}:
+\begin{itemize}
+  \item \textbf{Eintritt (5):} Zielkonflikte zwischen Geschwindigkeit, Fachanforderungen und Compliance sind in frühen Phasen typisch und grundsätzlich steuerbar.
+  \item \textbf{Auswirkung (6):} Fehlsteuerungen wirken in alle Folgephasen und verursachen hohe Korrekturkosten.
+  \item \textbf{Entdeckbarkeit (6):} Zielschieflagen werden häufig erst nach getroffenen Weichenstellungen sichtbar.
+\end{itemize}
 
 \begin{table}[!htbp]
 \centering
-\begin{tabular}{|p{5.5cm}|c|c|c|c|l|}
+\begin{tabular}{|p{5.5cm}|c|c|c|c|c|}
 \hline
 \textbf{Risiko} & \textbf{Eintritt} & \textbf{Auswirkung} & \textbf{Entdeck.} & \textbf{Score} & \textbf{Kategorie} \\
 \hline
@@ -92,17 +104,16 @@ Ein Modell, das auf solchen Daten trainiert wird,
 würde diese Verzerrung erlernen und fortschreiben.
 
 \paragraph*{Bewertung und Begründung.}
-Historische Datenschnitte sind oft nicht repräsentativ für aktuelle und zukünftige Kontexte;
-deshalb bewerten wir die Eintrittswahrscheinlichkeit von Bias in Bestandsdaten mit 6.
-Die Auswirkung liegt bei 10, weil eine verzerrte Datengrundlage das Modell fundamental schwächt
-und systematische Fehlentscheidungen mit finanziellen und reputativen Schäden erzeugen kann.
-Die Entdeckbarkeit setzen wir auf 9: Technische Qualitätsfehler werden über Great-Expectations-Checks,
-Schema- und Vollständigkeitsprüfungen sowie einfache Verteilungs- und Segmenttests früh sichtbar,
-während verdeckte Proxy-Bias-Muster ohne gezielte Fairness-Analysen schwerer erkennbar bleiben.
+Bewertet wird das Hauptrisiko \textit{Datenqualität und Bias in historischen Daten}:
+\begin{itemize}
+  \item \textbf{Eintritt (6):} Historische Datenschnitte sind oft nicht repräsentativ für aktuelle und zukünftige Kontexte.
+  \item \textbf{Auswirkung (10):} Eine verzerrte Datengrundlage schwächt das Modell fundamental und kann systematische Fehlentscheidungen mit finanziellen und reputativen Schäden erzeugen.
+  \item \textbf{Entdeckbarkeit (9):} Technische Qualitätsfehler werden über Great-Expectations-Checks und Verteilungsprüfungen früh sichtbar; verdeckte Proxy-Bias-Muster bleiben ohne gezielte Fairness-Analysen schwerer erkennbar.
+\end{itemize}
 
 \begin{table}[!htbp]
 \centering
-\begin{tabular}{|p{5.5cm}|c|c|c|c|l|}
+\begin{tabular}{|p{5.5cm}|c|c|c|c|c|}
 \hline
 \textbf{Risiko} & \textbf{Eintritt} & \textbf{Auswirkung} & \textbf{Entdeck.} & \textbf{Score} & \textbf{Kategorie} \\
 \hline
@@ -148,28 +159,31 @@ Offenes Risiko aus Phase 1: Score unverändert, weiterhin Gelb.
 
 \subsubsection{Phase 3: Modellierung und Evaluierung}
 \paragraph*{Ausgangslage und Risiko.}
-In Phase 3 steht die Modellgüte im Zentrum,
-einschließlich Segmentstabilität und Fehlerkosten.
+In Phase 3 steht die Modellgüte im Zentrum, einschließlich Segmentstabilität und Fehlerkosten.
 Neben Overfitting ist insbesondere die spätere Drift-Anfälligkeit relevant.
-Die Evaluierung erfolgt nicht nur global,
-sondern explizit je Kundensegment,
+Die Evaluierung erfolgt nicht nur global, sondern explizit je Kundensegment,
 um verdeckte Schwächen in risikorelevanten Teilgruppen zu erkennen.
-Neben klassischen Gütemaßen
-werden Entscheidungsfolgen betrachtet,
-zum Beispiel Fehlklassifikationskosten
-und Auswirkungen auf das Kreditportfolio.
+Neben klassischen Gütemaßen werden Entscheidungsfolgen betrachtet,
+zum Beispiel Fehlklassifikationskosten und Auswirkungen auf das Kreditportfolio.
+Besonders relevant im Kreditkontext ist dabei die asymmetrische Fehlerstruktur:
+Ein False Positive (zahlungsunfähiger Kunde erhält Kredit) erzeugt direkte Ausfallkosten,
+ein False Negative (kreditwürdiger Kunde wird abgelehnt) hingegen
+Reputations- und Diskriminierungsrisiken.
+Da der EU AI Act automatisierte Kreditentscheidungen als hochriskant einstuft,
+muss das Modell für regulatorische Prüfer nachvollziehbar und erklärbar sein.
+Die Evaluierungsphase ist damit nicht nur technisch, sondern auch regulatorisch ein zentraler Kontrollpunkt.
 
 \paragraph*{Bewertung und Begründung.}
-In dieser Phase können bei der Modellselektion, insbesondere über heterogene Kundensegmente,
-instabile Ergebnisse auftreten. Die Eintrittswahrscheinlichkeit liegt bei 5.
-Fehlklassifikationen wirken im Betrieb direkt auf Kreditentscheidungen und Risikoexposition,
-woraus wir eine Auswirkung von 6 ableiten.
-Schwächen in Teilgruppen können hinter globalen Kennzahlen verborgen bleiben;
-deshalb liegt die Entdeckbarkeit bei 5.
+Bewertet wird das Hauptrisiko \textit{Instabile Modellgüte über Segmente}:
+\begin{itemize}
+  \item \textbf{Eintritt (5):} Bei der Modellselektion können insbesondere über heterogene Kundensegmente instabile Ergebnisse auftreten.
+  \item \textbf{Auswirkung (6):} Fehlklassifikationen wirken im Betrieb direkt auf Kreditentscheidungen und Risikoexposition.
+  \item \textbf{Entdeckbarkeit (5):} Schwächen in Teilgruppen können hinter globalen Kennzahlen verborgen bleiben.
+\end{itemize}
 
 \begin{table}[!htbp]
 \centering
-\begin{tabular}{|p{5.5cm}|c|c|c|c|l|}
+\begin{tabular}{|p{5.5cm}|c|c|c|c|c|}
 \hline
 \textbf{Risiko} & \textbf{Eintritt} & \textbf{Auswirkung} & \textbf{Entdeck.} & \textbf{Score} & \textbf{Kategorie} \\
 \hline
@@ -212,29 +226,31 @@ das Datenrisiko aus Phase 2 wechselt auf Grün (Qualitätsregeln bewährt, keine
 
 \subsubsection{Phase 4: Pilotierung und Nutzbarmachung}
 \paragraph*{Ausgangslage und Risiko.}
-In Phase 4 wird das System integriert
-und im Pilotbetrieb unter Realbedingungen beobachtet.
-Das Risiko verschiebt sich von Entwicklungsfehlern
-hin zu Betriebs- und Prozessrisiken,
+In Phase 4 wird das System integriert und im Pilotbetrieb unter Realbedingungen beobachtet.
+Das Risiko verschiebt sich von Entwicklungsfehlern hin zu Betriebs- und Prozessrisiken,
 insbesondere dem \textit{Modellrisiko} durch beginnenden Data Drift.
-Schwerpunkt ist nun die Robustheit der Ende-zu-Ende-Kette
-(Datenfluss, Schnittstellen)
-und die erstmalige Messung von Drift-Indikatoren
-wie dem Population Stability Index (PSI).
-Im Pilot werden bewusst Szenarien mit Lastspitzen
-oder Ausfallsituationen getestet,
+Schwerpunkt ist die Robustheit der Ende-zu-Ende-Kette (Datenfluss, Schnittstellen)
+und die erstmalige Messung von Drift-Indikatoren wie dem Population Stability Index (PSI).
+Im Pilot werden bewusst Szenarien mit Lastspitzen oder Ausfallsituationen getestet,
 um operative Schwachstellen vor dem breiten Rollout zu identifizieren.
+Hinzu kommt eine regulatorische Besonderheit: Das Modell muss vor dem Echtbetrieb
+eine formale interne Abnahme durch Compliance und Risikomanagement bestehen,
+was eine zusätzliche Dokumentationspflicht für alle Piloterkenntnisse erzeugt.
+In der Praxis wird häufig ein Parallelbetrieb durchgeführt, bei dem alte und neue
+Entscheidungslogik gleichzeitig laufen und die Ergebnisse verglichen werden,
+ein sinnvoller, aber ressourcenintensiver Ansatz zur Kalibrierung des neuen Systems.
 
 \paragraph*{Bewertung und Begründung.}
-Im Pilot sind erste Drift-Signale plausibel, aber noch nicht voll geschäftskritisch;
-deshalb liegt die Eintrittswahrscheinlichkeit bei 5. Ein unerkannter Drift skaliert im Vollbetrieb
-zu erheblichen Fehlentscheidungen, weshalb die Auswirkung bei 6 liegt. Das KRI-Set ist im Pilot
-noch nicht vollständig kalibriert; deshalb können frühe Signale übersehen werden, weshalb wir die
-Entdeckbarkeit mit 5 ansetzen.
+Bewertet wird das Hauptrisiko \textit{Beginnende Drift im Pilotbetrieb}:
+\begin{itemize}
+  \item \textbf{Eintritt (5):} Erste Drift-Signale sind im Pilot plausibel, aber noch nicht voll geschäftskritisch.
+  \item \textbf{Auswirkung (6):} Ein unerkannter Drift skaliert im Vollbetrieb zu erheblichen Fehlentscheidungen.
+  \item \textbf{Entdeckbarkeit (5):} Das KRI-Set ist im Pilot noch nicht vollständig kalibriert; frühe Signale können übersehen werden.
+\end{itemize}
 
 \begin{table}[!htbp]
 \centering
-\begin{tabular}{|p{5.5cm}|c|c|c|c|l|}
+\begin{tabular}{|p{5.5cm}|c|c|c|c|c|}
 \hline
 \textbf{Risiko} & \textbf{Eintritt} & \textbf{Auswirkung} & \textbf{Entdeck.} & \textbf{Score} & \textbf{Kategorie} \\
 \hline
@@ -292,16 +308,16 @@ Es liegt also nicht nur ein technisches Signal,
 sondern auch ein geschäftskritisches Portfoliorisiko vor.
 
 \paragraph*{Bewertung und Begründung.}
-Im laufenden Betrieb wirken reale Marktveränderungen auf die Merkmalsverteilungen,
-während die Modellgüte in kritischen Segmenten sinkt. Deshalb bewerten wir die
-Eintrittswahrscheinlichkeit für Data Drift mit 7. Die Auswirkung setzen wir auf 8,
-weil technische und fachliche Signale gleichzeitig negativ sind und dadurch Fehlentscheidungen
-sowie Portfoliorisiken real werden. Die Entdeckbarkeit ist begrenzt, da sich Auswirkungen auf
-Portfolioebene zeitverzögert akkumulieren; deshalb liegt sie bei 7.
+Bewertet wird das Hauptrisiko \textit{Data Drift in kritischen Segmenten}:
+\begin{itemize}
+  \item \textbf{Eintritt (7):} Im laufenden Betrieb wirken reale Marktveränderungen auf die Merkmalsverteilungen, während die Modellgüte in kritischen Segmenten sinkt.
+  \item \textbf{Auswirkung (8):} Technische und fachliche Signale sind gleichzeitig negativ; Fehlentscheidungen und Portfoliorisiken werden real.
+  \item \textbf{Entdeckbarkeit (7):} Auswirkungen auf Portfolioebene akkumulieren sich zeitverzögert und sind daher schwerer frühzeitig erkennbar.
+\end{itemize}
 
 \begin{table}[!htbp]
 \centering
-\begin{tabular}{|p{5.5cm}|c|c|c|c|l|}
+\begin{tabular}{|p{5.5cm}|c|c|c|c|c|}
 \hline
 \textbf{Risiko} & \textbf{Eintritt} & \textbf{Auswirkung} & \textbf{Entdeck.} & \textbf{Score} & \textbf{Kategorie} \\
 \hline

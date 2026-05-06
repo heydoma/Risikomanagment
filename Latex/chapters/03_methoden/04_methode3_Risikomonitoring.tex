@@ -67,29 +67,19 @@ damit Qualitätsabweichungen früh erkannt und reproduzierbar behoben werden kö
 \cite{Amershi2019}.
 Damit wird Monitoring zum formalen Rückkopplungsmechanismus für Iterationen und Entscheidungspunkte im DASC-PM \cite{schulz_dasc-pm_2022}.
 
-Für das Monitoring in Data Science Projekten sind typischerweise folgende
-Signalgruppen relevant \cite{Sculley2015,Amershi2019}:
+Für das Monitoring in Data-Science-Projekten sind typischerweise vier Signalgruppen relevant \cite{Sculley2015,Amershi2019}:
 \begin{itemize}
-  \item \textbf{Datenqualität:}
-				fehlende Werte, Ausreißer, Schemaänderungen, Dubletten,
-				Verteilungsshifts in Eingangsmerkmalen.
-  \item \textbf{Qualität von Labels und Ground Truth:}
-				Verzögerungen in der Rückmeldung,
-				Inkonsistenzen in der Annotation,
-	  systematische Unterschiede zwischen Trainingsdaten und Realitätsdaten.
-  \item \textbf{Modellgüte:}
-				Abfall in Accuracy, F1 oder AUC,
-				Anstieg von Fehlerquoten in kritischen Klassen.
-  \item \textbf{Robustheit und Fairness:}
-				Performanceunterschiede zwischen Gruppen,
-				Stabilität gegenüber veränderten Datenlagen.
+  \item \textbf{Daten- und Labelqualität:}
+        Verteilungsshifts, Schemaänderungen, fehlende Werte sowie Inkonsistenzen
+        zwischen Trainingsdaten und Produktionsdaten.
+  \item \textbf{Modellgüte und Robustheit:}
+        Abfall in Accuracy, F1 oder AUC, erhöhte Fehlerquoten in kritischen Klassen
+        sowie Performanceunterschiede zwischen Gruppen.
   \item \textbf{Betrieb und Sicherheit:}
-				Latenzen, Ausfallraten, Zugriffsmuster,
-				Änderungen an Datenpipelines oder Modellversionen.
+        Latenzen, Ausfallraten und Änderungen an Datenpipelines oder Modellversionen.
   \item \textbf{Businesswirkung:}
-				Nutzenkennzahlen wie Conversion, Kosten oder Durchlaufzeiten,
-				sowie Anzeichen für Fehlsteuerung durch falsche Modellinterpretation
-				im Geschäftsprozess.
+        Nutzenkennzahlen wie Kosten oder Durchlaufzeiten sowie Anzeichen für
+        Fehlsteuerung durch falsche Modellinterpretation im Geschäftsprozess.
 \end{itemize}
 
 \subsection{Einordnung über Standards und Managementsysteme}
