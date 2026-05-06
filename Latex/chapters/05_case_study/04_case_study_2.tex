@@ -1,7 +1,7 @@
 \section{Case-Study 2: Jumbo - Personalisierung der Customer Journey} \label{sec:case_study_2}
 Die folgende Fallstudie untersucht die Transformation der niederländischen Supermarktkette Jumbo, die nach der Einführung eines neuen Treueprogramms mit einem starken Anstieg der Datenmengen konfrontiert wurde. Neben dem stationären Handel bietet Jumbo umfangreiche Online-Dienste an, wodurch insbesondere digitale Kundendaten erheblich zunahmen. Die Überlastung interner Ressourcen führte zu langen Verarbeitungszeiten und machte eine Anpassung der Infrastruktur erforderlich \cite{Kuling_Case_Study_2022}. Zusätzlich erhöhte die Expansion nach Belgien den Druck auf die bestehenden Systeme. Gemeinsam mit Bloomreach implementierte Jumbo daraufhin KI-gestützte Personalisierungsmechanismen, um das Online-Einkaufserlebnis individuell anpassen zu können.
 
-Um einen weiteren Ansatz darzustellen, orientiert sich das Scoring der zweiten Fallstudie (Case Study 2) an der Logik der FMEA und fokussiert die Bildung sogenannter Risikoprioritätszahlen (RPZ), die in diesem Kontext den KRI-Werten gleichgesetzt werden. Als Schwellenwerte gelten dabei „>0“ = Grün, „>300“ = Gelb und „>600“ = Rot.
+Das Scoring der zweiten Fallstudie orientiert sich parallel zur ersten erneut an der Logik der FMEA und fokussiert sich entsprechend auf die Bildung sogenannter Risikoprioritätszahlen (RPZ), die in diesem Kontext den KRI-Werten gleichgesetzt werden. Die Schwellenwerte werden hingegen neu definiert („>0“ = Grün, „>300“ = Gelb und „>600“ = Rot), um die kontextspezifische Anpassungsfähigkeit sowie die Abhängigkeit von der subjektiven Bewertung durch die Data Owner abzubilden. Die Risikotoleranz ist demnach nicht einheitlich, sondern variiert in Abhängigkeit von unternehmensspezifischen Rahmenbedingungen und Entscheidungspräferenzen.
 
 \subsection{Risk Gate 1: Definition der Problemstellung}
 Nach der Definition des Problems, das die Initiierung des Projekts rechtfertigt, 
@@ -12,12 +12,11 @@ zur Risikominimierung (Safeguards), Gate-Entscheidung sowie der anschließenden 
 
 Zur Identifikation potenzieller Risiken innerhalb dieser Phase wurde sich an den zuvor 
 beschriebenen Risikotypen in Data-Science-Projekten sowie an den definierten Bewertungs-, 
-Monitoring- und Minimierungsmechanismen orientiert.
+Monitoring- und Minimierungsmechanismen orientiert (vgl. Kapitel 3.1, 3.2 & 3.3).
 
 Die folgende Tabelle zeigt die zentralen Risiken der Problem-Statement-Phase, 
 die im Rahmen des ersten Risk Gates adressiert werden sollten:(vgl. \hyperref[sec:analyseansatz]{Analyseansatz in Kapitel \enquote{Anwendung der RM-Extension auf die Case-Studys}}).
 
-Tabelle~\ref{tab:risiken_problem_statement} fasst die in dieser Phase relevanten Risiken zusammen.
 \begin{table}[!htbp]
 \centering
 \renewcommand{\arraystretch}{1.3}
@@ -48,10 +47,10 @@ müssen entsprechende Anforderungen bereits zu Beginn des Projekts definiert wer
 \label{tab:risiken_problem_statement}
 \end{table}
 
-Zur anschließenden Bewertung der identifizierten Risiken kann die 
-FMEA (Fehlermöglichkeits- und Einflussanalyse) herangezogen werden. 
-Hierbei werden den Kriterien Auftrittswahrscheinlichkeit (A), Bedeutung (B) 
-und Entdeckungswahrscheinlichkeit (C) pro Risiko Werte auf einer Skala 
+Zur anschließenden Bewertung der identifizierten Risiken wird die 
+FMEA herangezogen. 
+Hierbei werden den Risiken, im Bezug auf Auftrittswahrscheinlichkeit (A), Bedeutung (B) 
+und Entdeckungswahrscheinlichkeit (C), Werte auf einer Skala 
 von 1 bis 10 zugewiesen:
 
 \begin{table}[!htbp]
