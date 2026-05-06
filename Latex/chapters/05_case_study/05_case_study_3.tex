@@ -57,11 +57,13 @@ Die Bewertungsstruktur umfasst die folgenden drei Kennziffern:
 \begin{itemize}
     \item Eintrittswahrscheinlichkeit (1 = unwahrscheinlich, 5 = sehr wahrscheinlich)
     \item Auswirkung (1 = gering , 5 = stark)
-    \item Entdeckbarkeit (1 = schwer, 5 = leicht)
+    \item Entdeckbarkeit (1 = leicht, 5 = schwer)
 \end{itemize}
 
 Diese werden unterschiedlich gewichtet, um ihrer relativen Bedeutung im Anwendungskontext Rechnung zu tragen. 
-Die Gewichtung ist in Tabelle \ref{tab:gewichtung} dargestellt.
+Die Gewichtung orientiert sich dabei an der erhöhten Relevanz von 
+Eintrittswahrscheinlichkeit und Auswirkung in kritischen Anwendungskontexten
+(vgl. Tabelle \hyperref[tab:gewichtung]{\ref{tab:gewichtung}}).
 
 \begin{table}[H]
 \centering
@@ -85,7 +87,7 @@ KRI = 0{,}4 \cdot Eintrittswahrscheinlichkeit + 0{,}4 \cdot Auswirkung + 0{,}2 \
 \end{equation}
 
 Durch diese additive Verknüpfung ergibt sich ein Wertebereich von minimal 1 bis maximal 5. 
-Diese KRI's bilden die Entscheidungsgrundlage der Risk-Gates welche sich, 
+Diese KRIs bilden die Entscheidungsgrundlage der Risk-Gates welche sich, 
 wie in Tabelle \ref{tab:risikoklassen} darstellt.
 
 \begin{table}[H]
@@ -108,7 +110,7 @@ Die Integration von Ergebnissen aus weiterführenden Analyseverfahren
 über geeignete Transformations- bzw. Mapping-Ansätze. 
 Dabei werden methodenspezifische Kennzahlen in die einheitliche Risikoskala überführt. 
 
-Für die Nachverfolgung der Risiken und späteren Gegenüberstellung, werden die KRI's samt 
+Für die Nachverfolgung der Risiken und späteren Gegenüberstellung, werden die KRIs samt 
 ihrer Maßnahmen in einem Risk-Register verwaltet und zusammengeführt. Dieses bildet 
 zusätzlich noch den KRI vorher und nachher ab, wodurch eine Verändung direkt sichtbar wird. 
 
@@ -128,8 +130,7 @@ Eine Identifikation kritischer Risiken ist unter diesen Voraussetzungen nicht m�
 
 \paragraph{Gate-Entscheidung: Grün.}
 Es konnten keine relevanten Risiken identifiziert werden. Der Übergang in die
-nächste Phase erfolgt ohne Einschränkungen
-(vgl.\ Tabelle~\ref{tab:cs3_phase1_risiko_verfolgung_tabelle}).
+nächste Phase erfolgt ohne Einschränkungen.
 
 \subsubsection{Phase 2: Data Provisioning}
 
@@ -184,8 +185,12 @@ wenn diese nicht gewährleistet werden kann~\citep{espmark_assessment_2025}.
 
 Die Trainingsdaten wurden auf Basis der vorhandenen Videos gelabelt und waren
 in ausreichendem Umfang vorhanden. Die Modellperformance wurde anhand
-etablierter Metriken bewertet und in KRI überführt
+etablierter Metriken bewertet, als quantitative Indikatoren interpretiert und in KRIs überführt
 (vgl.\ Tabelle~\ref{tab:cs3_phase3_kri_mapping_tabelle_1}).
+
+Die Schwellenwerte für die Interpretation der Performancemetriken als quantitative Indikatoren,
+basieren auf heuristischen Annahmen und orientieren sich an Toleranzbereichen die dem Kontext 
+angemessen erscheinen.
 
 \textbf{Erster Trainingslauf -- Ausgangsbewertung:}
 
