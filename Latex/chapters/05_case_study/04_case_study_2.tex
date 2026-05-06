@@ -12,7 +12,7 @@ zur Risikominimierung (Safeguards), Gate-Entscheidung sowie der anschließenden 
 
 Zur Identifikation potenzieller Risiken innerhalb dieser Phase wurde sich an den zuvor 
 beschriebenen Risikotypen in Data-Science-Projekten sowie an den definierten Bewertungs-, 
-Monitoring- und Minimierungsmechanismen orientiert (vgl. Kapitel 3.1, 3.2 & 3.3).
+Monitoring- und Minimierungsmechanismen orientiert (vgl. \hyperref[sec:methode1]{Kapitel~3.1}, \hyperref[sec:methode2]{3.2} \& \hyperref[sec:risiko_monitoring]{3.3}).
 
 Die folgende Tabelle zeigt die zentralen Risiken der Problem-Statement-Phase, 
 die im Rahmen des ersten Risk Gates adressiert werden sollten:(vgl. \hyperref[sec:analyseansatz]{Analyseansatz in Kapitel \enquote{Anwendung der RM-Extension auf die Case-Studys}}).
@@ -120,7 +120,7 @@ Zur Minimierung der identifizierten Risiken hätte Jumbo bereits in der Phase de
 Strategien der Risikovermeidung und Risikoakzeptanz anwenden können. 
 Problematische Datenquellen sollten dabei bereinigt oder vollständig aus dem Datensatz ausgeschlossen werden, 
 um regulatorische Verstöße im Sinne des EU AI Acts zu vermeiden 
-(siehe Kapitel 2.1 ,,Zentrale Begriffe und Frameworks'').
+(siehe \hyperref[sec:begriffe]{Kapitel~2.1 ,,Zentrale Begriffe und Frameworks''}).
 
 Zusätzlich können Risiken wie mangelnde Interpretierbarkeit, fehlende Business-Perspektive 
 oder Ressourcenüberforderung durch eine strukturierte Kommunikationsstrategie reduziert werden. 
@@ -142,7 +142,7 @@ erhebliches Risiko gegen rechtliche Rahmenwerke zu verstoßen, beispielsweise di
 
 Auf Basis der zuvor umgesetzten Maßnahmen (u.a. Datenbereinigung und Anforderungsanalyse)
 ergibt sich folgende Risikopriorisierung: Bias (RPZ 18), Datenverfügbarkeit/Zugriffshürden (RPZ 50),
-rechtliche Verstöße (RPZ 360) (vgl. Anhang \ref{appendix:risk_gate_2_cs_2} und \ref{appendix:risk_gate_2_cs_2_result}).
+rechtliche Verstöße (RPZ 360) (vgl. Anhang \ref{tab:cs2_app_rg2_kriterien_rpz} und \ref{tab:cs2_app_rg2_rpz_risiken}).
 
 Geeignete Maßnahmen zur Minimierung der phasenspezifischen Risiken lassen sich insbesondere 
 durch Risikovermeidung und proaktiven Schutz definieren. 
@@ -171,11 +171,11 @@ Ein überangepasstes Modell könnte im Kontext der Personalisierungsstrategie vo
 bei neuen Kunden oder veränderten Rahmenbedingungen jedoch an Generalisierbarkeit verlieren. 
 Die Folge wären irrelevante Produktempfehlungen und ein entsprechend sinkender Mehrwert für die Endkunden \cite{schulz_dasc-pm_2022}.
 
-Nach der Erstellung des Risikoregisters (vgl. Kapitel A.4.3) und der anschließenden Berechnung der RPZs (vgl. A.4.4) ergibt sich folgende Priorisierung: 
+Nach der Erstellung des Risikoregisters (vgl. \hyperref[tab:cs2_app_rg3_kriterien_rpz]{Anhang A.4.3}) und der anschließenden Berechnung der RPZs (vgl. \hyperref[tab:cs2_app_rg3_rpz_risiken]{A.4.4}) ergibt sich folgende Priorisierung:
 Rechtliche Verstöße (RPZ 270), Overfitting (RPZ 126), mangelnde Datenverfügbarkeit bzw. Zugriffshürden (RPZ 120), mangelnde Interpretierbarkeit (RPZ 30), Ressourcenüberforderung (RPZ 12) sowie fehlende Integration der Business-Perspektive (RPZ 4). 
-Die zuvor definierten Maßnahmen führten bereits zu einer Reduktion einzelner Risiken, beispielsweise bei rechtlichen Verstößen von RPZ 360 auf RPZ 270. Aufgrund der folglichen Klassifizierung als geringfügig riskant (Grüne Ampel) werden hier keine weiteren Maßnahmen zur Risikominimierung implementiert, die bereits definierte Maßnahme "Privacy Impact Assesment" bleibt von dieser Entscheidung unberührt.
+Die zuvor definierten Maßnahmen führten bereits zu einer Reduktion einzelner Risiken, beispielsweise bei rechtlichen Verstößen von RPZ 360 auf RPZ 270. Aufgrund der folglichen Klassifizierung als geringfügig riskant (Grüne Ampel) werden hier keine weiteren Maßnahmen zur Risikominimierung implementiert, die bereits definierte Maßnahme ,,Privacy Impact Assessment'' bleibt von dieser Entscheidung unberührt.
 
-Zur Minimierung des Overfitting-Risikos empfiehlt sich insbesondere Robustheitsprüfungen des Modells, beispielsweise mithilfe des Tools ,,ROBUSCOPE'' des Fraunhofer-Instituts [Quelle]. 
+Zur Minimierung des Overfitting-Risikos empfiehlt sich insbesondere Robustheitsprüfungen des Modells, beispielsweise mithilfe des Tools ,,ROBUSCOPE'' des Fraunhofer-Instituts \cite{Frauenhofer_Institut}.
 Zusätzlich bleibt die kontinuierliche Dokumentation von Entscheidungen und Ergebnissen erforderlich \cite{schulz_dasc-pm_2022}.
 
 Da sich sämtliche Risiken dieser Phase im grünen Risikobereich befinden, werden keine weiteren Maßnahmen für zuvor identifizierte Risiken definiert. Zudem wird eine grüne Gate-Entscheidung getroffen und der Übergang in die vierte Phase freigegeben.
@@ -199,8 +199,7 @@ Die testweise Anwendung der Risikomanagement-Extension zeigt, dass sie aufgrund 
 Sie unterstützt im Rahmen digitaler Projekte, wie bei Jumbo, nicht nur die Einhaltung regulatorischer Anforderungen, 
 sondern verbessert zugleich die Kommunikation zwischen den Stakeholdern 
 und reduziert dadurch potenzielle finanzielle, technologische und organisatorische Risiken. Grundlegende Voraussetzung hierfür ist die gründliche Dokumentation der Prozesschritte, Entscheidungen und Erkenntnisse, insbesondere mit Fokus auf die Differenzierung zwischen Erkenntnissen, welche durch Fachwissen, und solche, die durch Analyseverfahren erkannt wurden. Dadurch kann eine Generalisierbarkeit der Ergebnisse sichergestellt werden.
-leichzeitig ist sie jedoch mit einem
-Gleichzeitig zeigt sich hingegen, dass die Extension mit einem hohen manuellen Aufwand verbunden, weshalb eine (Teil-) Automatisierung im Sinne von MLOps als sinnvoll erscheint. Nutzbare Tools in diesem Sinne sind DQLabs, MLflow und SHAP (vgl. Kapitel 2.1 "zentrale Begriffe und Frameworks").
+Gleichzeitig zeigt sich hingegen, dass die Extension mit einem hohen manuellen Aufwand verbunden, weshalb eine (Teil-) Automatisierung im Sinne von MLOps als sinnvoll erscheint. Nutzbare Tools in diesem Sinne sind DQLabs, MLflow und SHAP (vgl. \hyperref[sec:begriffe]{Kapitel~2.1 "Zentrale Begriffe und Frameworks"}).
 
 Der hohe operative Aufwand entsteht durch Kontroll- und Entscheidungsprozesse innerhalb der Risk Gates. 
 Mit jeder Projektphase steigt dabei die Komplexität, da Risiken aus vorherigen Phasen erneut überprüft werden müssen. 
