@@ -97,7 +97,7 @@ Jede kritische Entscheidung muss nachvollziehbar dokumentiert werden:
 - wirksame Maßnahme
 - Termin für Nachkontrolle
 
-## Beispiel für die spätere Case Study (SafeLend)
+## Beispiel für die spätere Case-Study (SafeLend)
 Risikotyp: Feature Drift im Kredit-Scoring.
 
 Mögliche KRI:
