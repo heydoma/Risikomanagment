@@ -7,16 +7,23 @@ Risk Gates werden nach jeder Hauptphase des DASC-PM platziert und bilden
 damit die formale Voraussetzung für den Übergang in die jeweils nachfolgende Phase.
 
 Innerhalb jeder Hauptphase werden zunächst phasenspezifische Risiken 
-identifiziert und bewertet, um die dafür notwendigen Key Risk Indicators (KRI) 
-zu erzeugen. Dies geschieht anhand der in Kapitel \hyperref[sec:methode1]{\ref{sec:methode1}} vorgestellten Methoden
+identifiziert und bewertet, um die für die Entschiedungsfindung im Risk Gate
+notwendigen Indikatoren zu erzeugen. Wie diese Indikatoren im Detail
+aufgebaut sind, wird bewusst nicht vorgegeben, um den Einsatz dieser 
+Strategie so individuell wie möglich zu gestalten.
+
+Die Bewertung der Risiken geschieht anhand der in Kapitel \hyperref[sec:methode1]{\ref{sec:methode1}} vorgestellten Methoden
 zur Risikobeurteilung in Data-Science-Projekten. Da die Konzentration relevanter
 Risikotypen je nach Projektkontext und -ziel erheblich variiert, erfordert 
-jede Phase eine individuell ausgerichtete Risikobewertung. Um den iterativen 
+jede Phase eine individuell ausgerichtete Risikobewertung und ggf. eigens entwickelte 
+Analyse und Bewertungsmethoden. Um den iterativen 
 Charakter des DASC-PM zu erhalten und den Projektfortschritt nicht 
 unverhältnismäßig zu verlangsamen, ist es dabei essenziell, dass die 
 Risikobewertung von Beginn an in einen möglichst automatisierten Prozess 
-überführt wird. Nur so können die Vorteile des Risk-Gate-Ansatzes mit jeder 
-Iteration des Prozessmodells vollumfänglich genutzt werden.
+überführt wird. Nur so können die Vorteile des Risk Gate Ansatzes mit jeder 
+Iteration des Prozessmodells vollumfänglich genutzt werden. Dies kann und soll
+die qualitative Bewertung von Risiken allerdings nicht ausschließen. Hierfür 
+muss ein ebenfalls individueller Prozess erarbeitet werden.
 
 Eine zentrale Bedingung für den Einsatz von Risk Gates ist, dass jede 
 Risikobewertung ein dokumentiertes Ergebnisartefakt erzeugt, das mindestens 
@@ -68,7 +75,7 @@ Entscheidung über den Phasenübergang strukturiert:
 Es ist wichtig hervorzuheben, dass alle identifizierten Risiken 
 kontinuierlich nachverfolgt werden müssen und somit in das ,,Risikogedächtnis'' einfließen. 
 Der Unterschied zwischen den Ampelentscheidungen ist lediglich, dass 
-bei einer grünen Ampel keine Maßnahme zu definieren, bei gelb 
+bei einer grünen Ampel keine Maßnahme zu definieren, bei Gelb 
 gibt es optionale Maßnahmen die parallel durchgeführt werden können 
 und im roten Bereich ist eine Maßnahme unverzüglich durchzuführen.
 
@@ -81,7 +88,7 @@ kritischen Schwellenwert, so wird der Status entsprechend der Überschreitung an
 Eine Ausnahme von der Regel, dass nach jeder Hauptphase ein Risk Gate folgt, 
 bildet die Phase der ,,Nutzung''. Da das Modell zu diesem Zeitpunkt im 
 produktiven Betrieb ist, greift anstelle eines einmaligen Gate-Prüfpunkts 
-das in \hyperref[sec:risiko_monitoring]{Kapitel~3.4} beschriebene kontinuierliche Monitoring. Dieses umfasst
+das in \hyperref[sec:risiko_monitoring]{Kapitel~\ref{sec:risiko_monitoring}} beschriebene kontinuierliche Monitoring. Dieses umfasst
 sowohl technische Kennziffern als auch die fortlaufende Einschätzung des 
 Risikoniveaus. Technische Indikatoren und Risikobeurteilung sind in dieser 
 Phase konzeptionell eng miteinander verknüpft. Übersteigt ein Risiko im 
