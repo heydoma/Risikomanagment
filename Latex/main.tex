@@ -77,8 +77,11 @@
 
 \graphicspath{ {images/} } % Optional: specify folder path
 
-% --- KOMA: bessere Überschriftenabstände (optional) ---
-\RedeclareSectionCommand[beforeskip=0.8\baselineskip,afterskip=0.6\baselineskip]{chapter}
+% --- KOMA: Kapitel beginnen nicht auf neuer Seite ---
+\makeatletter
+\patchcmd{\scr@startchapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+\RedeclareSectionCommand[beforeskip=3\baselineskip,afterskip=0.6\baselineskip]{chapter}
 
 % --- Literaturverwaltung (BibTeX/Natbib) ---
 
