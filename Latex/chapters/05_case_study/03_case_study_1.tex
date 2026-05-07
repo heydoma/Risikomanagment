@@ -68,10 +68,7 @@ Unklare Verantwortlichkeiten in der Freigabe & 4 & 6 & 4 & 96 & Grün \\
 \paragraph*{Maßnahmen.}
 Gesteuert wird über verbindliche Governance-Kriterien (Freigaben, dokumentierte
 Risikoakzeptanz) und einen Eskalationspfad für Zielkonflikte (Tab.~\ref{tab:cs1_phase1_massnahmen}).
-
-\paragraph*{KRI.}
-Der Gate-Status hängt an der Vollständigkeit der Governance-Artefakte: offene Freigabepunkte müssen 0 sein,
-die Dokumentationsvollständigkeit der Ziel- und Rollenfestlegung muss 100\% erreichen.
+Die Freigabe setzt voraus, dass keine offenen Freigabepunkte verbleiben und die Dokumentationsvollständigkeit der Ziel- und Rollenfestlegung 100\% erreicht.
 
 \begin{table}[!htbp]
 \centering
@@ -130,11 +127,7 @@ Datenschutz- und Compliance-Lücken & 5 & 7 & 4 & 140 & Gelb \\
 Die Steuerung kombiniert Data-Quality-Gates, Feature-Governance und Bias-Prüfungen;
 kritische Merkmale werden im Datenfreigabeprozess gemeinsam durch Fachbereich,
 Data Science und Compliance bewertet (Tab.~\ref{tab:cs1_phase2_massnahmen}).
-
-\paragraph*{KRI.}
-Als KRI dienen die Pflichtfeldvollständigkeit der Trainingsdaten (Soll: mindestens 98\%)
-und die Differenz der Ablehnungsquoten zwischen Postleitzahlen-Clustern (Soll: maximal 5\%).
-Great-Expectations-Checks und statistische Verteilungsprüfungen operationalisieren die Entdeckbarkeit.
+Überwacht werden die Pflichtfeldvollständigkeit der Trainingsdaten (Soll: mindestens 98\%) sowie die Differenz der Ablehnungsquoten zwischen Postleitzahlen-Clustern (Soll: maximal 5\%); Great-Expectations-Checks und statistische Verteilungsprüfungen operationalisieren die Entdeckbarkeit.
 
 \begin{table}[!htbp]
 \centering
@@ -200,9 +193,7 @@ Geringe Erklärbarkeit kritischer Entscheidungen & 4 & 5 & 4 & 80 & Grün \\
 \paragraph*{Maßnahmen.}
 Steuerung über Robustheits-/Sensitivitätsanalysen, Erklärbarkeit (z.B. SHAP \cite{lundberg_unified_2017}/LIME \cite{ribeiro_why_2016})
 und Mindestkriterien je Segment; Grenzfälle werden manuell geprüft (Tab.~\ref{tab:cs1_phase3_massnahmen}).
-
-\paragraph*{KRI.}
-Als KRI gelten eine Segment-AUC von mindestens 0.75 und ein maximaler Performance-Gap zwischen Segmenten von 0.05.
+Als Mindestkriterien werden eine Segment-AUC von mindestens 0{,}75 sowie ein maximaler Performance-Gap zwischen Segmenten von 0{,}05 überwacht.
 
 \begin{table}[!htbp]
 \centering
@@ -270,9 +261,7 @@ Unzureichendes Pilot-Monitoring & 4 & 5 & 5 & 100 & Gelb \\
 Für den Übergang in den Betrieb werden Fallback/Rollback, KRI-Eskalationslogik und
 regelmäßiges Reporting umgesetzt; Verantwortlichkeiten und Reaktionszeiten für Incidents
 werden verbindlich festgelegt (Tab.~\ref{tab:cs1_phase4_massnahmen}).
-
-\paragraph*{KRI.}
-Im Pilotbetrieb gilt ein Population Stability Index (PSI) unter 0.20 als grün; die Schnittstellenfehlerquote muss unter 1\% bleiben.
+Überwacht wird der Population Stability Index (PSI), der unter 0{,}20 als unkritisch gilt; die Schnittstellenfehlerquote muss unter 1\% bleiben.
 
 \begin{table}[!htbp]
 \centering
@@ -357,8 +346,7 @@ das Reporting-Intervall verkürzt.
 Eine formale Re-Freigabe des vollautomatisierten Betriebs
 erfolgt erst nach stabilen Indikatoren über einen definierten Zeitraum.
 
-\paragraph*{KRI.}
-Als Alarm-KRI gilt ein PSI über 0.25; zusätzlich wird die Reaktionszeit auf Incidents auf maximal 30 Minuten begrenzt.
+Der Alarmwert liegt bei einem PSI über 0{,}25; die Reaktionszeit auf Incidents wird auf maximal 30 Minuten begrenzt.
 
 \medskip
 \noindent
